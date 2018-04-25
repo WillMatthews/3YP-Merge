@@ -1,0 +1,40 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Overview}{2}
+\contentsline {subsection}{\numberline {1.2}Design objective}{3}
+\contentsline {section}{\numberline {2}Review of ammonia synthesis methods}{4}
+\contentsline {subsection}{\numberline {2.1}Haber process}{4}
+\contentsline {subsection}{\numberline {2.2}Ruthenium-based synthesis}{5}
+\contentsline {subsection}{\numberline {2.3}Electrocatalysis}{5}
+\contentsline {subsection}{\numberline {2.4}Photocatalytic synthesis}{6}
+\contentsline {section}{\numberline {3}Thermodynamic modelling}{6}
+\contentsline {subsection}{\numberline {3.1}Equilibrium constant}{6}
+\contentsline {subsection}{\numberline {3.2}Reaction mixtures}{7}
+\contentsline {section}{\numberline {4}Mechanism and Kinetics}{8}
+\contentsline {subsection}{\numberline {4.1}Reaction mechanism}{8}
+\contentsline {subsection}{\numberline {4.2}Rate of reaction}{9}
+\contentsline {subsection}{\numberline {4.3}Fugacities}{9}
+\contentsline {subsection}{\numberline {4.4}Modelling}{11}
+\contentsline {section}{\numberline {5}Catalyst system}{11}
+\contentsline {section}{\numberline {6}Reactor design}{12}
+\contentsline {subsection}{\numberline {6.1}Material selection}{12}
+\contentsline {subsection}{\numberline {6.2}Reactor sizing}{12}
+\contentsline {subsection}{\numberline {6.3}Heat exchanger}{13}
+\contentsline {subsubsection}{\numberline {6.3.1}Quench cooling}{13}
+\contentsline {subsubsection}{\numberline {6.3.2}Indirect cooling}{13}
+\contentsline {subsubsection}{\numberline {6.3.3}Design}{14}
+\contentsline {section}{\numberline {7}Additional units}{15}
+\contentsline {subsection}{\numberline {7.1}Separator}{15}
+\contentsline {subsection}{\numberline {7.2}Compressor}{16}
+\contentsline {subsection}{\numberline {7.3}Purge}{17}
+\contentsline {section}{\numberline {8}Optimising operation and control}{17}
+\contentsline {subsection}{\numberline {8.1}ASPEN simulation}{17}
+\contentsline {subsection}{\numberline {8.2}Plant control}{18}
+\contentsline {section}{\numberline {9}Ammonia storage}{19}
+\contentsline {subsection}{\numberline {9.1}High pressure storage}{19}
+\contentsline {subsection}{\numberline {9.2}Low temperature storage}{19}
+\contentsline {subsection}{\numberline {9.3}Design}{20}
+\contentsline {section}{\numberline {10}Ammonia cracker}{21}
+\contentsline {section}{\numberline {11}Safety and environmental assessment}{22}
+\contentsline {subsection}{\numberline {11.1}Chemical risk and hazards}{23}
+\contentsline {section}{\numberline {12}Economic assessment}{27}
+\contentsline {section}{\numberline {13}Results and process summary}{28}

@@ -1,0 +1,196 @@
+%\documentclass[11pt, oneside]{article}  
+
+%\usepackage{style-3yp} %this is the .sty file
+%\usepackage{pdflscape}
+\lfoot{Enzia Schnyder} %your name in the footer
+
+%\usepackage{wrapfig}
+%\usepackage{float}
+%table
+%\usepackage{array}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+%\newcolumntype{K}{>{\centering\arraybackslash}m{1.5cm}}
+%\newcolumntype{J}{>{\centering\arraybackslash}m{2.8cm}}
+%\usepackage{multirow}
+
+%\begin{document}
+
+\section{Heat Exchangers}
+\subsection{introduction}
+
+Within the plant, there are many different streams that need to be heated and cooled. By designing a network of heat exchangers, heat can transferred between these streams, thus improving overall plant efficiency. The pinch analysis method described by Smith \cite{hexbook} \cite{lecture:hex} will be used to design the heat exchange network so that streams are matched most effectively. 
+
+\subsection{Stream data}
+The turbine system was excluded from the heat exchange network as it is only in use 5\% of the time and thus cannot provide any heating/cooling for most of the time. Data was gathered about the incoming and outgoing streams from each major process unit and is summarised in table \ref{tab:heatexdata}. Figure \ref{fig:heatexflow} also shows how these streams are linked to the process units in the plant.
+
+The change in enthalpy $\Delta H$ from the inlet to the destination of each of the streams was calculated using:
+\begin{equation} \label{eq:heatex}
+\Delta H = \dot{m} C_p (T_{in} - T_{out})
+\end{equation}
+where $\dot{m}$ is the mass flow rate, $C_p$ is the specific heat capacity and $T_{in}$ and $T_{out}$ are the temperatures at the inlet and destination respectively. The product $\dot{m} C_p$ is the heat capacity flow rate denoted as $CP$. Negative changes in enthalpy correspond to hot streams that must be cooled (heat supply) and positive changes in enthalpy correspond to cold streams that must be heated (heat demand).
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=0.99\textwidth]{./pictures/heatexflow.png}
+  \caption{A diagram showing how different streams in the heat exchange network are related to the process units. Blue arrows represent cold streams that must be heated up and red arrows represent hot streams that must be cooled} \label{fig:heatexflow}
+\end{figure}
+
+\begin{table} [h]
+\begin{center}
+\caption{Data for streams coming in and out of all major process units of the ESS plant} \label{tab:heatexdata} 
+\begin{tabular}{ |c|c|L|c|c|c|L| }
+ \hline
+Stream & Composition & $\dot{m} $ $(kg/s) $& $C_p$ $(kJ kg^{-1} K^{-1})$  & $T_{in}$ $(K)$ & $T_{out}$ $(K)$ & $\Delta H$ $(kW)$ \\ 
+ \hline
+  1 & $H_2$ & 0.4844 & 14.3 & 393 & 298 & -658\\ 
+ \hline
+ 2 & $O_2$ & 35.75 & 0.919 & 393 & 298 & -3119\\ 
+ \hline
+3 & $H_2$ & 0.5099 & 14.3 & 298 & 473 & 1276\\
+\hline
+4 & $N_2$ & 2.34 & 1.04 & 288 & 473 & 450.2\\
+ \hline
+  5 & $NH_3$ & 2.795 & 2.19 & 238 & 233 &-30.6\\
+ \hline
+ 6 & $NH_3$ & 2.655 & 2.19 & 233 & 243 & 58.1\\
+ \hline
+ 7 & Air & 500 & 1.01 & 898 & 298 & -303000\\
+ \hline
+\end{tabular}
+\end{center}  
+\end{table}
+Streams 2 and 7 are exhaust streams so they do not have to be fully cooled fully, and can be used as heating utilities with maximum power described in table\ref{tab:heatexdata}. This results in a total heat demand of 4.54MW and a total heat supply of 0.689MW with additional 303.7MW provided by hot streams 2 and 7. Therefore heating power must be supplied from streams 2 or 7 to fulfill heating requirements. Due to the low outlet temperatures of hot streams, cooling utility will also be required.
+
+\subsection{Design Problem}
+
+A problem table, shown in figure \ref{tab:problemtable} can be used to summarise the temperature difference in each stream and to find the change in enthalpy across each temperature interval. For this table, the actual stream temperatures are shifted to guarantee that each heat exchanger will operate over a minimum temperature difference $\Delta T_{min}$: $T_H^* = T_H - \frac{\Delta T_{min}}{2}$ for hot streams and $T_C^* = T_C + \frac{\Delta T_{min}}{2}$ for cold streams. A large $\Delta T_{min}$ means that less heat can be recovered, increasing utility costs. Decreasing $\Delta T_{min}$ will increase the heat recovered but will also increase the area of the heat exchangers required and the capital cost. It was set to 20K as the streams at the pinch points are gaseous, which require a larger $\Delta T_{min}$ than liquid streams. Streams 2 and 7 are excluded from the problem table as they do not need to be cooled fully.
+
+\begin{table} [H]
+\begin{center}
+\caption{Problem table for this design problem} \label{tab:problemtable} 
+\renewcommand{\arraystretch}{0.95}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+ \hline
+$T^*$ $(K)$ &  \multicolumn{5}{|c|}{Stream \& CP $(kWK^{-1})$} & \multirow{2}{*}{$\Delta T \ (K)$} & \multirow{2}{*}{$\Delta H_{int} \ (kW)$}\\  \cline{1-6}
+   \multirow{2}{*}{483} & 1 - 6.93 & 3 - 7.29 & 4 - 2.43 & 5 - 6.12 & 6 - 5.81 & & \\ 
+ \cline{2-8}
+  & \multirow{2}{*}{} &\multirow{2}{*}{$\uparrow$} & \multirow{2}{*}{$\uparrow$}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{100} & \multirow{2}{*}{-972}\\ 
+ \cline{1-1}
+\multirow{2}{*}{383} & & & & & & &\\
+\cline{2-8}
+& \multirow{2}{*}{|} &\multirow{2}{*}{|} & \multirow{2}{*}{|}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{75} & \multirow{2}{*}{-209.3} \\ 
+ \cline{1-1}
+\multirow{2}{*}{308} & & & & & & &\\
+\cline{2-8}
+ & \multirow{2}{*}{|} &\multirow{2}{*}{} & \multirow{2}{*}{|}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{10} & \multirow{2}{*}{45}\\ 
+ \cline{1-1}
+ \multirow{2}{*}{298} & & & & & & &\\
+\cline{2-8}
+& \multirow{2}{*}{$\downarrow$} &\multirow{2}{*}{} & \multirow{2}{*}{}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{10} & \multirow{2}{*}{69.3} \\ 
+ \cline{1-1}
+ \multirow{2}{*}{288} & & & & & & &\\
+\cline{2-8}
+ & \multirow{2}{*}{} &\multirow{2}{*}{} & \multirow{2}{*}{}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{35} & \multirow{2}{*}{0}\\ 
+ \cline{1-1}
+ \multirow{2}{*}{253} & & & & & & &\\
+\cline{2-8}
+ & \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{}& \multirow{2}{*}{}&\multirow{2}{*}{$\uparrow$} & \multirow{2}{*}{10} & \multirow{2}{*}{-58.1}\\ 
+ \cline{1-1}
+ \multirow{2}{*}{243} & & & & & & &\\
+\cline{2-8}
+ & \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{}& \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{15} & \multirow{2}{*}{0}\\ 
+ \cline{1-1}
+ \multirow{2}{*}{228} & & & & & & &\\
+  \cline{2-8}
+ & \multirow{2}{*}{}&\multirow{2}{*}{} & \multirow{2}{*}{}& \multirow{2}{*}{$\downarrow$}&\multirow{2}{*}{} & \multirow{2}{*}{5} & \multirow{2}{*}{30.6}\\
+ \cline{1-1}
+ \multirow{2}{*}{223} & & & & & & &\\
+ \cline{2-8}
+&\multicolumn{7}{|c|}{}  \\
+ \hline
+\end{tabular}
+\end{center}  
+\end{table}
+
+
+\subsection{Utility Requirements} \label{ssec:utility}
+
+\begin{wrapfigure}{r}{0.48\textwidth}
+\includegraphics[width=0.9\linewidth]{./pictures/cascade} 
+\caption{Cascade diagram for the heat exchange network.}
+\label{fig:cascade}
+\end{wrapfigure}
+Using the problem table, we can find the maximum cumulative negative enthalpy (greatest heat deficit) of -1181.3kW at 308K, the pinch point. This cannot be realised as it requires heat to be transferred up the temperature scale. To resolve this a hot utility is added of 1181kW at the hottest point. This heat can cascade down the system as shown in figure \ref{fig:cascade}. Cumulative enthalpy is labeled at each point and the diagram shows how excess heat from surplus intervals can be used to heat up deficit intervals below them. The cascade diagram tells us that the minimum heating and cooling requirements that can be used to satisfy the problem are 1181.3kW and 86.8kW respectively.
+
+\subsection{Pinch Design}
+Using the pinch design method, two separate networks are independently designed above and below the pinch. This is because minimum utility requirements cannot be met if heat is transferred across the pinch. To satisfy all stream requirements, two constraints also have to be met:
+\\ 1. Above the pinch, the number of hot streams must be less than or equal to the number of cold streams so that cooling utilities do not have to be used. 
+\\ 2. The heat capacity flow rate of hot streams must be less than or equal to that of the cold stream they are matched with so that no point has a temperature difference less than $\Delta T_{min}$. 
+
+The reverse constraints apply below the pinch and are summarised in table \ref{tab:pinchconstraints}, which shows that the first constraint is not met above the pinch. Stream 1 is not hot enough to heat streams 3 and 4 so a fraction of stream 7 is added to the network to heat them (shown in green), which also allows the first constraint to be satisfied. Where there were multiple streams that could be matched, they were selected to give the greatest temperature difference, which reduces area of the heat exchangers and therefore the capital cost of the network required. Equation \ref{eq:heatex} is used to calculate enthalpy requirements and temperature coming out of each heat exchanger.
+
+
+
+\begin {table} [h]
+\begin{center}
+\caption{Constraints for pinch design of the heat exchange network. The top half of the table describes design constraints and the bottom half shows stream data.} \label{tab:pinchconstraints} 
+\begin{tabular}{ |K|K|K|K|K|K|K|K| }
+ \hline
+\multicolumn{4}{|c|}{Above pinch} & \multicolumn{4}{|c|}{Below pinch}\\
+\hline
+\multicolumn{4}{|c|}{$N_H \leqslant N_C$} & \multicolumn{4}{|c|}{$N_H \geqslant N_C$}\\
+ \hline
+\multicolumn{4}{|c|}{ $CP_H \leqslant CP_C$} & \multicolumn{4}{|c|}{$CP_H \geqslant CP_C$}\\
+ \hline
+  1 &6.93 & 3 & 7.29 & 1 & 6.93 & 4 & 2.43\\
+  \hline
+  \textcolor{ForestGreen}{7}& \textcolor{ForestGreen}{2.04}& 4 & 2.43 & 5 & 6.12 & 6 &  5.81\\
+  \hline
+  \multicolumn{2}{|c|}{Hot} &  \multicolumn{2}{|c|}{Cold} &  \multicolumn{2}{|c|}{Hot} &  \multicolumn{2}{|c|}{Cold}\\
+  \hline
+\end{tabular}
+\end{center}  
+\end {table}
+
+Above the pinch, stream 1 can be fully cooled using stream 3. Streams 3 and 4 both then require further heating utility in the form of stream 7. The flow rate of stream 7 must be less than $2.4$ to satisfy constraint 2 and was chosen to exactly satisfy the heating requirements of streams 3 and 4 while arriving at the pinch temperature resulting in a mass flow rate of $2.02 kg^{-1}$. In total 3 heat exchangers were required: 1 as part of the main work and 2 as 'heating utility' from stream 7. 
+
+Below the pinch, stream 5 requires cooling utility no cold streams are cold enough to cool it. This leaves stream 1 to heat both streams 4 and 6. Stream 4 has a greater heating requirement so it is satisfied first. Stream 1 also requires cooling utility to remove the remaining heat. In total 2 heat exchangers were required and cooling utility needed for streams 1 and 5. The full network is shown in figure \ref{fig:heatexnetwork}, enthalpy changes across heat exchangers and utilities are also shown in table \ref{tab:powerhex}. Stream 2 was not needed for the final design as enough heating power was provided by stream 7. 
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=1\textwidth]{./pictures/heatexnetwork.png}
+  \caption{The final heat exchange network. Each pair of circles represents a heat exchanger, single circles represent cooling utility and temperatures (K) are shown at each isothermal segment.} \label{fig:heatexnetwork}
+  \end{figure}
+
+\begin {table} [h]
+\begin{center}
+\caption{Heat transferred in all heat exchangers and utilities in the network} \label{tab:powerhex} 
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+ \hline
+\multirow{2}{*}{Component} & \multicolumn{5}{|c|}{Heat exchangers }& \multicolumn{2}{|c|}{Cooling Utilities}\\ 
+ \cline{2-8}
+   & HEX 1 & HEX 2 & HEX 3 & HEX 4 &HEX 5 & C1 & C2\\ 
+ \hline
+ Enthalpy change (kW) & 425.3 & 756.0 & 519.8 & 24.3 & 58.1 & 56.2 & 30.6\\ 
+ \hline
+\end{tabular}
+\end{center}  
+\end {table}
+
+From table \ref{tab:powerhex}, 5 heat exchangers and 2 cooling utility units were required. The total cooling utility required is 86.8kW and the total heating utility (in the form of stream 7) is 1181.3kW. This matches the minimum utility requirements calculated in section \ref{ssec:utility}, which shows that the heat exchanger network is one of the optimal configurations that can be designed.
+
+Streams 1, 6 and 7 in the heat exchanger network have variable flow rates. This means that to satisfy stream requirements at all times, there will have to be heat transferred across the pinch, increasing the utility requirements. A control system would have to be designed to adjust the mass flow rate of stream 7 and cooling utilities C1 and C2 according to the varying demand. However, that is beyond the scope of this report. Cooling water was chosen as the utility due to the plants proximity to large amounts of cool sea water. %mass flow rate or temperature difference?
+
+\subsection{Costing}
+From section \ref{sec:financial}, the capital cost of each heat exchanger varies with heat exchange area $A (m^2)$ as:
+\begin{equation} %reference
+Cost \ (Million\ \$) = 130 \frac{A}{0.093}^{0.78}
+\end{equation}
+The area of each heat exchanger was found using: 
+\begin{equation}Q = UA\Delta T_{LM} \end{equation}
+Where $Q$ is the heat transferred, $U$ is the overall heat transfer coefficient and $\Delta T_{LM}$ is the log-mean temperature difference across the heat exchanger calculated from the temperature difference at each side $\Delta T_{LM} = (\Delta T_A - \Delta T_B)/\ln{\frac{\Delta T_A}{\Delta T_B}}$. Due to the relatively small cost of the heat exchange network compared to the rest of the plant, approximate values for U were taken from existing data assuming that all heat exchangers operate with gases to give $U=30Wm^{-2}$ \cite{hexcoeff}. The cost of each heat exchanger was calculate and summed to give a total of \$241.3 thousand. Operational costs are calculated in section \ref{sec:financial}. %operational cost number
+
+\bibliography{./turbine/heatexreport}
+\bibliographystyle{unsrt}
+%\printbibliography[heading=subbibliography]
+%\end{document}

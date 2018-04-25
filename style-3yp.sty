@@ -1,0 +1,149 @@
+% General page setup
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{%
+a4paper,
+left=20 mm,
+right=20 mm,
+top=20 mm,
+bottom=20 mm
+}
+% Allow graphics
+\usepackage{graphicx,subcaption}
+% Allow Captions
+\usepackage[justification=centering]{caption}
+% Allow colours
+\usepackage[dvipsnames]{xcolor}
+% Drawing and Math Symbol Tools
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{amsmath}
+% Header/Footer tools
+\usepackage{fancyhdr}
+% Allows Double Spacing
+\usepackage{setspace}
+% Allows lists
+\usepackage{enumitem}
+% Not neccessary but nice to have :)
+\usepackage{metalogo}
+% Allows easy bolding of vectors
+\usepackage{bm}
+% Allows nice arrows on top of vectors
+\usepackage{esvect}
+% Generally useful
+\usepackage{mathtools}
+% AMAZING PACKAGE. hyperlinks for everything
+\usepackage{hyperref}
+%Allows for page count
+\usepackage{lastpage}
+
+% double space
+\doublespacing
+
+%% FOR CODE BLOCKS USE MINTED - LISTINGS IS DEPRECIATED
+
+% Header & Footer - Change 'lfoot' at the beginning of your section.
+\headheight 14pt
+\pagestyle{fancy}
+\rhead{\color{red}DO NOT RELEASE}
+\lhead{\color{red}DRAFT}
+\chead{Compiled: \today}
+\cfoot{\thepage~of~\pageref{LastPage}}
+\rfoot{Group 3}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%HELVET FONT
+\usepackage{sansmathfonts}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{textcomp}
+
+%% Make Captions be above tables
+\usepackage{floatrow}%[capposition=top]
+\floatsetup[table]{capposition=top}
+
+
+%% compress table of contents
+\usepackage{tocloft}
+%\setlength\cftparskip{-2pt}
+%\setlength\cftbeforechapskip{0pt}
+\usepackage[toc,lot]{multitoc}
+\renewcommand*{\multicolumntoc}{2}
+\setlength{\columnseprule}{0.5pt}
+\renewcommand*{\multicolumnlof}{2}
+\renewcommand*{\multicolumnlot}{2}
+\setlength{\parskip}{1em}
+
+%% Compress section break
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{\parskip}{4pt}%
+\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
+
+\usepackage{pdfpages}
+
+
+
+% vertical d for differentials in math
+% just do \dd to get a vertical d in math mode
+\newcommand{\dd}[1]{\mathrm{d}#1}
+
+% code formatting inline with text
+% use \code to get a fancy command highlighter for inline text
+\newcommand\code[1]{
+  \tikz[baseline=(s.base)]{
+    \node(s)[rounded corners,fill=orange!20,draw=gray]{\texttt{#1}};
+  }
+}
+
+
+\usepackage{wrapfig}
+\usepackage{pdflscape}
+%table
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
+\newcolumntype{K}{>{\centering\arraybackslash}m{1.5cm}}
+\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
+\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
+
+   
+   
+   
+%\usepackage{fullpage}
+\usepackage[version=4]{mhchem}
+%\usepackage{setspace}
+%\usepackage{inputenc}
+%\usepackage{wrapfig}
+%\usepackage{textcomp}
+%\usepackage{graphicx}
+\usepackage{textgreek}
+\usepackage{rotate}
+\usepackage{gensymb}
+
+
+\let\subsubsubsection\paragraph
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following packages are from Angus
+% Allows landscape / rotation
+\usepackage{rotating}
+\usepackage{lscape}
+% Harvard-style Referencing
+\usepackage{natbib}
+% Graphs and tables
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{seqsplit}
+\usepackage{array}
+\usepackage{multirow}
+% URL in reference
+\usepackage{hyperref}

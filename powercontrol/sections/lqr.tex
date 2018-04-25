@@ -1,0 +1,214 @@
+\subsection{LQR Problem Formulation}
+\subsubsection{State Space System}
+\label{sec:lqr}
+
+The design begin by considering the system as a \emph{State Space}, this takes into account {\color{red}system dynamics}, {\color{blue}input effects}, and predicted {\color{green}disturbance effects}.
+
+    \begin{equation}
+            {\color{red} \frac{ \partial \vv{\bm{x}} }{ \partial t } }  = {\color{red} \bm{A} \vv{\bm{x}}} + {\color{blue}\bm{B}{\bm{u}} }+ {\color{green}\bm{D} d}
+    \end{equation}
+        \begin{equation}
+            y = \bm{C} \vv{\bm{x}}
+        \end{equation}
+        \begin{equation}
+                \vv{\bm{x}} =
+                \begin{bmatrix}
+                        e_{\omega}\\
+                        T_{t}\\
+                        T_{s}\\
+                        T_{e}\\
+                \end{bmatrix}
+                ,
+                \qquad
+                \bm{u} =
+                \begin{bmatrix}
+                        u_t\\
+                        u_s\\
+                        u_e\\
+                        u_b\\
+                \end{bmatrix}
+                ,
+                \qquad
+                \bm{d} =
+                \begin{bmatrix}
+                        d_{\text{demand}}\\
+                        d_{\text{cryostill}}\\
+                        d_{\text{wind}}
+                \end{bmatrix}
+                ,
+                \qquad
+                \bm{D} =
+                \begin{bmatrix}
+                        -1 & -1 & 1 \\
+                        %\multicolumn{2}{c}{\smash{\raisebox{0\normalbaselineskip}{$ \bm{0}_{4,3}$}}}\\
+                        \, & \bm{0}_{4,3} & \, \\
+                \end{bmatrix}
+        \end{equation}
+        \begin{equation}
+                \bm{A} =
+                \begin{bmatrix}
+                        0 & J^{-1}& J^{-1}& -J^{-1}\\
+                        0 & -k_t & 0 & 0\\
+                        0 & 0 & -k_s & 0\\
+                        0 & 0 & 0 & -k_e
+                \end{bmatrix}
+                , \qquad \bm{B} =
+                \begin{bmatrix}
+                        0 & 0 & 0 & 0\\
+                        -k_t & 0 & 0\\
+                        0 & -k_s & 0\\
+                        0 & 0 & -k_e
+                \end{bmatrix}
+        \end{equation}
+
+
+
+%    \begin{equation}
+%            {\color{red} \frac{ \partial \vv{\bm{x}} }{ \partial t } }  = {\color{red} \bm{A} \vv{\bm{x}}} + {\color{blue}\bm{B}{\bm{u}} }+ {\color{green}\bm{D} d}
+%    \end{equation}
+%        \begin{equation}
+%            y = \bm{C} \vv{\bm{x}}
+%        \end{equation}
+%        \begin{equation}
+%                \vv{\bm{x}} =
+%                \begin{bmatrix}
+%                        e_{\omega}\\
+%                        T_{t}\\
+%                        T_{s}\\
+%                        T_{e}\\
+%                        T_{b}\\
+%                \end{bmatrix}
+%                ,
+%                \qquad
+%                \bm{u} =
+%                \begin{bmatrix}
+%                        u_t\\
+%                        u_s\\
+%                        u_e\\
+%                        u_b\\
+%                \end{bmatrix}
+%                ,
+%                \qquad
+%                \bm{d} =
+%                \begin{bmatrix}
+%                        d_{\text{demand}}\\
+%                        d_{\text{cryostill}}\\
+%                        d_{\text{wind}}
+%                \end{bmatrix}
+%                ,
+%                \qquad
+%                \bm{D} =
+%                \begin{bmatrix}
+%                        -1 & -1 & 1 \\
+%                        %\multicolumn{2}{c}{\smash{\raisebox{0\normalbaselineskip}{$ \bm{0}_{4,3}$}}}\\
+%                        \, & \bm{0}_{4,3} & \, \\
+%                \end{bmatrix}
+%        \end{equation}
+%\begin{equation}
+%                \bm{A} =
+%                \begin{bmatrix}
+%                        0 & 60\J^{-1}& 60J^{-1}& -60J^{-1}& -60J^{-1}\\
+%                        0 & -k_t & 0 & 0 & 0\\
+%                        0 & 0 & -k_s & 0 & 0\\
+%                        0 & 0 & 0 & -k_e & 0\\
+%                        0 & 0 & 0 & 0 & -k_b\\
+%                \end{bmatrix}
+%                , \qquad \bm{B} =
+%                \begin{bmatrix}
+%                        0 & 0 & 0 & 0\\
+%                        -k_t & 0 & 0 & 0\\
+%                        0 & -k_s & 0 & 0\\
+%                        0 & 0 & -k_e & 0\\
+%                        0 & 0 & 0 & -k_b\\
+%                \end{bmatrix}
+%        \end{equation}
+%
+
+For this \emph{State Space}, the angular frequency error term $\qquad e_{\omega} = \omega_{g} - \omega_{g0}$ was used.
+
+\emph{Noiseless full-state feedback} was assumed, as it is known can observe each property individually, and known methods on noise rejection exist.
+Should a state not be observable, an \emph{observer} can be constructed to predict that state.
+
+\subsubsection{Augmented Integrator State}
+
+To obtain integral action from the LQR, we can create an `augmented' state which is the integral of the error state we measure \cite{power:augstate}. This is executed through creating an augmented system:
+
+    \begin{equation}
+            \frac{ \partial \vv{\bm{x_a}} }{ \partial t }   =  \bm{A_a} \vv{\bm{x_a}} + \bm{B_a}{\bm{u}} + \bm{D_a} \bm{d}
+    \end{equation}
+    Such that:
+    \begin{equation}
+            \vv{\bm{x_a}} = 
+            \begin{bmatrix}
+                    I_{\omega}\\
+                    \vv{\bm{x}}
+            \end{bmatrix}
+        , \qquad
+            \bm{A_a} = 
+            \begin{bmatrix}
+                    0 & 1 & 0 & 0 & 0 & 0\\
+                 \multicolumn{6}{c}{\smash{\raisebox{0\normalbaselineskip}{$ \bm{A} $}}}\\
+            \end{bmatrix}
+        , \qquad
+            \bm{B_a} = 
+            \begin{bmatrix}
+                    \bm{0}_{1,4}\\
+                    \bm{B}
+            \end{bmatrix}
+        , \qquad
+            \bm{D_a} = 
+            \begin{bmatrix}
+                    \bm{0}_{1,3}\\
+                    \bm{D}
+            \end{bmatrix}
+    \end{equation}
+
+This was repeated for an additional integral state - giving double integral (or gradient tracking) action.
+
+
+\subsubsection{Cost Function Structure}
+
+Producing the optimal LQR controller involves minimising the cost function $J$: 
+\begin{equation}
+        J = \int^{\infty}_{0} (\, \vv{\bm{x}}^{\mathrm{T}} \bm{Q} \vv{\bm{x}} + \bm{u}^{\mathrm{T}} \bm{R} \bm{u} \,) \, \dd t
+\end{equation}
+Such that with feedback  $\bm{u} = -\bm{G} \vv{\bm{x}}$ an obtain optimal state feedback matrix $\bm{G}$ can be obtained.
+MATLAB conveniently has the built-in function \code{\color{blue}lqr}, which takes as arguments the weighting matrices $\bm{Q}$ and $\bm{R}$ and returns the gain matrix $\bm{G}$.
+
+This can be applied to a regular LQR and the LQR with augmented state, such that multi-state P and PI control can be achieved.
+
+\subsubsection{Parallel LQR with Augmented State}
+
+By considering the plant's structure, it was realised that \emph{it is not beneficial} to have the turbine running for DC, steady state loads as it is less efficient than the SOFC and will increase the running cost of the plant.
+Therefore the SOFC should manage all disturbance that it plausibly can without turbine intervention - just for the argument that the SOFC will use less ammonia and therefore reduce plant size.
+The SOFC therefore has to have integral action to reject DC error (as integrators have infinite gain at DC).
+The SOFC will also had a high gain, or a low cost associated with it.
+After some experimentation it was found that double integral action on the SOFC increased performance and reduced low frequency oscillations on load changes.
+
+Turbine intervention is for large proportional error, so we do not want integral action on it.
+Turbine will also has a higher cost associated with it, such that the SOFC is preferred if possible.
+
+Overall the frequency error \emph{must be inside tolerances} (recall Section \ref{sec:pwrintro}), therefore cost associated with frequency error is the highest, with the integral terms tuned for best response.
+
+
+\subsubsection{Non Idealities and Assumptions}
+
+In this analysis all components are assumed as first order, linear, have no time delay, and have the ability to supply positive and negative power.
+In reality the SOFC and Turbine can only give power to the grid, and the electrolyser can only take power from the grid, so the LQR method \emph{will not be ideal}.
+
+A parallel combination of the LQR and augmented-state LQR may also not be ideal - since we reject some feedback terms, and each system is unaware of the other.
+
+Inputs are also limited such that $ 0 \leq u \leq 1$, which is another non-ideality.
+With gains too high (input costs too low) control becomes bang-bang may lose the ability to finely regulate the system.
+Another consequence of my assumptions is the assumption that the plant can satisfy all demand put on it with zero error at DC.
+
+Turbines have a cost associated with starting up - the amount of wear in a turbine (what defines the time between services) is determined by the number of spin-up events.
+The blades in the turbine undergo one stress cycle when the engine spools up to speed which (by Miners Rule) determines the damage undertaken by the engine.
+Preventing unnecessary startups can be achieved by a threshold, which introduces \emph{another non-ideality} into the system.
+
+In the formulation the effect of the (assumed to be known through the Markov Chain in Section \ref{sec:markov}) disturbance, or explore the effect of sensor noise on measuring states was not implemented.
+
+Another non-ideality on the system is the limits on the integrator.
+Limits were imposed to prevent windup, and these were tuned for performance.
+
+Results from the implementation are analysed below in Section \ref{sec:pwrtesting}.

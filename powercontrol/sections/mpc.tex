@@ -1,0 +1,28 @@
+\subsection{MPC Problem Formulation}
+\subsubsection{Conversion of State Space to MPC}
+\label{sec:mpc}
+
+To convert from continuous time to discrete time, the \emph{State Space} was transformed (as suggested by \cite{power:mpcform}):
+
+Firstly by recalling the original State Space:
+\begin{equation}
+        \frac{\partial \vv{\bm{x}}}{\partial t} = \bm{A} \vv{\bm{x}} + \bm{B} \bm{u} + \bm{D} \bm{d}
+\end{equation}
+Discretise - $t_k = kT_s$ where $T_s$ is the sample time:
+\begin{equation}
+        \bm{x}(t_{k+1}) = \bm{A}^{\prime} \bm{x}(t_k) + \bm{B}^{\prime}\bm{u}(t_k) + \bm{D}^{\prime}\bm{d}(t_k)
+\end{equation}
+Where discretisation is performed by:
+\begin{equation}
+        \bm{A}^{\prime} \equiv \mathrm{e}^{\bm{A}T_s}
+        , \qquad \bm{B}^{\prime} \equiv \int^{T_s}_0\mathrm{e}^{\bm{A} \eta} \bm{B} \mathrm{d} \eta ,
+        \qquad \bm{D}^{\prime} \equiv \int^{T_s}_0\mathrm{e}^{\bm{A} \eta} \bm{D} \mathrm{d} \eta
+\end{equation}
+{\color{red}To Be Continued.. Maybe Remove this Section.}
+
+MATLAB has a built in funciton that does this transformation, \code{c2d} which was used to convert to discrete time-based systems.
+
+\subsubsection{Constraints for the MPC}
+Lorem Ipsum
+
+

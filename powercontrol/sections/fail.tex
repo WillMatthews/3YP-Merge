@@ -1,0 +1,22 @@
+\subsection{Operation in Fail-States}
+\label{sec:failurestate}
+
+When a fault is detected, the component would be taken offline.
+This removes it from the generated State Space, and means the controller has to adapt to stabilise the dynamics of the plant.
+
+Should a generation-side component fail, the grid is at risk of not having enough energy and frequency dropping to dangerous levels.
+For this reason, the SOFCs and Turbine are paralleised, such that a single turbine \emph{can be taken offline}, as more are able to step in and ensure operation.
+
+Should all of one type of generation-side component fail, for example the SOFC, the turbine will have to make up all the load deficit.
+The turbine was not designed to have integral action, so there will be a proportional frequency error if another controller doesn't introduce integral action.
+Therefore failure detection should be used (through a Kalman filter as suggested by \cite{power:kalman}) which will trigger the action of an integrator on the turbine.
+
+Should a single electrolyser fail the remainder of active cells will consume the required amount of energy to sustain correct frequency.
+Should all the electrolyser units fail, the plant will have to dump power from the grid to prevent the frequency rising and damaging domestic equipment.
+This can be achieved by a \emph{load bank} which is nothing more than an array of actively cooled resistors.
+Such systems are avaliable for purchase and an example found can continuously dissapate 1MW \cite{power:rdump}.
+
+Since simulations found a maximum net power on the grid of 250MW, 300 such resistive load dumps would be needed (safey factor of 1.2). 
+The control signal from the electrolyser can be redirected to the load dumps, as they have a comparable response time.
+
+Should a catastrophic failure occur causing the plant to not keep up with demand, \emph{load shedding} will happen, which is a protective method to keep some of the grid alive and prevent a \emph{black start}. This is discussed in more detail in section \ref{sec:challengespwr}.

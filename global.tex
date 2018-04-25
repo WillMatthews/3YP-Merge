@@ -1,0 +1,82 @@
+\documentclass[11pt,oneside]{article}
+
+\usepackage{style-3yp}
+\usepackage{chapterbib}
+
+%\usepackage[style=numerical]{biblatex}
+
+
+
+\usepackage[firstpage]{draftwatermark}
+
+
+
+
+% references
+%\addbibresource{./turbine/heatexreport}
+%\addbibresource{./turbine/precracker}
+%\addbibresource{./turbine/Sustainability}
+%\addbibresource{./turbine/turbine}
+%\addbibresource{./airseparation/refs}
+%\addbibresource{./ammoniasynth/V3bib}
+
+
+\begin{document}
+
+% Document Title Page
+\includepdf{./titlepage/titlepg.pdf}
+
+% Table of Contents
+\newpage
+\tableofcontents
+\newpage
+
+
+% Introduction Chapter
+\lfoot{William Matthews}
+\graphicspath{{./intro/}}
+\include{./intro/intro}
+
+% Haber Chapter
+\lfoot{James Rhodes}
+\graphicspath{{./ammoniasynth/graphics/}}
+\include{./ammoniasynth/V3}
+
+
+
+% Air Separation Chapter
+\lfoot{Lai Chong}
+\graphicspath{{./airseparation/}}
+\include{./airseparation/airseparation}
+
+
+% Electrolysis Chapter
+%todo change section labels
+\lfoot{Jing Yang}
+\graphicspath{{./electrolysis/}}
+\include{./electrolysis/hhh}
+
+\doublespacing
+% Ammonia Turbine Chapter
+%todo remove begin end document
+\lfoot{Enzia Schnyder}
+\graphicspath{{./turbine/}}
+\include{./turbine/heatexreport}
+\include{./turbine/turbine}
+\include{./turbine/Sustainability}
+
+% SOFC Chapter
+\lfoot{Lewis Murray}
+\graphicspath{{./SOFC/}}
+\include{./SOFC/main}
+
+% Power Control Chapter
+\lfoot{William Matthews}
+\graphicspath{{./powercontrol/}}
+\include{./powercontrol/PowerControl}
+
+% Conclusion Chapter
+\lfoot{Lai Chong}
+\include{./conclusion/conclusion}
+
+\end{document}

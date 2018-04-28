@@ -1,7 +1,6 @@
 %\documentclass[11pt, oneside]{article}  
 
 %\usepackage{style-3yp} %this is the .sty file
-%\usepackage{pdflscape}
 \lfoot{Enzia Schnyder} %your name in the footer
 
 %\usepackage{wrapfig}
@@ -65,7 +64,7 @@ Streams 2 and 7 are exhaust streams so they do not have to be fully cooled fully
 
 A problem table, shown in figure \ref{tab:problemtable} can be used to summarise the temperature difference in each stream and to find the change in enthalpy across each temperature interval. For this table, the actual stream temperatures are shifted to guarantee that each heat exchanger will operate over a minimum temperature difference $\Delta T_{min}$: $T_H^* = T_H - \frac{\Delta T_{min}}{2}$ for hot streams and $T_C^* = T_C + \frac{\Delta T_{min}}{2}$ for cold streams. A large $\Delta T_{min}$ means that less heat can be recovered, increasing utility costs. Decreasing $\Delta T_{min}$ will increase the heat recovered but will also increase the area of the heat exchangers required and the capital cost. It was set to 20K as the streams at the pinch points are gaseous, which require a larger $\Delta T_{min}$ than liquid streams. Streams 2 and 7 are excluded from the problem table as they do not need to be cooled fully.
 
-\begin{table} [H]
+\begin{table} [h]
 \begin{center}
 \caption{Problem table for this design problem} \label{tab:problemtable} 
 \renewcommand{\arraystretch}{0.95}

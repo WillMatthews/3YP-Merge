@@ -1,9 +1,9 @@
 \documentclass[11pt, oneside]{article}  
+%\lfoot{Enzia Schnyder} %your name in the footer
 
+% Note: Packages are already included at the top in global_handouts.tex
 \usepackage{style-3yp} %this is the .sty file
 \usepackage{pdflscape}
-\lfoot{Enzia Schnyder} %your name in the footer
-
 \usepackage{float}
 \usepackage{longtable}
 %table
@@ -13,10 +13,8 @@
 \newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
 \newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
 \usepackage{multirow}
-
 \usepackage{gensymb} %degrees symbol
 \usepackage [version=4] {mhchem}
-
 
 \begin{document}
 \section{Gas Turbine}
@@ -38,15 +36,19 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
 \end{center} 
 \end{table}
 
+%\begin{equation}
+%\ce{(0.62 NH_3 + 0.19 N_2 + 0.57 H_2) + 0.75\lambda(O_2 + 3.76 N_2^*) ->1.5H_2O + 0.5N_2 + 2.82\lambda N_2^* + 0.75(\lambda \ \hyphen \ $1$ )O_2}
+%\end{equation}
+
 \begin{figure} [h]
 \centering
 \includegraphics[width=0.58\textwidth]{./pictures/plantdiagram.png}
   \caption{The turbine diagram, showing all streams, work inputs, outputs and heat inputs} \label{fig:turbinediagram}
   \end{figure}
   
-  \begin {table} [h]
+  \begin{table} [h]
 \begin{center}
-\caption{Heat inputs and work outputs of the system} \label{tab:powerdata} 
+\caption{Heat inputs and work outputs of the system} \label{tab:powerdata}
 \begin{tabular}{ |c|c| }
  \hline
   $W_{T1}$ & 80.9MW\\ 
@@ -61,7 +63,32 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
  \hline
 \end{tabular}
 \end{center}  
+\end{table}
+
+\begin{landscape}
+\begin{figure} [h]
+\centering
+\includegraphics[width=1\textwidth]{./pictures/controlsimulink.png}
+ \caption{The control system modelled in Simulink.} \label{fig:controlsimulink} 
+ \end{figure}
+ 
+  \begin {table} [h]
+\begin{center}
+\caption{Parameters of the PID controller derived from Simulinks PID tuner} \label{tab:PID} 
+\begin{tabular}{ |c|c| }
+ \hline
+  P & 1.0502\\ 
+ \hline
+  I & 0.04338\\ 
+  \hline
+  D & 1.172\\ 
+ \hline
+ N & 0.2379\\
+ \hline
+\end{tabular}
+\end{center}  
 \end {table}
+\end{landscape}
 
 \newpage
 

@@ -1,22 +1,22 @@
-\documentclass[11pt, oneside]{article}  
+%\documentclass[11pt, oneside]{article}  
 %\lfoot{Enzia Schnyder} %your name in the footer
 
 % Note: Packages are already included at the top in global_handouts.tex
-\usepackage{style-3yp} %this is the .sty file
-\usepackage{pdflscape}
-\usepackage{float}
-\usepackage{longtable}
+%\usepackage{style-3yp} %this is the .sty file
+%\usepackage{pdflscape}
+%\usepackage{float}
+%\usepackage{longtable}
 %table
-\usepackage{array}
-\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
-\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
-\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
-\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
-\usepackage{multirow}
-\usepackage{gensymb} %degrees symbol
-\usepackage [version=4] {mhchem}
+%\usepackage{array}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+%\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
+%\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
+%\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
+%\usepackage{multirow}
+%\usepackage{gensymb} %degrees symbol
+%\usepackage [version=4] {mhchem}
 
-\begin{document}
+%\begin{document}
 \section{Gas Turbine}
 
 \begin{table} [h]
@@ -39,6 +39,9 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
 %\begin{equation}
 %\ce{(0.62 NH_3 + 0.19 N_2 + 0.57 H_2) + 0.75\lambda(O_2 + 3.76 N_2^*) ->1.5H_2O + 0.5N_2 + 2.82\lambda N_2^* + 0.75(\lambda \ \hyphen \ $1$ )O_2}
 %\end{equation}
+
+%combustor graph
+%efficiency graph
 
 \begin{figure} [h]
 \centering
@@ -65,32 +68,7 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
 \end{center}  
 \end{table}
 
-\begin{landscape}
-\begin{figure} [h]
-\centering
-\includegraphics[width=1\textwidth]{./pictures/controlsimulink.png}
- \caption{The control system modelled in Simulink.} \label{fig:controlsimulink} 
- \end{figure}
- 
-  \begin {table} [h]
-\begin{center}
-\caption{Parameters of the PID controller derived from Simulinks PID tuner} \label{tab:PID} 
-\begin{tabular}{ |c|c| }
- \hline
-  P & 1.0502\\ 
- \hline
-  I & 0.04338\\ 
-  \hline
-  D & 1.172\\ 
- \hline
- N & 0.2379\\
- \hline
-\end{tabular}
-\end{center}  
-\end {table}
-\end{landscape}
-
-\newpage
+%table for initial and final properties
 
 \section{Heat Exchange Network}
 \begin{figure} [h]
@@ -118,7 +96,7 @@ Stream & Composition & $\dot{m} $ $(kg/s) $& $C_p$ $(kJ kg^{-1} K^{-1})$  & $T_{
  \hline
  6 & $NH_3$ & 2.655 & 2.19 & 233 & 243 & 58.1\\
  \hline
- 7 & Air & 500 & 1.01 & 898 & 298 & -303000\\
+ 7 & Air & 200 & 1.01 & 898 & 298 & -121200\\
  \hline
 \end{tabular}
 \end{center}  
@@ -144,4 +122,8 @@ Stream & Composition & $\dot{m} $ $(kg/s) $& $C_p$ $(kJ kg^{-1} K^{-1})$  & $T_{
 \end{tabular}
 \end{center}  
 \end {table}
-\end{document}
+
+\bibliography{handouts}
+\bibliographystyle{unsrt}
+
+%\end{document}

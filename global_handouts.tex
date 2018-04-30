@@ -1,22 +1,24 @@
-\documentclass[11pt,oneside]{article}
-
+\documentclass[11pt]{article}
 \usepackage{style-3yp}
 \usepackage{chapterbib}
+\rhead{\includegraphics[width=3.5cm]{images/ox-wide.eps}}
+\lhead{Presentation Handout}
+\chead{Ammonia Based ESS in Maui}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages for Enzia
-\usepackage{pdflscape}
-\usepackage{float}
-\usepackage{longtable}
+%\usepackage{pdflscape}
+%\usepackage{float}
+%\usepackage{longtable}
 %table
-\usepackage{array}
-\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
-\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
-\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
-\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
-\usepackage{multirow}
-\usepackage{gensymb} %degrees symbol
-\usepackage [version=4] {mhchem}
+%\usepackage{array}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+%\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
+%\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
+%\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
+%\usepackage{multirow}
+%\usepackage{gensymb} %degrees symbol
+%\usepackage [version=4] {mhchem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[style=numerical]{biblatex}
 
@@ -32,6 +34,12 @@
 %\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lfoot{William Matthews}
+\graphicspath{{./intro/}}
+\include{./intro/handout1}
+
+
+
 % Air Separation Chapter
 \lfoot{Lai Chong}
 \graphicspath{{./airseparation/handouts/graphics/}}
@@ -58,8 +66,8 @@
 %\include{./SOFC/main}
 
 % Power Control Chapter
-%\lfoot{William Matthews}
-%\graphicspath{{./powercontrol/}}
-%\include{./powercontrol/PowerControl}
+\lfoot{William Matthews}
+\graphicspath{{./powercontrol/}}
+\include{./powercontrol/handout2}
 
 \end{document}

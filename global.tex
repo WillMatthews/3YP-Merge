@@ -2,24 +2,10 @@
 
 \usepackage{style-3yp}
 \usepackage{chapterbib}
-
+    \fancypagestyle{plain}{}
 %\usepackage[style=numerical]{biblatex}
 
-
-
 \usepackage[firstpage]{draftwatermark}
-
-
-
-
-% references
-%\addbibresource{./turbine/heatexreport}
-%\addbibresource{./turbine/precracker}
-%\addbibresource{./turbine/Sustainability}
-%\addbibresource{./turbine/turbine}
-
-%\addbibresource{./airseparation/refs}
-%\addbibresource{./ammoniasynth/V3bib}
 
 
 \begin{document}
@@ -29,11 +15,27 @@
 
 % Table of Contents
 \newpage
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{5cm}
+    {\large \textrm{\emph{For Nick.}}}
+\end{center}
+\mbox{}
 \newpage
+
+\setcounter{page}{1}
 \singlespacing
 \tableofcontents
 \newpage
 \doublespacing
+
+
+
+%%%%%%%% END TITLING AND ADMIN PREAMBLE %%%%%%%%%%%%
+
+
+
+
 
 % Introduction Chapter
 \lfoot{William Matthews}

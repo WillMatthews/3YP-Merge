@@ -30,7 +30,7 @@
  \hline
 $NH_3$ & 17.03 & 18.6 & 316.8 & 15.0 & 28.0\\ 
  \hline
-$H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
+$H_2/NH_3$ mixture & 10 & 28.6 & 281.3 & 6.47 & 40\\
  \hline
 \end{tabular}
 \end{center} 
@@ -40,10 +40,18 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
 %\ce{(0.62 NH_3 + 0.19 N_2 + 0.57 H_2) + 0.75\lambda(O_2 + 3.76 N_2^*) ->1.5H_2O + 0.5N_2 + 2.82\lambda N_2^* + 0.75(\lambda \ \hyphen \ $1$ )O_2}
 %\end{equation}
 
-%combustor graph
-%efficiency graph
-
 \begin{figure} [h]
+\centering
+\includegraphics[width=0.65\textwidth]{./pictures/combustor.eps}
+  \caption{A chart showing the variation in inlet reactant temperature with equivalence ratio.} \label{fig:flametemp}
+  \end{figure} 
+\begin{figure} [H]
+\centering
+\includegraphics[width=0.65\textwidth]{./pictures/efficiencyPT.eps}
+  \caption{Chart showing the change in joule efficiency, split-shaft efficiency and simple cycle efficiency across different pressure ratios} \label{fig:twinefficiency}
+  \end{figure}
+  
+\begin{figure} [H]
 \centering
 \includegraphics[width=0.58\textwidth]{./pictures/plantdiagram.png}
   \caption{The turbine diagram, showing all streams, work inputs, outputs and heat inputs} \label{fig:turbinediagram}
@@ -68,60 +76,23 @@ $H_2/NH_3$ mixture & 10 & 28.6 & 334.7 & 6.47 & 40\\
 \end{center}  
 \end{table}
 
-%table for initial and final properties
-
-\section{Heat Exchange Network}
-\begin{figure} [h]
-\centering
-\includegraphics[width=0.9\textwidth]{./pictures/heatexflow.png}
-  \caption{A diagram showing how different streams in the heat exchange network are related to the process units. Blue arrows represent cold streams that must be heated up and red arrows represent hot streams that must be cooled} \label{fig:heatexflow}
-\end{figure}
-
-\begin{table} [h]
+  \begin{table} [h]
 \begin{center}
-\caption{Data for streams coming in and out of all major process units of the ESS plant} \label{tab:heatexdata} 
-\begin{tabular}{ |c|c|L|c|c|c|L| }
+\caption{Initial and final properties of the each turbine at full load} \label{tab:powerdata}
+\begin{tabular}{ |c|c|c| }
  \hline
-Stream & Composition & $\dot{m} $ $(kg/s) $& $C_p$ $(kJ kg^{-1} K^{-1})$  & $T_{in}$ $(K)$ & $T_{out}$ $(K)$ & $\Delta H$ $(kW)$ \\ 
+  Model & Initial & Final\\ 
  \hline
-  1 & $H_2$ & 0.4844 & 14.3 & 393 & 298 & -658\\ 
+   NH3 flow rate (kmol/s) & 0.3246 & 0.6257\\
+  \hline
+  Equivalence ratio & 2.50 & 2.44\\
  \hline
- 2 & $O_2$ & 35.75 & 0.919 & 393 & 298 & -3119\\ 
- \hline
-3 & $H_2$ & 0.5099 & 14.3 & 298 & 473 & 1276\\
-\hline
-4 & $N_2$ & 2.34 & 1.04 & 288 & 473 & 450.2\\
- \hline
-  5 & $NH_3$ & 2.795 & 2.19 & 238 & 233 &-30.6\\
- \hline
- 6 & $NH_3$ & 2.655 & 2.19 & 233 & 243 & 58.1\\
- \hline
- 7 & Air & 200 & 1.01 & 898 & 298 & -121200\\
+  Efficiency & 0.3320 & 0.4353\\
  \hline
 \end{tabular}
 \end{center}  
 \end{table}
 
-\begin{figure} [H]
-\centering
-\includegraphics[width=0.72\textwidth]{./pictures/heatexnetwork.png}
-  \caption{The final heat exchange network. Each pair of circles represents a heat exchanger, single circles represent cooling utility and temperatures (K) are shown at each isothermal segment.} \label{fig:heatexnetwork}
-  \end{figure}
-
-\begin {table} [h]
-\begin{center}
-\caption{Heat transferred in all heat exchangers and utilities in the network} \label{tab:powerhex} 
-\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
- \hline
-\multirow{2}{*}{Component} & \multicolumn{5}{|c|}{Heat exchangers }& \multicolumn{2}{|c|}{Cooling Utilities}\\ 
- \cline{2-8}
-   & HEX 1 & HEX 2 & HEX 3 & HEX 4 &HEX 5 & C1 & C2\\ 
- \hline
- Enthalpy change (kW) & 425.3 & 756.0 & 519.8 & 24.3 & 58.1 & 56.2 & 30.6\\ 
- \hline
-\end{tabular}
-\end{center}  
-\end {table}
 
 \bibliography{handouts}
 \bibliographystyle{unsrt}

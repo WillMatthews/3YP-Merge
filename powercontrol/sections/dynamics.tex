@@ -3,7 +3,7 @@
 \subsubsection{Electrical Grid}
 
 To begin the design, dynamics of electrical grids are needed to be understood, specifically how supply and demand feed into the frequency.
-Supplementing this is how Maui has a {peak demand of 195MW, a yearly energy usage of 1200GWh}, 55,301 residential and 9,356 commercial customers.
+Supplementing this is how Maui has a {peak demand of 195MW, a yearly energy usage of 1200GWh}, 55,301 residential and 9,356 commercial customers. \cite{power:maui}.
 This sizable demand means large fluctuations in the net power in the grid will occur, so an accurate model is needed.
 
 It was observed that a net-positive power in the system will cause an increase in the frequency as the energy generated \emph{must} go somewhere due to conservation of energy.
@@ -65,7 +65,7 @@ The rise times can be assumed to be $\frac{3}{t_{\text{rise}_i}} \approx k_i$ as
                 \hline
                 Electrolyser& 80 seconds & 2.25 & N/A & 300MW & 20\\
                 \hline
-                Cryo-Still & 40 mins & 4.50 & N/A & {\textbf{\color{red}??}} & 30\\
+                Cryo-Still & 40 mins & 4.50 & N/A & - & 30\\
                 \hline
         \end{tabular}
         \caption{A table to capture the properties of the many systems in the ESS}
@@ -125,6 +125,8 @@ Equation \ref{eqn:wturbexm} was applied to the wind speed data-set with 65 turbi
 
 The data obtained had values for every fifteen minutes, which although is a high resolution a cubic spline fit gives an approximation on the second-by-second level.
 This is a approximation to what reality is with windspeed, however since turbine transfer functions for dynamic cases was not considered - this may make a good approximation to reality.
+
+Similarly for demand, the EIA supply data sets for electrical demand \cite{power:EIA}, which were smoothed with cubic splines and cleaned for use later.
 
 \begin{figure}[t]
 \centering

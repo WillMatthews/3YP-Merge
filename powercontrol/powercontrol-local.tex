@@ -1,0 +1,32 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{style-3yp}
+\bibliographystyle{unsrt}
+\usepackage[numbers,sort]{natbib}
+
+\begin{document}
+\lfoot{William Matthews}
+\include{sections/title}
+\tableofcontents
+\newpage
+\input{./sections/intro}
+\input{./sections/dynamics}
+\input{./sections/plant}
+\newpage
+\input{./sections/plantscale}
+\newpage
+\input{./sections/ctrlstruct}
+\input{./sections/PID}
+\input{./sections/lqr}
+%\input{./sections/mpc}
+%\input{./sections/disturbance}
+\input{./sections/testing}
+\input{./sections/secondary}
+\input{./sections/fail}
+\input{./sections/challenges}
+\input{./sections/conclusion}
+%\input{./sections/references}
+
+%\bibliographystyle{plain}
+\bibliography{powerbib}
+
+\end{document}

@@ -6,6 +6,9 @@
 
 Wind energy is very intermittent in its supply, and a method is needed for delivering power from an Energy Storage System (ESS) smoothly and efficiently.
 
+Chemical plants typically operate in a steady state, which is why a simulation for this stop-start plant is very important.
+Another important note to stress is that this plant is the sole energy provider for the location, so it is responsible for any shortfalls or surpluses in demand, and therefore potential damage to consumers.
+
 In this chapter a means to providing a large population a stable, reliable power supply in an efficient manner is developed, as well as a simulation of the plant to apply control schemes to.
 
 \subsection{Motivation}
@@ -21,9 +24,8 @@ Clearly a method that offers a highly efficient (as well as stable) grid will re
 Control methods explored include Linear Quadratic Regulator (LQR), Proportional Integral Differential (PID) and others to explore the best way to control the chemical plant. This section also touches on Model Predictive Control (MPC) - an approach that was employed in industry since the 1980s with initial applications in chemical plants and oil refineries.
 The MPC is now commonplace in grid-balancing systems, as it offers optimal input, and takes account of constraints (such as maximum generation from a turbine). \cite{power:mpcadvs}
 
-Classical control in the form of PID and LQR, while easier to implement, do not offer control over constraints, and therefore the MPC is deemed a good exploration piece.
-In this section methods in setting up the MPC for the next design iteration are explored, as full system dynamics at this stage in the design process are not known.
-
+Classical control in the form of PID and LQR, while easier to implement, do not offer control over constraints, and therefore MPC is deemed a good candidate for the next iteration.
+MPC was not implemented as full system dynamics at this stage in the design process are not known.
 
 \subsection{Control Objectives}
 
@@ -32,7 +34,7 @@ Fundamentally the task objectives are separated into to two main criteria:
 \item{Control Grid Frequency through supply and demand.}
 \item{Regulate SOFC and Turbine inputs for the most cost-efficient control method.}
 \end{itemize}
-Most electrical grids ensure to keep net average frequency errors as zero for grid-based clocks to not run fast or slow. This report will not explore time-corrections.
+Most electrical grids ensure to keep net average frequency errors as zero for grid-based clocks to not run fast or slow. This report will not explore time-corrections. \cite{power:timecorrection}
 
 \begin{figure}[htb]
 \centering

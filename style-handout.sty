@@ -20,7 +20,7 @@ bottom=20 mm
 \usepackage{amsmath}
 % Header/Footer tools
 %\usepackage{fancyhdr}
-\usepackage{fancyhdr}
+\usepackage{fancyheadings}
 % Allows Double Spacing
 \usepackage{setspace}
 % Allows lists
@@ -64,25 +64,25 @@ bottom=20 mm
 \usepackage{textcomp}
 
 %% maybe remove these two
-%\usepackage{float}
-%\restylefloat*{figure}
+\usepackage{float}
+\restylefloat*{figure}
 
 %% Make Captions be above tables
-\usepackage{floatrow}%[capposition=top]
-\floatsetup[table]{capposition=top}
+%\usepackage{floatrow}%[capposition=top]
+%\floatsetup[table]{capposition=top}
 
 %% ^^ REMOVE COMMENTS...
 
 %% compress table of contents
-\usepackage{tocloft}
+%\usepackage{tocloft}
 %\setlength\cftparskip{-2pt}
 %\setlength\cftbeforechapskip{0pt}
-\usepackage[toc,lot]{multitoc}
-\renewcommand*{\multicolumntoc}{2}
-\setlength{\columnseprule}{0.5pt}
-\renewcommand*{\multicolumnlof}{2}
-\renewcommand*{\multicolumnlot}{2}
-\setlength{\parskip}{1em}
+%\usepackage[toc,lot]{multitoc}
+%\renewcommand*{\multicolumntoc}{2}
+%\setlength{\columnseprule}{0.5pt}
+%\renewcommand*{\multicolumnlof}{2}
+%\renewcommand*{\multicolumnlot}{2}
+%\setlength{\parskip}{1em}
 
 %% Compress section break
 \usepackage{titlesec}
@@ -142,11 +142,7 @@ bottom=20 mm
 \usepackage{rotating}
 \usepackage{lscape}
 % Harvard-style Referencing
-%\usepackage{natbib}
-\bibliographystyle{unsrt}
-\usepackage[numbers,sort]{natbib}
-
-
+\usepackage{natbib}
 % Graphs and tables
 \usepackage{float}
 \usepackage{tabularx}

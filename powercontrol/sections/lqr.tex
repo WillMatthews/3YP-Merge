@@ -1,4 +1,5 @@
 \subsection{LQR Problem Formulation}
+
 \subsubsection{State Space System}
 \label{sec:lqr}
 
@@ -127,7 +128,7 @@ The design begin by considering the system as a \emph{State Space}, this takes i
 For this \emph{State Space}, the angular frequency error term $\qquad e_{\omega} = \omega_{g} - \omega_{g0}$ was used.
 
 \emph{Noiseless full-state feedback} was assumed, as it is known can observe each property individually, and known methods on noise rejection exist.
-Should a state not be observable, an \emph{observer} can be constructed to predict that state.
+Should a state not be observable, an \emph{observer} can be constructed to predict that state. \cite{power:controlman}
 
 \subsubsection{Augmented Integrator State}
 
@@ -175,12 +176,13 @@ Producing the optimal LQR controller involves minimising the cost function $J$:
 Such that with feedback  $\bm{u} = -\bm{G} \vv{\bm{x}}$ an obtain optimal state feedback matrix $\bm{G}$ can be obtained.
 MATLAB conveniently has the built-in function \code{\color{blue}lqr}, which takes as arguments the weighting matrices $\bm{Q}$ and $\bm{R}$ and returns the gain matrix $\bm{G}$.
 
+As an aside, \code{\color{blue}lqr} works as a \emph{known solution} to the above cost function is $G = R^{-1} ( B^T P)$, where $P$ is found from solving the Algebraic Riccati Equation: $A^T P + PA - PBR^{-1}B^TP = 0$. \cite{power:controlman}
+
 This can be applied to a regular LQR and the LQR with augmented state, such that multi-state P and PI control can be achieved.
 
 \subsubsection{Parallel LQR with Augmented State}
 
-By considering the plant's structure, it was realised that \emph{it is not beneficial} to have the turbine running for DC, steady state loads as it is less efficient than the SOFC and will increase the running cost of the plant.
-Therefore the SOFC should manage all disturbance that it plausibly can without turbine intervention - just for the argument that the SOFC will use less ammonia and therefore reduce plant size.
+By using the same argument as in Section \ref{sec:power-pid}, the SOFC should manage all disturbance that it plausibly can without turbine intervention - just for the argument that the SOFC will use less ammonia and therefore reduce plant size.
 The SOFC therefore has to have integral action to reject DC error (as integrators have infinite gain at DC).
 The SOFC will also had a high gain, or a low cost associated with it.
 After some experimentation it was found that double integral action on the SOFC increased performance and reduced low frequency oscillations on load changes.
@@ -205,8 +207,6 @@ Another consequence of my assumptions is the assumption that the plant can satis
 Turbines have a cost associated with starting up - the amount of wear in a turbine (what defines the time between services) is determined by the number of spin-up events.
 The blades in the turbine undergo one stress cycle when the engine spools up to speed which (by Miners Rule) determines the damage undertaken by the engine.
 Preventing unnecessary startups can be achieved by a threshold, which introduces \emph{another non-ideality} into the system.
-
-In the formulation the effect of the (assumed to be known through the Markov Chain in Section \ref{sec:markov}) disturbance, or explore the effect of sensor noise on measuring states was not implemented.
 
 Another non-ideality on the system is the limits on the integrator.
 Limits were imposed to prevent windup, and these were tuned for performance.

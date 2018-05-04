@@ -1,10 +1,13 @@
 \documentclass[11pt]{article}
-\usepackage{style-3yp}
+\usepackage{style-handout}
 \usepackage{chapterbib}
 \rhead{\includegraphics[width=3.5cm]{images/ox-wide.eps}}
 \lhead{Presentation Handout}
 \chead{Ammonia Based ESS in Maui}
 
+
+\usepackage{float}
+\restylefloat*{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages for Enzia
 %\usepackage{pdflscape}
@@ -53,14 +56,14 @@
 \normalsize
 \end{center}
 \newpage
-
+\tableofcontents
+\newpage
+% Introduction Chapter          !!READY, SLIDE NUMBERS UPDATED 19:20!!
 \lfoot{William Matthews}
 \graphicspath{{./intro/}}
 \include{./intro/handout1}
 
-
-
-% Air Separation Chapter
+% Air Separation Chapter        !!READY, SLIDE NUMBERS UPDATED 19:20!!
 \lfoot{Lai Chong}
 \graphicspath{{./airseparation/handouts/graphics/}}
 \include{./airseparation/handouts/handouts_airseparation}
@@ -71,9 +74,9 @@
 \include{./electrolysis/handouts}
 
 % Haber Chapter
-%\lfoot{James Rhodes}
-%\graphicspath{{./ammoniasynth/graphics/}}
-%\include{./ammoniasynth/V3}
+\lfoot{James Rhodes}
+\graphicspath{{./ammoniasynth/handout/graphics/}}
+\include{./ammoniasynth/handout/handouts_SandS}
 
 % Ammonia Turbine Chapter
 \lfoot{Enzia Schnyder}
@@ -81,9 +84,15 @@
 \include{./turbine/handouts}
 
 % SOFC Chapter
-%\lfoot{Lewis Murray}
-%\graphicspath{{./SOFC/}}
-%\include{./SOFC/main}
+\lfoot{Lewis Murray}
+\graphicspath{{./SOFC/handout}}
+\graphicspath{{./SOFC/}}
+\include{./SOFC/handout/handout}
+
+%heat exchangers
+\lfoot{Enzia Schnyder}
+\graphicspath{{./turbine/}}
+\include{./turbine/heatexhandout}
 
 % Power Control Chapter
 \lfoot{William Matthews}
@@ -91,8 +100,5 @@
 \include{./powercontrol/handout2}
 
 
-\lfoot{Enzia Schnyder}
-\graphicspath{{./turbine/}}
-\include{./turbine/heatexhandout}
 
 \end{document}

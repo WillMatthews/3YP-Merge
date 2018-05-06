@@ -2,12 +2,13 @@
 \label{sec:power-pid}
 
 A Proportional Integral Derivative (PID) controller was chosen as it contains an \emph{integrator} which allows for no steady state tracking error, due to its infinite DC gain.
-On inspection it is clear that applying a PID for both the SOFC and the Gas Turbine is not beneficial, as we do not wish for the Gas Turbine to run for DC loads, as this will use more ammonia and increase plant size (and therefore CAPEX and OPEX).
+On inspection it is clear that applying a PID for both the SOFC and the Gas Turbine is not beneficial.
+The Gas Turbine should not run for DC loads, as this will use more ammonia and increase plant size (and therefore CAPEX and OPEX).
 
 The design requirements prefer the SOFC to manage all disturbance that it can without turbine intervention. The SOFC had a PID applied, whereas the Gas Turbine had only a Proportional controller.
 The state observed was the frequency error from the set value, as its derivative correlates with net energy in the system.
 
-Figure \ref{fig:power-PIDcombo} shows diagrammatically how this is implemented, which I use as a starting point for my Linear Quadratic Regulator design.
+Figure \ref{fig:power-PIDcombo} shows diagrammatically how this is implemented, which was used as a starting point for the Linear Quadratic Regulator design.
 The control signal for the Electrolyser and SOFC is shared, as these two components \emph{should not} be on at the same time. The signal to the Electrolyser is inverted as the control signals were defined earlier as $0 \leq u \leq 1$.
 These signals are clipped on entry to the `Component Dynamics' block in Figure \ref{fig:comp}.
 

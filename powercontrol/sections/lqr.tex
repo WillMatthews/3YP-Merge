@@ -26,7 +26,6 @@ The design begin by considering the system as a \emph{State Space}, this takes i
                         u_t\\
                         u_s\\
                         u_e\\
-                        u_b\\
                 \end{bmatrix}
                 ,
                 \qquad
@@ -55,7 +54,7 @@ The design begin by considering the system as a \emph{State Space}, this takes i
                 \end{bmatrix}
                 , \qquad \bm{B} =
                 \begin{bmatrix}
-                        0 & 0 & 0 & 0\\
+                        0 & 0 & 0 \\
                         -k_t & 0 & 0\\
                         0 & -k_s & 0\\
                         0 & 0 & -k_e
@@ -132,7 +131,7 @@ Should a state not be observable, an \emph{observer} can be constructed to predi
 
 \subsubsection{Augmented Integrator State}
 
-To obtain integral action from the LQR, we can create an `augmented' state which is the integral of the error state we measure \cite{power:augstate}. This is executed through creating an augmented system:
+To obtain integral action from the LQR, an `augmented' state can be created, which is the integral of the error state measured \cite{power:augstate}. This is executed through creating an augmented system:
 
     \begin{equation}
             \frac{ \partial \vv{\bm{x_a}} }{ \partial t }   =  \bm{A_a} \vv{\bm{x_a}} + \bm{B_a}{\bm{u}} + \bm{D_a} \bm{d}
@@ -184,31 +183,29 @@ This can be applied to a regular LQR and the LQR with augmented state, such that
 
 By using the same argument as in Section \ref{sec:power-pid}, the SOFC should manage all disturbance that it plausibly can without turbine intervention - just for the argument that the SOFC will use less ammonia and therefore reduce plant size.
 The SOFC therefore has to have integral action to reject DC error (as integrators have infinite gain at DC).
-The SOFC will also had a high gain, or a low cost associated with it.
-After some experimentation it was found that double integral action on the SOFC increased performance and reduced low frequency oscillations on load changes.
+The SOFC will also have a high gain, or a low cost associated with it.
+After some experimentation it was found that double integral action on the SOFC increased performance and reduced low frequency oscillations on high frequency load changes.
 
-Turbine intervention is for large proportional error, so we do not want integral action on it.
-Turbine will also has a higher cost associated with it, such that the SOFC is preferred if possible.
+Turbine intervention is for large proportional error, so integral action is not desired.
+Turbine control also had higher cost associated with it, such that the SOFC is preferred if possible.
 
 Overall the frequency error \emph{must be inside tolerances} (recall Section \ref{sec:pwrintro}), therefore cost associated with frequency error is the highest, with the integral terms tuned for best response.
 
 
-\subsubsection{Non Idealities and Assumptions}
+\subsubsection{Non-Idealities and Assumptions}
 
 In this analysis all components are assumed as first order, linear, have no time delay, and have the ability to supply positive and negative power.
 In reality the SOFC and Turbine can only give power to the grid, and the electrolyser can only take power from the grid, so the LQR method \emph{will not be ideal}.
 
-A parallel combination of the LQR and augmented-state LQR may also not be ideal - since we reject some feedback terms, and each system is unaware of the other.
+A parallel combination of the LQR and augmented-state LQR may also not be ideal - since some feedback terms are rejected, and each system is unaware of the other.
 
 Inputs are also limited such that $ 0 \leq u \leq 1$, which is another non-ideality.
-With gains too high (input costs too low) control becomes bang-bang may lose the ability to finely regulate the system.
-Another consequence of my assumptions is the assumption that the plant can satisfy all demand put on it with zero error at DC.
+With gains too high (input costs too low), control becomes bang-bang may lose the ability to finely regulate the system.
+Another consequence of my assumptions is that the plant can satisfy all demand put on it with zero error at DC.
 
 Turbines have a cost associated with starting up - the amount of wear in a turbine (what defines the time between services) is determined by the number of spin-up events.
 The blades in the turbine undergo one stress cycle when the engine spools up to speed which (by Miners Rule) determines the damage undertaken by the engine.
-Preventing unnecessary startups can be achieved by a threshold, which introduces \emph{another non-ideality} into the system.
-
+Preventing unnecessary start-ups can be achieved by a threshold, which introduces \emph{another non-ideality} into the system.
 Another non-ideality on the system is the limits on the integrator.
 Limits were imposed to prevent windup, and these were tuned for performance.
-
 Results from the implementation are analysed below in Section \ref{sec:pwrtesting}.

@@ -6,10 +6,10 @@
 As discussed through this section, electrical grids require an `inertial component' to reduce the bandwidth and aid in achieving stability of the system.
 Another way of looking at inertia is as a stored energy in the rotating generation units, this interpretation can be used in making an active, inexpensive inertia for the grid.
 
-Implementing real inertia is expensive, it requires the investment of the mass that will be rotating synchronously with the grid as well as the means of coupling the large inertia to the grid.
+Implementing real inertia is expensive, as it requires the investment of the mass that will be rotating synchronously with the grid as well as the means of coupling the large inertia to the grid.
 
 Especially problematic are the Wind Turbines and SOFCs, as they produce a DC current which is inverted to make AC for transmission.
-The power inverter is a switchmode system that has a small inertia, so an active method for increasing inertia is required.
+The power inverter is a switch mode system that has a small inertia, so an active method for increasing inertia is required.
 
 \subsubsection{Specification for Implementation}
 
@@ -17,6 +17,6 @@ A control system with a battery-bank can be used to feed power into the grid.
 Batteries are DC units, whereas the grid is AC so an inverter is needed as well.
 
 By re-using Equation \ref{swing} it is possible to make a control system that acts as a virtual inertia on the grid \cite{power:inertia}.
-Soltions are offered by Václav Knap and Rakesh Sinha \cite{power:inertia} that introduce a virtual inertia to the electrical grid. 
+Solutions exist \cite{power:inertia} that introduce a virtual inertia to the electrical grid. 
 
 The inertia used on the simulation found to give a compromise between fast response and tracking performance was $80 \cdot 10^3\text{kgm}^2$, which would be used to define the scale of the virtual inertia.

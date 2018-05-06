@@ -3,8 +3,8 @@
 
 \subsubsection{Plant Tests}
 
-On creation of the plant, components needed to be tested to ensure operation was as expected.
-Step responses were observed for the components (Figure \ref{fig:power-risetime}), these conformed to expectations (as in Table \ref{tbl:time}) and the test was deemed successful.
+On creation of the plant, components needed to be tested to ensure operation were as expected.
+Step responses were observed for the components (Figure \ref{fig:power-risetime}), which conformed to expectations (as in Table \ref{tbl:time}) and the test was deemed successful.
 
 \begin{figure}
     \centering
@@ -13,9 +13,9 @@ Step responses were observed for the components (Figure \ref{fig:power-risetime}
     \label{fig:power-risetime}
 \end{figure}
 
-Tanks were tested and operated as expected, data for the Haber-Bosch, and cryogenic still were added and the plant behaved as expected.
+Tanks were tested and operated as expected, parameters for the Haber-Bosch, and cryogenic still were added and the plant behaved as expected.
 
-An important note for all the controllers that were experimented on was the electrical inertia $J$ was reduced until the plant could no longer be controlled within tolerances, and then a small saftey factor was added.
+An important note for all the controllers that were experimented on was that the electrical inertia $J$ was reduced until the plant could no longer be controlled within tolerances, and then a small safety factor was added.
 Interestingly all controllers had a similar lower limit on the tolerable inertia.
 It was decided $J = 80 \cdot 10^{3}\text{kgm}^{2}$.
 
@@ -59,7 +59,7 @@ The turbine running at DC was not desirable, so a PID in parallel with a Proport
 \subsubsection{Plant with a PID/PD Combination}
 
 By implementing the same method as suggested in Section \ref{sec:power-pid}, the following results were yielded.
-We note very strong performance from the controller, where very low frequency error is visible.
+Important to note was very strong performance from the controller, where very low frequency error is visible.
 This unfortunately came at the cost of an high ammonia use-rate, ending the 100 day simulation at -4200 tons of ammonia.
 
 \begin{figure}

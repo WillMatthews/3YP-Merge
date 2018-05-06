@@ -2,33 +2,33 @@
 \label{sec:plant}
 
 \subsubsection{Motivation}
-To test designed controllers, a representation of the plant to experiment on.
+To test designed controllers, a representation of the plant to experiment on is needed.
 Simulink\footnote{Simulink is a Registered Trademark of The MathWorks Inc.} was used to build a model of the plant, and apply controllers to.
-The model that was is a \emph{simplified version} of how the plant is expected to behave.
+The model is a \emph{simplified version} of how the plant is expected to behave.
 The simplifications made and design decisions that were proceeded with are justified below.
 
 \subsubsection{Modelled Components}
 
-Components were simplified as how the many considered components will respond to changes of input are are not known in detail.
+Components were simplified as how the many considered components will respond to changes of input are not known in detail.
 Since the plant controls $P_{\text{net}}$, the SOFCs and the Turbine are important to simulate on the generation, and the electrolyser on the consumption side.
 
 Tanks were modelled by means of a integrator, fed with net flow-rates for each chemical species.
 
-The cryogenic air-still is kept running continuously as it reduces the size of the part to make the same amount of material (and there to make the same amount of material for the cost).
+The cryogenic air-still is kept running continuously as it reduces the size of the part required to make the same amount of material.
 Another benefit is this negates the need to model the delay associated with priming the system before use.
 Cryogenic stills take on the order of hours to reach the temperature required for operation, so continuous running makes sense from a energy conservation standpoint too.
 
 \subsubsection{Assumptions}
 
 Components were assumed to behave as first-order, linear with no delays.
-There is also the assumption that there is no minimum utilisation for components, i.e. $0 \leq u \leq 1$ such that for example the electrolyser can drain any power between $0$ Watts and its maximum power, $P_{\text{max}}$.
-For material flow-rate, it was assumed the ammonia used in the turbine and the SOFC scaled linearly with utilisation percentage, and gas generation from the electrolyser also scaled linearly with utilisation percentage.
+There was also the assumption that there is no minimum utilisation for components, i.e. $0 \leq u \leq 1$ such that for example the electrolyser can drain any power between $0$ Watts and its maximum power, $P_{\text{max}}$.
+For material flow-rate, it was assumed the ammonia used in the turbine and the SOFC scaled linearly with utilisation, and gas generation from the electrolyser also scaled linearly with utilisation.
 
 \subsubsection{Simulink Model Structure and Initial Implementation}
 
 Values for each block were left as variables to be determined by a supporting MATLAB script, with relevant data input from other sections of this investigation.
-This allowed for rapid prototyping, and allowed me to quickly try different values for controller gains to observe responses.
-The model was subdivided each possible section into different components:
+This allowed for rapid prototyping, and gave the ability to quickly try different values for controller gains to observe responses.
+The model was subdivided into different components:
 \begin{description}
 \item[Global Plant]{ is a block that includes the plant and controller.
 This is packaged in a convenient way as to apply different disturbances and observe performance.

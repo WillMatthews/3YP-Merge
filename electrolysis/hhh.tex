@@ -19,12 +19,17 @@
 %\doublespacing
 %\begin{document} 
 
+\definecolor{name}{system}{definition}
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{bisque}{rgb}{1.0, 0.89, 0.77}
+\definecolor{burntsienna}{rgb}{0.91, 0.45, 0.32}
 \section{Hydrogen Production}
 \subsection{Introduction} 
 
 
-Hydrogen gas is required to be fed into the ammonia synthesis process before being converted to energy. The production of hydrogen is currently dominated by the steam reforming of methane gas which depends on the finite fossil fuel resources that also produce greenhouse gases. Water electrolysis combined with renewable energy is sustainable, produces almost zero carbon dioxide and is able to produce hydrogen at a high purity$(>99.9\%)$. Even with these advantages, water electrolysis only represents 4\% of the global hydrogen production. This is largely due to high investment cost and energy efficiency problem. There are currently three main types of electrolysis: alkaline electrolysis, polymer electrolyte membrane electrolysis(PEM) and solid oxide electrolysis cell(SOEC). Only the first two types are commercially mature and available. Alkaline electrolysis is chosen because it has the largest power capacity to match the scale of this project. Alkaline electrolysis also have much lower investment cost(at least 10 times smaller)and larger durability compared with PEM. As the maximum power supply (276MW) is far above the power capacity of any commercial electrolysers(Typical range is 3 - 6MW), multiple electrolyzers are installed in parallel.
-The main objective of the design is to increase the system efficiency while maintaining the required hydrogen production rate.The aim of this chapter is to lay a theoretical basis, present a detailed model  and examine the recent trends in alkaline electrolysis technology. 
+Hydrogen gas is required to be fed into the ammonia synthesis process before being converted to energy. The production of hydrogen is currently dominated by the steam reforming of methane gas which depends on the finite fossil fuel resources that also produce greenhouse gases. Water electrolysis combined with renewable energy is sustainable, produces almost zero carbon dioxide and is able to produce hydrogen at a high purity $(>99.9\%)$. Even with these advantages, water electrolysis only represents 4\% of global hydrogen production. This is largely due to high investment cost and energy efficiency problem. There are currently three main types of electrolysis: alkaline electrolysis, polymer electrolyte membrane electrolysis (PEM) and solid oxide electrolysis cell (SOEC). Only the first two types are commercially mature and available. Alkaline electrolysis is chosen because it has the largest power capacity to match the scale of this project. Alkaline electrolysis also has much lower investment cost (at least 10 times smaller)and larger durability compared with PEM. As the maximum power supply (276MW) is far above the power capacity of any commercial electrolysers (typical range is 3 - 6MW), multiple electrolysers are installed in parallel.
+The main objective of the design is to increase the system efficiency while maintaining the required hydrogen production rate. The aim of this chapter is to lay a theoretical basis, present a detailed model  and examine the recent trends in alkaline electrolysis technology. 
 
 \subsubsection{Process diagram} 
 The process flow diagram in figure 1 shows the electrolytic cell and its surrounding facilities, including water treatment, electrolyte recirculation, AC to DC rectifier, output gas treatment, and facilities for temperature and pressure control. The electrolytic cell is the most important component and it also consumes most of the energy supplied. A detailed CAD drawing is shown in next page.
@@ -38,7 +43,7 @@ The process flow diagram in figure 1 shows the electrolytic cell and its surroun
 \includepdf[pages=-,angle=90]{pid.pdf}
 
 \subsubsection{Dynamic system response}
-Because the power output from the wind farm is variable, intermittent and unpredictable, the electrolyser is required to cover a wide load range. (Typical load range is 100\% - 20\%)Some alkaline electrolysers can operate at a small overload, but is not considered here because it lowers lifetime and efficiency. The lower limit is set for gas purity concerns, if the wind energy is below a minimum limit, the electrolyser can be either shut down or operate at a standby mode(energy is supplied to the stack to maintain a minimum hydrogen production rate). A complete shutdown would require a rather time-consuming start-up process while operating at the standby mode lowers efficiency, and therefore a compromise has to be made. In this model, the electrolyzers have multiple stacks that can be shut-down independently and automatically in order to reduce the minimum power input requirement and thus improve the system flexibility.  In addition, the The electrolyser also needs to have a fast response in order to capture the peaks of he energy supply. Despite the dynamic nature of hydrogen production, the hydrogen consumption rate at the ammonia synthesis process is constant and therefore a hydrogen storage system is also required to store the excess energy. \cite{purity}\cite{gas} 
+Because the power output from the wind farm is variable, intermittent and unpredictable, the electrolyser is required to cover a wide load range(typical load range is 100\% - 20\%). Some alkaline electrolysers can operate at a small overload, but they are not considered here because they lowers lifetime and efficiency. The lower limit is set for gas purity concerns: if the wind energy is below a minimum limit, the electrolyser can be either shut down or operate at a standby mode (energy is supplied to the stack to maintain a minimum hydrogen production rate). A complete shutdown would require a rather time-consuming start-up process while operating at the standby mode lowers efficiency, and therefore a compromise has to be made. In this model, the electrolyzers have multiple stacks that can be shut-down independently and automatically in order to reduce the minimum power input requirement and thus improve the system flexibility.  In addition, the electrolyser also needs to have a fast response in order to capture the peaks of he energy supply. Despite the dynamic nature of hydrogen production, the hydrogen consumption rate of the ammonia synthesis process is constant and therefore a hydrogen storage system is also required to store the excess energy. \cite{purity}\cite{gas} 
 %?????
 \subsubsection{Specification}
 The specification is shown in table 1. In industry, the typical electrical energy input efficiency is 54 kwh/$kg_{H2}$\cite{specification}. The mean hydrogen production rate is at a surplus to the hydrogen consumption rate to ensure that a constant hydrogen flow from the storage can be achieved. The water conversion rate is assumed to be 80\%. Table 1 shows the flow rate and power requirement as well as the system and dynamic operation parameters. The hydrogen purity requirement is high because oxygen could adsorb on the surface of the ammonia synthesis catalyst and poison it. 
@@ -70,7 +75,7 @@ Ramp-up $\%_{(full load)}$/second& 10 & Ramp-down$\%_{(full load)}$/second  &  1
 
      
 \subsection{Fundamentals} 
-Electrolysis is a non-spontaneous redox reaction that is carried out in the electrolytic cell, with the electrolyzer filled with electrolytes (anion and cation) to improve conductivity. When a DC current passes through the electrodes, hydrogen is produced at the cathode, and oxygen is generated at the anode, it is important to note that the metal from electrolyte should be more reactive than hydrogen, so that hydrogen is produced instead of metal. The electrolyzer is divided into the anode chamber and the cathode chamber by the diaphragm, with electrodes placed in each chamber. The reaction in alkaline solution is as follows:
+Electrolysis is a non-spontaneous redox reaction that is carried out in the electrolytic cell, with the electrolyser filled with electrolytes (anion and cation) to improve conductivity. When a DC current passes through the electrodes, hydrogen is produced at the cathode, and oxygen is generated at the anode, it is important to note that the metal from electrolyte should be more reactive than hydrogen, so that hydrogen is produced instead of metal. The electrolyser is divided into the anode chamber and the cathode chamber by the diaphragm, with electrodes placed in each chamber. The reaction in alkaline solution is as follows:
 \begin{equation} 
 Cathode \quad 2H_2 O(l) + 2e^- \rightarrow H_2(g) + 2OH^-(aq)\quad   \phi_0=-0.828V
 \end{equation} 
@@ -80,11 +85,11 @@ Anode \quad 4OH^-(aq) \rightarrow O_2(g) +2H_2O(l) +4e^- \quad \phi_0=0.401V
 \begin{equation} 
 The \ overall \ reaction \quad H_2O(l) \rightarrow \frac{1}{2} O(g) + H_2(g) 
 \end{equation} 
-The molar rate of hydrogen production for cells connected in series can be determined by considering the Faraday's law, which presents as 
+The molar rate of hydrogen production for cells connected in series can be determined by considering Faraday's law, which presents as 
 \begin{equation} 
 \ f_{H2} = \eta_F \frac{N_{cell}I_{cell}}{zF} =\eta_F\frac{N_{cell} jA}{zF} 
 \end{equation} 
-Where $\eta_F$ is the Faraday efficiency, F is Faraday's constant, z is the number of electrons transferred, which is 2 in this reaction. $n_c$ is the number of cells, I is total current, j is current density, and A is cell area.It is shown in the equation that the production rate is directly proportional to the current. \cite{rate} The objective is to minimise power consume and increase efficiency, both electrochemical and thermodynamic effects should be taken into account for optimising the operation conditions.
+where $\eta_F$ is the Faraday efficiency, F is Faraday's constant, z is the number of electrons transferred, which is 2 in this reaction. $n_c$ is the number of cells, I is total current, j is current density, and A is cell area.It is shown in the equation that the production rate is directly proportional to the current. \cite{rate} The objective is to minimise power consumption and increase efficiency, both electrochemical and thermodynamic effects should be taken into account for optimising the operation conditions.
 
 
 \subsubsection{Thermodynamics} 
@@ -92,8 +97,8 @@ The electrolysis process is an endothermic reaction, the enthalpy change is expr
 \begin{equation} 
 \triangle H =\triangle G + T\triangle S = zF[T(\frac{\partial U_{rev}}{\partial T})_p - U_{rev}]
 \end{equation} 
-Where $\triangle G $ is the Gibbs free energy change, which is the energy required to split water and is therefore the minimum electrical energy required. $T\triangle S$ represents thermal energy, $\triangle S$ is the change of the reaction entropy. $U_{rev}$ is the reversible voltage and p is the prevailing pressure(Pa).F is Faraday's constant, z is the number of electrons transferred, which is 2 in this reaction.\cite{gibbs}  
-Under standard condition(1 atm, 25$^{\circ}$ C), $\triangle H^0 = 285.8 kJ/mol, \triangle S^0 = 163.14$. Therefore, $\triangle G^0 = 237.2 kJ/mol.$ With increasing temperature, the energy required for decomposing water is reduced. This is the reason why high temperature electrolysis method is adopted for the electrolysis process.The minimum voltage required (the reversible voltage) can be calculated by
+where $\triangle G $ is the Gibbs free energy change, which is the energy required to split water and is therefore the minimum electrical energy required. $T\triangle S$ represents thermal energy, $\triangle S$ is the change of the reaction entropy. $U_{rev}$ is the reversible voltage and p is the prevailing pressure (Pa). F is Faraday's constant, and z is the number of electrons transferred, which is 2 in this reaction.\cite{gibbs}  
+Under standard conditions (1 atm, 25$^{\circ}$ C), $\triangle H^0 = 285.8 kJ/mol, \triangle S^0 = 163.14$. Therefore, $\triangle G^0 = 237.2 kJ/mol.$ With increasing temperature, the energy required for decomposing water is reduced. This is why high temperature electrolysis method is adopted for the electrolysis process.The minimum voltage required (the reversible voltage) can be calculated by
 \begin{equation} 
 U_{rev} =\frac {-\triangle G} {zF} 
 \end{equation} 
@@ -140,7 +145,7 @@ m(t, W_t\%) =\frac{W_t\%(183.1221-0.56845T+984.5679 \exp(W_t\%/115.96277))} {100
 It can be shown on Matlab that the effect of concentration changes on reversible voltage is very small. 
 
 \subsubsection{Electrochemistry} 
-The actual cell voltage would be higher than the reversible energy  as a result of irreversibility of the process. The cell voltage is the sum of reversible voltage, overpotential due to Ohmic losses,activation overpotential and concentration overpotential.
+The actual cell voltage would be higher than the reversible energy  as a result of irreversibility of the process. The cell voltage is the sum of reversible voltage, overpotential due to Ohmic losses, activation overpotential and concentration overpotential.
 \begin{equation} 
 U_{cell}=U_{rev}+U_{ohm}+U_{act}+U_{con}
 \end{equation} 
@@ -177,7 +182,7 @@ where M represents the molarity in mol/L, and T is Temperature in Kelvin, and A-
 \includegraphics[width = 5.5cm]{optimum}
 \caption{ a)Variation of conductivity with temperature and concentration. b)3D plot. c) and the optimal concentration of electrolyte with temperature} 
 \end{figure} 
-From the graphs shown, it can be seen that the conductivity increases when concentration is higher, this is due to the increase in the number of unit ions per volume in the solution. However the solution does have a limit of how conductive it can reach, once that limit is achieved, the conductivity starts decreasing with increasing concentration. It can also be shown that the conductivity increases with increasing temperature, this is because an increase in temperature may also cause an increase in the number of ions in solution due to dissociation of molecules. It is also interesting to note that there exist an optimal concentration which increases with increasing temperature, at above 200 degree Celsius, the optimal concentration reaches around 36\%. In reality, however, the electrolyte concentration is usually around 25 - 30 \%because a very high concentration could lead to corrosion problem.
+From the graphs shown, it can be seen that the conductivity increases when concentration is higher, this is due to the increase in the number of unit ions per volume in the solution. However the solution does have a limit of how conductive it can reach, once that limit is achieved, the conductivity starts decreasing with increasing concentration. It can also be shown that the conductivity increases with increasing temperature, this is because an increase in temperature may also cause an increase in the number of ions in solution due to dissociation of molecules. Also noteworthy is the existence of an optimal concentration which increases with increasing temperature: at above 200 degree Celsius, the optimal concentration reaches around 36\%. In reality, however, the electrolyte concentration is usually around 25 - 30 \% because a very high concentration could lead to corrosion.
 The ohmic overpotential from electrolytic solution is therefore\
 \begin{equation} 
 U_{ohm} = r_{ions} \times J
@@ -219,12 +224,12 @@ R_{mem} = \frac{0.06+80e^{T/50}}{10000S_m}
 Where Sm is the membrane surface in $cm^2$.
 
 \subsubsection{Activation overpotential}
-In reality, the efficiency of alkaline electrolysis is furthered reduced by electrode kinetics, making the actual electrode potential higher than the reversible potential. The difference is called the activation overpotential. This represents the kinetic barriers that need to be overcome for the gas evolution reactions at each electrode. Various experiments have shown that the overpotential for oxygen evolution reaction(OER) is much higher than for that the hydrogen evolution reaction(HER), and it depends heavily on the catalytic properties of electrode materials. \cite{activation} There are many other factors that influence the overpotential, including temperature, current density, concentration and impurity of the solution.
-The corresponding current density can be calculated using the Butler-Volmer equation.\cite{activation1}
+In reality, the efficiency of alkaline electrolysis is further reduced by electrode kinetics, making the actual electrode potential higher than the reversible potential. The difference is called the activation overpotential. This represents the kinetic barriers that need to be overcome for the gas evolution reactions at each electrode. Various experiments have shown that the overpotential for oxygen evolution reaction (OER) is much higher than for that the hydrogen evolution reaction (HER), and it depends heavily on the catalytic properties of electrode materials. \cite{activation} There are many other factors that influence the overpotential, including temperature, current density, concentration and impurity of the solution.
+The corresponding current density can be calculated using the Butler-Volmer equation. \cite{activation1}
 \begin{equation} 
 J = J_0 [e(^{\frac{\alpha_a}{RT}zFU_{act,a}}) - e(^{\frac{\alpha_c}{RT}zFU_{act,c}})],
 \end{equation}
-where J is the current density, $J_0$ is the exchange current density, which represents current at equilibrium, the oxidation and reduction reaction rates are opposite and equal, resulting in zero net current.  $\alpha_{a/c}$ is the charge transfer coefficients.The charge transfer coefficients are related by temperature by
+where J is the current density, $J_0$ is the exchange current density, which represents current at equilibrium, the oxidation and reduction reaction rates are opposite and equal, resulting in zero net current, and  $\alpha_{a/c}$ is the charge transfer coefficients. The charge transfer coefficients are related by temperature by
 \begin{equation} 
 \alpha_a = 0.0675 + 0.00095T, \alpha_c = 0.1175+0.00095T
 \end{equation} 
@@ -252,11 +257,11 @@ where Ja is the actual current density, J is the superficial current density, an
 \begin{equation}
 \theta = 0.023(\frac{J}{Am^{-2}})^{0.3}
 \end{equation} 
-Apart from current density, the bubble coverage also depend upon several other factors including the rate of gas evolution at the electrode   ,  the average residence time of bubbles at the electrode surface , and the average bubble volume at departure from the electrode surface.\cite{bubble2} The total activation potential combined with bubble effects can be calculated by\cite{activation4} 
+Apart from current density, the bubble coverage also depends upon several other factors including the rate of gas evolution at the electrode surface, and the average residence time of bubbles at the electrode surface , and the average bubble volume at departure from the electrode surface.\cite{bubble2} The total activation potential combined with bubble effects can be calculated by\cite{activation4} 
 \begin{equation} 
 U_{act-\theta} = 2.3026\frac{RT}{zF\alpha_{a/c}}{log(\frac{J}{J_0}}) - 2.3026log(1-\theta) 
 \end{equation} 
-where the second term on the RHS represents the bubble effects.Another important effect of bubble formation is  the reduction of electrolyte conductivity, which will increase the ohmic resistance of the electrolyte. The effective conductivity  can be calculated using the Bruggman equation\cite{void} 
+where the second term on the RHS represents the bubble effects. Another important effect of bubble formation is  the reduction of electrolyte conductivity, which will increase the ohmic resistance of the electrolyte. The effective conductivity  can be calculated using the Bruggman equation\cite{void} 
 \begin{equation}
 \sigma_B = \sigma_0(1- \alpha_{total})^{1.5}
 \end{equation}
@@ -282,7 +287,7 @@ The void fraction is related by bubble coverage by\cite{activation2}
 
 
 \subsubsection{Overall cell voltage and optimum operating conditions}
-The polarisation curve of the alkaline electrolysis cell is plotted in figure 8 a), it can be seen that the total cell voltage increases with higher current density. This is largely due to the increased contribution from ohmic losses,especially from bubble formation, whereas the curve for activation polarisation actually becomes flatter at higher current density. This means that a lower current density will lower the energy consumption and thus increase the system efficiency. However, the hydrogen production rate, which increases with higher current density,  is also an important factor to consider along with the system efficiency.  Electrolyser degradation and safety issues also influence the choice of current density. The rate of elcetrolyser degradation increases rapidly with higher current density and this will thus increase the investment cost. The large amount of heat produced as a result of higher current density, if poorly managed, can be dangerous. In addition, gas crossover is more significant at low current density, and this is because although the amount of gases crossing over the membrane remains the same, there are smaller amounts of gases produced to dilute the effects. The result is a highly flammable mixture once it reaches a certain limit. In industry, a compromise has to be made. The current density is usually kept between 1000 - 3000$A/m^2$. \cite{currentdensity}\cite{currentdensity2}
+The polarisation curve of the alkaline electrolysis cell is plotted in figure 8 a), it is observable that the total cell voltage increases with higher current density. This is largely due to the increased contribution from ohmic losses,especially from bubble formation, whereas the curve for activation polarisation actually becomes flatter at higher current density. This means that a lower current density will lower the energy consumption and thus increase the system efficiency. However, the hydrogen production rate, which increases with higher current density,  is also an important factor to consider along with the system efficiency.  Electrolyser degradation and safety issues also influence the choice of current density. The rate of electrolyser degradation increases rapidly with higher current density and this will thus increase the investment cost. The large amount of heat produced as a result of higher current density, if poorly managed, can be dangerous. In addition, gas crossover is more significant at low current density, and this is because although the amount of gases crossing over the membrane remains the same, there are smaller amounts of gases produced to dilute the effects. The result is a highly flammable mixture once it reaches a certain limit. In industry, a compromise has to be made. The current density is usually kept between 1000 - 3000$A/m^2$. \cite{currentdensity}\cite{currentdensity2}
 
 \begin{figure}[h]
 \includegraphics[width=5.5cm]{total.eps}
@@ -290,7 +295,7 @@ The polarisation curve of the alkaline electrolysis cell is plotted in figure 8 
 \includegraphics[width=5.5cm]{cellP.eps}
 \caption{a)Total cell voltage showing cumulative effects of reversible voltage, activation and ohmic overpotential. b)Total cell voltage against temperature. c)Total cell voltage against pressure}
 \end{figure}
-Raising the operating temperature is one of the most effective ways to improve efficiency. As can be seen in figure 8 b), increasing the operating temperature reduces the cell voltage, as a result of decreased reversible voltage, higher ionic conductivity, and lower activation overpotential due to enhanced electrode surface kinetics. However, a high temperature means that more energy is needed to cool down the system after the separator, and high temperature can also lead to high corrosion risk which will require more expensive materials. Also, the water loss from evaporation also increases with higher temperature. Conventional electrolysis system is operated around 80 - 90$^oC$, just below the boiling point of water. There are two major ways to further elevate the operating temperature, the first way is to use a pressurised system which will increase the boiling point of electrolyte, and in industry this is usually kept at 120-150$^oC$. The second way is to carry out steam electrolysis which can increase the temperature even further to a level of above 500$^oC^.$ However this method has not become commercialized in industry due to high economic cost.\cite{temp} \cite{reversible} \\
+Raising the operating temperature is one of the most effective ways to improve efficiency. As can be seen in figure 8 b), increasing the operating temperature reduces the cell voltage, as a result of decreased reversible voltage, higher ionic conductivity, and lower activation overpotential due to enhanced electrode surface kinetics. However, a high temperature means that more energy is needed to cool down the system after the separator, and high temperature can also lead to high corrosion risk which will require more expensive materials. Also, the water loss from evaporation also increases with higher temperature. Conventional electrolysis system is operated around 80 - 90$^oC$, just below the boiling point of water. There are two major ways to further elevate the operating temperature, the first way is to use a pressurised system which will increase the boiling point of electrolyte, and in industry this is usually kept at 120-150$^oC$. The second way is to carry out steam electrolysis which can increase the temperature even further to a level of above 500$^oC^.$ However this method has not become commercialized in industry due to its high economic cost.\cite{temp} \cite{reversible} \\
 Pressure is another very important parameter, increasing operating pressure has several positive effects apart from allowing for higher operating temperature.  A high pressure would reduce the size of bubbles, and gases increase in solubility with increased pressure. This will reduce the ohmic loss from bubble formation. Obtaining pressurised hydrogen is also more energy efficient during the compression process. Also, higher operating pressure makes the process of hydrogen drying easier. However, at high pressure, there is more gas crossover due to diffusion since the partial pressure of both gases have increased. A high pressure also slightly increases the operating cell voltage. \cite{pressure} In industry, 
 hydrogen production at a pressure of up to 30 bar is  commercial available, and this can be achieved by using a feed-water pump.\cite{pressure2} 
 
@@ -308,7 +313,7 @@ The thermal efficiency takes into account the thermal energy and can be calculat
 \begin{equation}
 \eta_{Thermal} = \frac{\Delta H_{t,p}}{zFU_c} = \frac{U_{th}}{U_c} 
 \end{equation} 
-where $\Delta H_{t,p}$ is the enthalpy change of water decomposition. The thermal efficiency is 100\% if the cell voltage is equal to the thermoneutral voltage. When cell voltages is higher than $U_{th}$, the efficiency is lower than 100\%, and the process is exothermic. A thermal efficiency of over 100\%, which is when the cell voltage is below the thermoneutral voltage,  is theoretically achievable in high temperature steam electrolysis but is generally unpractical for alkaline electrolysis system. Under standard conditions, $U_{rev} = 1.23V$ and $U_{th} = 1.48V$. The relationship between $U_{rev}$ and $U_{th}$ against current density is plotted in figure.
+where $\Delta H_{t,p}$ is the enthalpy change of water decomposition. The thermal efficiency is 100\% if the cell voltage is equal to the thermoneutral voltage. When cell voltage is higher than $U_{th}$, the efficiency is lower than 100\%, and the process is exothermic. A thermal efficiency of over 100\%, which is when the cell voltage is below the thermoneutral voltage,  is theoretically achievable in high temperature steam electrolysis but is generally unpractical for alkaline electrolysis system. Under standard conditions, $U_{rev} = 1.23V$ and $U_{th} = 1.48V$. The relationship between $U_{rev}$ and $U_{th}$ against current density is plotted in figure.
 \begin{figure}[H]
 \includegraphics[width=8cm]{efficiency.eps} 
 \includegraphics[width=8cm]{rate.eps}
@@ -328,7 +333,7 @@ Finally, the electrolyser efficiency or the HHV efficiency can be calculated usi
 \begin{equation}
 \eta_E = \frac{HHV of Hydrogen}{C_E} 
 \end{equation}
-where HHV is the higher-heating-value of hydrogen.It assumes that the energy absorbed by water can be released and reused in the system by converting water back to its its initial standard conditions. However, recovering the full higher-heating value is not practical in reality.
+where HHV is the higher-heating-value of hydrogen.It assumes that the energy absorbed by water can be released and reused in the system by converting water back to its initial standard conditions. However, recovering the full higher-heating value is not practical in reality.
 The electrical-energy efficiency can be calculated using the higher-heating voltage.\cite{efficiency} \cite{efficiency2} 
 \begin{equation}
 \eta_E=\frac{V_{HHV}}{V_{cell}}
@@ -410,7 +415,7 @@ The electrolyser efficiency at different temperature and pressure with fixed cur
 
 \subsubsection{Configuration} 
 Currently there are two kinds of electrolyser configuration: unipolar and bipolar. In a unipolar configuration(or tank-type), the electrodes with the same polarity are connected in parallel, therefore the total cell voltage is the same as the voltages of individual cells, and the total current is the sum of currents in each cell. A bipolar electrolyser usually has a larger number of cells with the electrodes connected in series, and the electrodes each has both the positive and negative polarities. So current is the same in each cell and at the terminals. Unipolar electrolysers operate at a low voltage level of 1.9 - 2.5 V, but they require a high level of current. On the other hand, bipolar configuration requires a low current but a voltage of $V_{cell} \times (n-1)$, which is about 35-600V. $V_{cell}$ is the voltage for each cell and n is the number of electrodes. The industrial electrolysers are mostly bipolar electrolysers.
-The pros and cons of each type of configuration is shown in table 2.
+The pros and cons of each type of configuration are shown in table 2.
 
 %The compact structure of the bipolar electrolyzer reduces the loss caused by the resistance of the electrolyte, thus improving the efficiency of the electrolyzer. But on the other hand, the bipolar electrolyzer has increased the complexity of design because of its compact structure, resulting in the manufacturing cost higher than that of the monopole electrolyzer. In view of the current emphasis on conversion efficiency, the industrial electrolyzer is mostly bipolar electrolyzer.
 
@@ -473,13 +478,13 @@ The zero gap cell involves two porous electrodes that are compressed and in cont
 \end{figure}
 
 \subsubsubsection{Membrane-less Electrolyser}
-In a conventional electrolyser, a membrane is used to separate the oxygen and hydrogen gases. However, membranes can be expensive to produce and may not be stable. Membraneless electrolysers have been developed to solve the problem. Figure 15 shows the principle of membraneless Divergent Electrode-Flow-Through (DEFT) alkaline electrolyser. The technology is based on the parallel arrangement of porous electrodes which are separated by a electrode gap.The liquid electrolyte is first introduced into the high pressure distribution chamber, and then the fluid is subsequently introduced into the gap between each electrode. In stead of using membrane to separate the oxygen and hydrogen gases, the gases are separated by the fluid mechanic forces.\cite{membraneless2} One of the biggest advantages of this design is that there is almost no gas bubbles forming between the electrodes, thus have the potential to operate at a higher current density than the conventional electrolyser. An appropriate electrolyte flow velocity is required to reduce the gas bubbles to a negligible volume, and also prevent gas contamination to ensure a high hydrogen purity. Using the membraneless DEFT technology, a hydrogen purity of 99.83\% can be achieved with an electrode gap of 2.5mm and an minimum velocity of 0.075m/s.
+In a conventional electrolyser, a membrane is used to separate the oxygen and hydrogen gases. However, membranes can be expensive to produce and may not be stable. Membraneless electrolysers have been developed to solve the problem. Figure 15 shows the principle of membraneless Divergent Electrode-Flow-Through (DEFT) alkaline electrolyser. The technology is based on the parallel arrangement of porous electrodes which are separated by an electrode gap.The liquid electrolyte is first introduced into the high pressure distribution chamber, and then the fluid is subsequently introduced into the gap between each electrode. Instead of using a membrane to separate the oxygen and hydrogen gases, the gases are separated by fluid mechanic forces.\cite{membraneless2} One of the biggest advantages of this design is that there are almost no gas bubbles forming between the electrodes, thus have the potential to operate at a higher current density than the conventional electrolyser. An appropriate electrolyte flow velocity is required to reduce the gas bubbles to a negligible volume, and also prevent gas contamination to ensure a high hydrogen purity. Using the membraneless DEFT technology, a hydrogen purity of 99.83\% can be achieved with an electrode gap of 2.5mm and a minimum velocity of 0.075m/s.
 
 
 
 \subsubsection{Electrode Material} 
-The anode material must have good conductivity, high catalytic activity, good mechanical stability, resistance to electrolyte corrosion, in addition to an acceptable cost. Currently, the mostly used anode is nickel or nickel based alloy. Nickel has good corrosion resistance compared with Stainless Steel or iron electrode and low price in alkaline medium. At the same time, nickel has high oxygen evolution potential and high oxygen evolution efficiency. One way to improve efficiency is to increase the electrode surface area in order to reduce the real current density and thus the activation overpotential. For example, a porous anode can be developed by sintering nickel powders, it has been shown that the porous high-surface area anodes have lower oxygen evolution overpotential than smooth anodes under elevated temperature and pressure(30bars, 200$^oC$). Sintered, porous nickel coating is an another way to reduce overpotential which involves a lower sintering temperature. It has also been shown that an increase in coating thickness will raise the exchange current density and reduce the overpotential. Comparable effects in overpotential reduction can be achieved by using Raney alloys such as Raney nickel, Raney cobalt or Raney nickel-cobalt which will be covered with Ni or Co oxides during electrolysis.\cite{anode} \cite{anode2}\\ \\
-The cathode materials for hydrogen production in early age were mainly Pt, Pd and its alloys. Although these alloys have very low hydrogen evolution overpotential, they are expensive and can not be widely used to popularise.  So people put their eyes on cheap, low hydrogen overpotential alternatives such as Raney nickel or nickel based alloys like NiMo, NiSe and $NiS_2$. For cathode, the electrocatalyst's behaviours depend on its ability to adsorb hydrogen atoms, which is related to the strength of the metal hydrogen bond(H-M). A stronger M-H bond would reduce the HER activation energy. However, if the adsorption energy is too high, the desorption of hydrogen becomes difficult. Therefore, a suitable M-H bond strength is required for the cathode. It can be seen from figure 15 that Pt has the highest activity, and Ni also have suitable bond strength while being inexpensive at the same time. \cite{cathode2} Zhang compared the electrocatalytic activities of several nickel-based alloys(Ti/NiM where M represents different metals and Ni foil is the substrate). It can be shown from figure 16 that Ti/NiPt electrode has the highest catalytic activity, and they are all relatively stable. Ti/NiCo is the most suitable choice when electrolytic activity, stability and cost are all taking into account\cite{cathode}
+The anode material must have good conductivity, high catalytic activity, good mechanical stability, resistance to electrolyte corrosion, in addition to an acceptable cost. Currently, the mostly used anode is nickel or nickel based alloy. Nickel has good corrosion resistance compared with Stainless Steel or iron electrode and low price in alkaline medium. At the same time, nickel has high oxygen evolution potential and high oxygen evolution efficiency. One way to improve efficiency is to increase the electrode surface area in order to reduce the real current density and thus the activation overpotential. For example, a porous anode can be developed by sintering nickel powders, it has been shown that the porous high-surface area anodes have lower oxygen evolution overpotential than smooth anodes under elevated temperature and pressure (30bars, 200$^oC$). Sintered, porous nickel coating is an another way to reduce overpotential which involves a lower sintering temperature. It has also been shown that an increase in coating thickness will raise the exchange current density and reduce the overpotential. Comparable effects in overpotential reduction can be achieved by using Raney alloys such as Raney nickel, Raney cobalt or Raney nickel-cobalt which will be covered with Ni or Co oxides during electrolysis.\cite{anode} \cite{anode2}\\ \\
+The cathode materials for hydrogen production in early age were mainly Pt, Pd and its alloys. Although these alloys have very low hydrogen evolution overpotential, they are expensive and can not be widely used to popularise.  So people put their eyes on cheap, low hydrogen overpotential alternatives such as Raney nickel or nickel based alloys like NiMo, NiSe and $NiS_2$. For cathode, the electrocatalyst's behaviours depend on its ability to adsorb hydrogen atoms, which is related to the strength of the metal hydrogen bond(M-H). A stronger M-H bond would reduce the HER activation energy. However, if the adsorption energy is too high, the desorption of hydrogen becomes difficult. Therefore, a suitable M-H bond strength is required for the cathode. It can be seen from figure 15 that Pt has the highest activity, and Ni also have suitable bond strength while being inexpensive at the same time. \cite{cathode2} Zhang compared the electrocatalytic activities of several nickel-based alloys(Ti/NiM where M represents different metals and Ni foil is the substrate). It can be shown from figure 16 that Ti/NiPt electrode has the highest catalytic activity, and they are all relatively stable. Ti/NiCo is the most suitable choice when electrolytic activity, stability and cost are all taking into account\cite{cathode}
 \begin{figure}[H] 
 \centering
 \includegraphics[width=6cm]{catalyst.png}
@@ -495,13 +500,13 @@ The cathode materials for hydrogen production in early age were mainly Pt, Pd an
 
 
 \subsubsection{Electrolyte and ionic activator}
-The selection criteria for electrolyte include: high ionic conductivity;  does not decompose chemically under supplying voltage; lower volatility so is not removed with the product gas. Alkaline electrolyte is adopted instead of acid electrolyte because the corrosion problems is not as serious. KOH and NaOH solution are common electrolyte choices and their conductivity at different temperature is shown in figure 10. It can be seen that KOH solution has higher specific conductivity than NaOH and is therefore used in this model. Although recirculation of electrolyte is designed, there will be some electrolyte loss in reality through gases(typically 1 mg KOH per $Nm^3$ H2). It is therefore necessary to adjust the amount of electrolyte in the cell. KOH is cheaper than NaOH.
+The selection criteria for the electrolyte include: high ionic conductivity;  does not decompose chemically under supplying voltage; lower volatility so is not removed with the product gas. Alkaline electrolyte is adopted instead of acid electrolyte because the corrosion problems is not as serious. KOH and NaOH solutions are common electrolyte choices and their conductivities at different temperatures are shown in figure 10. It is observable that KOH solution has higher specific conductivity than NaOH and is therefore used in this model. Although recirculation of electrolyte is designed, there will be some electrolyte loss in reality through gases(typically 1 mg KOH per $Nm^3$ H2). It is therefore necessary to adjust the amount of electrolyte in the cell. KOH is also cheaper than NaOH.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{electrolytematerial.png}
 \end{figure}
-The energy consumption can be further reduced by the addition of ionic activator. Lj et al. \cite{ionic}investigated the effect of adding an Novel ternary Ni $-$ Co $-$ Mo based ionic activator to the alkaline KOH solution. It has been found that the electrolyzer with in-situ activated electrolyte has an efficiency about 15\% higher than the standard KOH solution, and an energy consumption saving of about 17\%. The energy saving is proved to be more efficient at higher temperatures and current densities.During electrolysis, metal composites are electrodeposited in situ on cathode surface and exhibit better catalytic activity for hydrogen evolution reaction than those electro- deposited ex-situ. 
+The energy consumption can be further reduced by the addition of an ionic activator. Lj et al. \cite{ionic}investigated the effect of adding an Novel ternary Ni $-$ Co $-$ Mo based ionic activator to the alkaline KOH solution. It has been found that the electrolyzer with in-situ activated electrolyte has an efficiency about 15\% higher than the standard KOH solution, and an energy consumption saving of about 17\%. The energy saving is proved to be more efficient at higher temperatures and current densities.During electrolysis, metal composites are electrodeposited in situ on cathode surface and exhibit better catalytic activity for hydrogen evolution reaction than those electro- deposited ex-situ. 
 
 \subsubsection{Separator} 
 The diaphragm(or microporous separators) , which is made of electrically insulating and hydrophilic materials, is used to separate the cathode and anode to prevent short circuit. The diaphragm also needs to be have high ionic conductivity for the hydroxide ions to pass through, while preventing the diffusion of hydrogen and oxygen gas bubbles, as well as unhindered intermixing of hydrogen saturated catholyte and oxygen saturated anolyte. Other requirements include low ohmic resistance and high resistance to corrosion in the alkaline environment. Asbestos membrane was used for a long time in the industry. However it has low resistance to corrosion and was forbidden because of its toxicity.A large number of inorganic and organic substitutes have been studied and currently Zirfon is the most widely used diaphragm. It contains the hydrophilic and inorganic $ZrO_2$ power and polysulfone network to increase the mechanical strength. The typically thickness of Zirfon diaphragm is 0.3mm, which is much thinner than the asbestos diaphragms. It also have a low ionic resistance(0.1-0.2$\Omega cm^2$)\cite{zirfon} In industry, the Zirfon diaphragm usually have a temperature limit of $120^oC$.\cite{pressure}\\\\
@@ -610,7 +615,7 @@ Underground storage in salt cavern has been developed for compressed hydrogen ga
 
 \subsection{System Simulation}
 A system simulation is carried out based on power input profile,  demonstrating the results for 120 hours in November 2016.  Figure 16  shows the changes of  HHV efficiency and the ratio of power input and maximum input with time. As can be seen, the HHV efficiency is at a level of around 73\% for most of the time and increases when the power input is low. The gaps represent the time period when the power input is below the minimum allowed limit. Note that some power is lost during the AC to DC rectifier stage, the conversion efficiency is assumed to be 90\%. For simplification, the simulation assumed zero start-up time, zero response time and constant temperature at $120^oC$. Figure 17 demonstrates the cumulative production of hydrogen in this time period. Comparing this with the constant hydrogen consumption rate, the storage capacity requirement can be calculated. 
-\begin{figure}[H]
+\begin{figure}[htb]
 \centering
 \includegraphics[width = 18cm]{simulation.eps}
 \caption{HHV efficiency and Power/ Power max}
@@ -622,11 +627,17 @@ A system simulation is carried out based on power input profile,  demonstrating 
 \caption{Cumulative production of hydrogen }
 \end{figure}
 \subsubsection{Costing}
-\begin{table}[H]
-\begin{tabular}{ |p{4.7cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
+\begin{longtable}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
+%\begin{table}[H]
+%\begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
  \hline
-  & Labour \pounds & Material \pounds & Total\pounds\\
+ \rowcolor{burntsienna}
+  & Labour \$ & Material \$ & Total\$\\
   \hline
+  \rowcolor{cyan}
+   \multicolumn{4}{ | c |}{Direct Field Cost} \\
+   \hline
+  \rowcolor{LightCyan}
   \multicolumn{4}{ | c |}{Equipment Cost} \\
   \hline
   Vessels & 11350.74 & 113507.38 & 124858.12\\
@@ -635,30 +646,30 @@ A system simulation is carried out based on power input profile,  demonstrating 
   \hline
   Drums/Filters & 4540.3  & 45402.95 & 49943.25\\
   \hline
-  Cell & 56753.69 & 1135073.78 & 1191827.47 \\
+  Cells & 56753.69 & 1225900 & 1282600 \\
   \hline
   Heat Exchangers & 4540.3 & 90805.9 & 95346.2\\
   \hline
   Pumps & 9080.59 & 181611.80 & 190692.4\\
   \hline
-  Power Packages &  0 & 90805.9 & 90805.9 \\
-  \hline
-   Sub Total Major Equipment & 108967.08 & 2111237.23 & 2220204.31\\
+  %\rowcolor{cyan}
+  \textbf{Subtotal Major Equipment} & \textbf{108967.08} & \textbf{2111237.23} & \textbf{2220204.31}\\
    \hline
-   \hline
+    \rowcolor{LightCyan}
    \multicolumn{4}{ | c |}{Bulk Material Cost} \\
    \hline 
-   Civil/Structure/Architectural  \\
+    \multicolumn{4}{ | c |}{\textbf{Civil/Structure/Architectural}} \\
+   %Civil/Structure/Architectural  \\
    \hline 
-   Foundations & 28376.854 & & 28376.84\\
+   Foundations & & 28376.854  & 28376.84\\
    \hline
-   Roads/Paving & 9080.59 & & 9080.59\\
+   Roads/Paving  & & 9080.59  & 9080.59\\
    \hline
-   Building & 113507.38 & & 113507.38\\
+   Building &  &113507.38  & 113507.38\\
    \hline
    Structural Steel & & 11350.74 & 11350.74\\
    \hline
-   Piping \\
+    \multicolumn{4}{ | c |}{\textbf{Piping/Instruments}} \\
    \hline
    Pipe & 14755.96 & 34052.21 & 48808.17\\
    \hline
@@ -666,38 +677,36 @@ A system simulation is carried out based on power input profile,  demonstrating 
    \hline
    Valves & 11350.74 & 73779.80  & 85130.53\\
    \hline
-   Instruments\\
-   \hline
    Cables & 13620.89 & 34052.21 & 47673.10\\
    \hline
    Instruments & 22701.48 &22701.48  & 45402.95\\
    \hline
    Control Valves & 17026.11 & 45402.95 & 62429.06\\
    \hline
-   Electrical \\
+    \multicolumn{4}{ | c |}{\textbf{Electrical}} \\
    \hline
    Cables &  13620.89  & 34052.21 & 47673.10\\
    \hline 
    DCS cabinet and card & 5675.37 & 4502.95 & 51078.32\\
    \hline
-   Paintings\\
+    \multicolumn{4}{ | c |}{\textbf{Paintings}} \\
    \hline
    Piping Painting & 5675.37 & & 5675.37\\
    \hline
    Equipment insulation & 9080.59 & & 9080.59\\
    \hline
-   Insulation\\
+   \multicolumn{4}{ | c |}{\textbf{Insulation}} \\
    \hline
    Piping Insulation & 17026.11 & & 17026.11\\
    \hline
    Equipment Insulation & 17026.11 & & 17026.11\\
    \hline
-   Sub Total Bulk Materials & 303064.70 & 292849.04 & 595913.73\\
+   \textbf{Subtotal Bulk Materials} & \textbf{303064.70} & \textbf{292849.04} & \textbf{595913.73}\\
    \hline
+
+   \textbf{Total Direct Field Materials} & \textbf{412031.78} & \textbf{2404086.27} & \textbf{2816118.05}\\
    \hline
-   Total Direct Field Materials & 412031.78 & 2404086.27 & 2816118.05\\
-   \hline
-   \hline
+   \rowcolor{cyan}
  \multicolumn{4}{ | c |}{Indirect Field Cost} \\  
  \hline
  Construction management & 45402.95 & & 45402.95\\
@@ -706,40 +715,39 @@ A system simulation is carried out based on power input profile,  demonstrating 
  \hline
  Scaffolding & 30646.99 & & 30646.99\\
  \hline
- Sub Total Indirect Field Costs & 132803.63 & & 132803.63\\
+\textbf{Total Indirect Field Costs} & \textbf{132803.63} & & \textbf{132803.63}\\
  \hline
  \hline
- \multicolumn{4}{ | c |}{Home Office} \\
+ \rowcolor{cyan}
+ \multicolumn{4}{ | c |}{Home Office/Miscellaneous} \\
  \hline
  Detailed Engineering & 31818.18 & & 31818.18 \\
+ 
  \hline
- Sub Total Home Office Costs\\
- \hline
- \hline
- Miscellaneous \\
- \hline
+ 
+ 
  Start-up & 12121.21 & & 12121.21\\
  \hline
- Forward Escalation & & &\\
- \hline
- Sub Total Miscellaneous &  31818.18 & & 31818.18\\
- \hline
- \hline
+\rowcolor{burntsienna}
  Total Costs Excluding UAP & 588774.81 & 2404086.27 &2992861.07\\
  \hline
- \hline
+ 
 Unallocated Provision  & & & 149643.05\\
 \hline
+\rowcolor{burntsienna}
 Total Project Cost & & & 3142504.13\\
 \hline
-\end{tabular}
-\end{table}
+%\end{tabular}
+\end{longtable}
 
 \subsubsection{sustainability}
 \subsubsection{safety}
 The major risk in the electrolysis plant is the flammable mixture of oxygen and hydrogen gases.
 Hydrogen has the NFPA 704's highest rating of 4 on the flammability scale. \cite{safety} This can happen if the gas crossover during the electrolysis is above the allowed limit, or if hydrogen is leaked to the air which is difficult to detect since its colourless, odourless, and tasteless. Hydrogen gas has a flammability range of 4-75\% in the air and it also has a very low ignition energy(as low as 17$\mu$J).To avoid this problem, 
 before driving the hydrogen production equipment, it is necessary to fill the system with nitrogen until the oxygen content of the system is less than 1\%; Hydrogen leak alarm devices need to installed and electrolysis room should be set explosion-proof lights. Hydrogen flames are also nearly invisible, so flame detectors are needed. Also, all the equipment should be well grounded to prevent static electricity, which can cause hydrogen combustion and explosion. The leakage of the alkaline electrolyte is another potential risk. The HAZOP analysis is shown below.
+
+\includepdf[pages=2,angle=180]{hazop.pdf}
+\includepdf[pages=3,angle=180]{hazop.pdf}
 \begin{figure}[p]
     \centering
     \includegraphics{electrolysis/hazop.pdf}

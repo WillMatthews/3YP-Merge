@@ -11,7 +11,6 @@ The state observed was the frequency error from the set value, as its derivative
 Figure \ref{fig:power-PIDcombo} shows diagrammatically how this is implemented, which was used as a starting point for the Linear Quadratic Regulator design.
 The control signal for the Electrolyser and SOFC is shared, as these two components \emph{should not} be on at the same time. The signal to the Electrolyser is inverted as the control signals were defined earlier as $0 \leq u \leq 1$.
 These signals are clipped on entry to the `Component Dynamics' block in Figure \ref{fig:comp}.
-
 \begin{figure}[H]
 \begin{center}
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        

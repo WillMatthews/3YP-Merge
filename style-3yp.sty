@@ -48,11 +48,12 @@ bottom=20 mm
 % Header & Footer - Change 'lfoot' at the beginning of your section.
 \headheight 14pt
 \pagestyle{fancy}
-\rhead{\color{red}DO NOT RELEASE}
-\lhead{\color{red}DRAFT}
-\chead{Compiled: \today}
+%\rhead{\color{red}DO NOT RELEASE}
+\rhead{Ammonia-Based ESS Design Study}
+%\rhead{Compiled: \today}
 \cfoot{\thepage~of~\pageref{LastPage}}
 \rfoot{Group 3}
+\fancyhead[L]{\leftmark}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -64,10 +65,6 @@ bottom=20 mm
 
 
 \usepackage{textcomp}
-
-%% maybe remove these two
-%\usepackage{float}
-%\restylefloat*{figure}
 
 %% Make Captions be above tables
 \usepackage{floatrow}%[capposition=top]
@@ -159,3 +156,7 @@ bottom=20 mm
 \usepackage{multirow}
 % URL in reference
 \usepackage{hyperref}
+
+\setlength\parindent{0pt}
+
+\usepackage[document]{ragged2e}

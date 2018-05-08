@@ -7,9 +7,9 @@ An LQR based controller does not give the power to play with these properties, s
 
 A MPC will allows the ability to generate an optimal control scheme for the plant - but are limited in that they run on discrete time, and will not offer a instantaneous response.
 
-\newpage
+%\newpage
 
-In the ideal scenario, the controller structure would be as follows:
+In the ideal scenario, the controller structure would be as in Figure \ref{fig:schematic}.
 
 \begin{figure}[thb]
         \centering
@@ -48,7 +48,7 @@ In the ideal scenario, the controller structure would be as follows:
 \end{description}
 
 This topology would be ideal as the High-Level controller would dictate the control of the plant for the most cost-effective response.
-The Secondary (Virtual Inertia) controller would manage very fast changes in the system state - to ensure a low enough bandwidth for any high-level controller operation.
+The Secondary (Virtual Inertia) controller would manage very fast changes in the system state - to ensure a low enough bandwidth for any High-Level controller operation.
 The High-Level controller would require state information from the disturbance model on future demand predictions, as well as the actual plant state (component actuation, grid frequency).
 Failure detection would be important in later iterations to guarantee the plant runs safely in all possible conditions - to ensure a stable electricity supply for consumers.
 

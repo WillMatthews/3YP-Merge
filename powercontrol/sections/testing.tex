@@ -6,7 +6,7 @@
 On creation of the plant, components needed to be tested to ensure operation were as expected.
 Step responses were observed for the components (Figure \ref{fig:power-risetime}), which conformed to expectations (as in Table \ref{tbl:time}) and the test was deemed successful.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5]{images/results/risetime.eps}
     \caption{Tests conducted on Power Components with differing rise times.}
@@ -24,7 +24,7 @@ It was decided $J = 80 \cdot 10^{3}\text{kgm}^{2}$.
 A proportional control scheme was initially applied to observe how the system responds and check stability.
 Results of the simulation are visible in Figure \ref{fig:power-proportional}.
 
-\begin{figure}
+\begin{figure}[]ht]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -62,7 +62,7 @@ By implementing the same method as suggested in Section \ref{sec:power-pid}, the
 Important to note was very strong performance from the controller, where very low frequency error is visible.
 This unfortunately came at the cost of an high ammonia use-rate, ending the 100 day simulation at -4200 tons of ammonia.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -106,7 +106,7 @@ The Augmented LQR Combination was preferred and then run for a year, to ensure t
 
 
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -140,7 +140,7 @@ Spread of frequency errors was small, as visible in Figure \ref{fig:omegaspread}
 Figure \ref{fig:omegayearseries} shows a time-series of a year's simulation, showing the grid is able to be controlled.
 
 Material balance for a year was stable.
-As visible in Figure \ref{fig:tankyear} no large excess of ammonia was produced, and for a first iteration the scaling as achieved in section \ref{sec:plantscale} was \emph{very good}.
+As visible in Figure \ref{fig:tankyear} no large excess of ammonia was produced, and for a first iteration the scaling as achieved in section \ref{sec:plantscale} was \emph{a good estimate}.
 
 
 
@@ -148,7 +148,7 @@ As visible in Figure \ref{fig:tankyear} no large excess of ammonia was produced,
 
 
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -173,7 +173,7 @@ As visible in Figure \ref{fig:tankyear} no large excess of ammonia was produced,
 
 
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering

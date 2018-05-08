@@ -6,12 +6,12 @@ To begin the design, dynamics of electrical grids need to be understood, specifi
 Supplementing this is how Maui has a {peak demand of 195MW, a yearly energy usage of 1200GWh}, 55,301 residential and 9,356 commercial customers. \cite{power:maui}.
 This sizable demand means large fluctuations in the net power in the grid will occur, so an accurate model is needed.
 
-It was observed that a net-positive power in the system causes an increase in the frequency as the energy generated \emph{must} go somewhere due to conservation of energy.
+It was observed that a net-positive power in the system ($P_{\text{net}} > 0$) causes an increase in the frequency ($\dot \omega > 0$) as the energy generated \emph{must} go somewhere due to conservation of energy.
 The place the energy goes is the angular momentum of the rotating masses.
 The inverse is true for net-negative powers, a decrease in frequency results.
 
 To begin tackling this problem, it is possible to consider the grid like a flywheel as suggested by \cite{power:swing}.
-The governing equation is known as the \emph{Swing Equation}, which models the electrical powers of every component as a \emph{torque} on a flywheel.
+The governing equation is known as the \emph{Swing Equation}, which models the electrical powers of every component as a \emph{torque} ($T_i$) on a flywheel.
 This method makes sense, as the grid has an inertia associated with it, which is the rotational inertia of all power sources and sinks.
 
 The inertia of the grid does vary with time - however for simplicity a time-invariant inertia $J$, (the inertia of my plant) is assumed.
@@ -21,29 +21,29 @@ This makes the control task more challenging as this will cause an increase in b
 To begin, the \emph{Swing Equation} as suggested by \cite{power:swing} was considered:
 %
 \begin{equation}
-    P = T\omega
+    P = T\omega_g
 \end{equation}
 %
 \begin{equation}
-        T = \frac{\partial}{\partial t} ( J \omega) = J \dot \omega
+        T = \frac{\partial}{\partial t} ( J \omega_g) = J \dot \omega_g
         \label{swing}
 \end{equation}
 %
 \begin{equation}
-        \therefore \qquad \dot \omega = \frac{P_{\text{net}}}{J \omega} = \frac{T_{\text{net}}}{J}, \quad \text{where} \quad  T_i = P_i \bar \omega^{-1}
+        \therefore \qquad \dot \omega_g = \frac{P_{\text{net}}}{J \omega_g} = \frac{T_{\text{net}}}{J}, \quad \text{where} \quad  T_i \approx P_i \omega^{-1}_{g0}
 \end{equation}
 %
-This derivation assumed an operating point $\bar \omega = 120\pi$, as that is the grid's angular frequency of the proposed location and it is not expected to deviate much from it.
+This derivation assumed an operating point $\omega_{g0} = 120\pi$, as that is the grid's angular frequency of the proposed location and it is not expected to deviate much from it.
 The implication of this result is that a low inertia on the grid will cause \emph{large} frequency rate of change for power mismatch.
 
 \subsubsection{Generation and Consumption Units}
 
-Since it was already known that each component's contribution can be written as $T_i = P_i \bar \omega$, power can also be interpreted as a torque.
-For an initial design a first-order response from each component was assumed, with step responses like:
+Since it was already known that each component's contribution can be written as $ T_i \approx P_i \omega^{-1}_{g0}$, power can also be interpreted as a torque.
+For an initial design a first-order response from each component was assumed, with step responses like (by using a time constant $k_i$):
 \begin{equation}
         T_i(t) = T_{\text{max}_i}(1 - \mathrm{e}^{-k_i t})
 \end{equation}
-Which implies a transfer function:
+Which implies a transfer function for each component as:
 \begin{equation}
         \overline{G_{i}(s)} = \frac{\overline{T_{i}(s)}}{\overline{U_{i}(s)}} = \frac{T_{\text{max}_{i}}k_i}{k_i + {s}}
 \end{equation}
@@ -57,14 +57,14 @@ The rise times can be assumed as $\frac{3}{t_{\text{rise}_i}} \approx k_i$ as th
             \centering
         \begin{tabular}{||l l l l l l||}
                 \hline
-                Component & $t_{\text{rise}}$ & $k$ / s$^{-1}$ & $\eta_{\text{therm}}$ & $P_{\text{max}}$/MW& Minimum Use / \%\\
+                Component & $t_{\text{rise}}$ & $k$ / mins$^{-1}$ & $\eta_{\text{therm}}$ & $P_{\text{max}}$ / MW& Minimum Use / \%\\
                 \hline
                 \hline
                 Turbine& 8 mins & 0.375 & 0.65 & 250MW & 10\\
                 \hline
                 SOFC& 35 mins & 0.0857 & 0.90 & 230MW & 30\\
                 \hline
-                Electrolyser& 80 seconds & 2.25 & N/A & 300MW & 20\\
+                Electrolyser& 1.2 mins & 2.25 & N/A & 300MW & 20\\
                 \hline
                 Cryo-Still & 40 mins & 4.50 & N/A & - & 30\\
                 \hline
@@ -119,7 +119,7 @@ This historical data-set was used to validate our model by considering how real-
 Using Equation \ref{eqn:wturbexm} and using $\tau_1, \tau_2$ the yearly generated energy in Maui can be plotted.
            \begin{figure}[bht]
                    \centering
-                   \includegraphics[scale=0.4]{./images/turbine.eps}
+                   \includegraphics[scale=0.6]{./images/turbine.eps}
                    \caption{Approximated Steady State Power Response of the GE Haliade-150-6MW} \label{fig:wturb}
            \end{figure}
 

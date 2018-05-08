@@ -3,7 +3,7 @@
 \subsubsection{State Space System}
 \label{sec:lqr}
 
-The design begin by considering the system as a \emph{State Space}, this takes into account {\color{red}system dynamics}, {\color{blue}input effects}, and predicted {\color{green}disturbance effects}.
+The design begin by considering the system as a \emph{State Space}, this takes into account {\color{red}system dynamics}, {\color{blue}input effects}, and predicted {\color{green}disturbance effects}. This model used the data generated from Table \ref{tbl:powercomp}, and uses the system state $\vv{\bm{x}}$ to construct a model.
 
     \begin{equation}
             {\color{red} \frac{ \partial \vv{\bm{x}} }{ \partial t } }  = {\color{red} \bm{A} \vv{\bm{x}}} + {\color{blue}\bm{B}{\bm{u}} }+ {\color{green}\bm{D} d}
@@ -124,7 +124,7 @@ The design begin by considering the system as a \emph{State Space}, this takes i
 %        \end{equation}
 %
 
-For this \emph{State Space}, the angular frequency error term $\qquad e_{\omega} = \omega_{g} - \omega_{g0}$ was used.
+For this \emph{State Space}, the angular frequency error term $\qquad e_{\omega} = \omega_{g} - \omega_{g0}$ was used, and loads were modelled by time-varying disturbance terms $d_i$.
 
 \emph{Noiseless full-state feedback} was assumed, as it is known can observe each property individually, and known methods on noise rejection exist.
 Should a state not be observable, an \emph{observer} can be constructed to predict that state. \cite{power:controlman}
@@ -163,19 +163,19 @@ To obtain integral action from the LQR, an `augmented' state can be created, whi
             \end{bmatrix}
     \end{equation}
 
-This was repeated for an additional integral state - giving double integral (or gradient tracking) action.
+This was repeated for an additional integral state, giving double integral (or gradient tracking) action.
 
 
 \subsubsection{Cost Function Structure}
 
-Producing the optimal LQR controller involves minimising the cost function $J$: 
+Producing the optimal LQR controller involves minimising the cost function $J^{\prime}$: 
 \begin{equation}
-        J = \int^{\infty}_{0} (\, \vv{\bm{x}}^{\mathrm{T}} \bm{Q} \vv{\bm{x}} + \bm{u}^{\mathrm{T}} \bm{R} \bm{u} \,) \, \dd t
+        J^{\prime} = \int^{\infty}_{0} (\, \vv{\bm{x}}^{\mathrm{T}} \bm{Q} \vv{\bm{x}} + \bm{u}^{\mathrm{T}} \bm{R} \bm{u} \,) \, \dd t
 \end{equation}
 Such that with feedback  $\bm{u} = -\bm{G} \vv{\bm{x}}$ an obtain optimal state feedback matrix $\bm{G}$ can be obtained.
 MATLAB conveniently has the built-in function \code{\color{blue}lqr}, which takes as arguments the weighting matrices $\bm{Q}$ and $\bm{R}$ and returns the gain matrix $\bm{G}$.
 
-As an aside, \code{\color{blue}lqr} works as a \emph{known solution} to the above cost function is $G = R^{-1} ( B^T P)$, where $P$ is found from solving the Algebraic Riccati Equation: $A^T P + PA - PBR^{-1}B^TP = 0$. \cite{power:controlman}
+As an aside, \code{\color{blue}lqr} works as a \emph{known solution} to the above cost function is $\bm{G} = \bm{R}^{-1} ( \bm{B}^T \bm{P})$, where $\bm{P}$ is found from solving the Algebraic Riccati Equation: $\bm{A}^T \bm{P} + \bm{P}\bm{A} - \bm{P}\bm{B}\bm{R}^{-1}\bm{B}^T\bm{P} = 0$. \cite{power:controlman}
 
 This can be applied to a regular LQR and the LQR with augmented state, such that multi-state P and PI control can be achieved.
 

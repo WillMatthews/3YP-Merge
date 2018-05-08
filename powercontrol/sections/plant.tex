@@ -21,7 +21,7 @@ Cryogenic stills take on the order of hours to reach the temperature required fo
 \subsubsection{Assumptions}
 
 Components were assumed to behave as first-order, linear with no delays.
-There was also the assumption that there is no minimum utilisation for components, i.e. $0 \leq u \leq 1$ such that for example the electrolyser can drain any power between $0$ Watts and its maximum power, $P_{\text{max}}$.
+There was also the assumption that there is no minimum utilisation for components, i.e. the control signal is $0 \leq u \leq 1$ such that for example the electrolyser can drain any power between $0$ Watts and its maximum power, $P_{\text{max}}$.
 For material flow-rate, it was assumed the ammonia used in the turbine and the SOFC scaled linearly with utilisation, and gas generation from the electrolyser also scaled linearly with utilisation.
 
 \subsubsection{Simulink Model Structure and Initial Implementation}
@@ -47,13 +47,13 @@ The diagrams overleaf show the Simulink plant that was used with the this design
 \begin{figure}[p]
 \centering
         \includegraphics[scale=0.7]{images/plant/global.pdf}
-        \caption{Plant in Testing Environment}
+        \caption{Plant in Testing Environment, lookup tables are used to feed real world data into the plant, and appropriate variables observed}
         \label{fig:global}
 \end{figure}
 \begin{figure}[p]
 \centering
         \includegraphics[scale=0.6]{images/plant2/plant.pdf}
-    \caption{Plant with Controller Implemented}
+    \caption{Plant with Controller Implemented, each important component is placed into a \emph{subsystem}}
         \label{fig:plant}
 \end{figure}
 \begin{figure}[p]
@@ -65,7 +65,7 @@ The diagrams overleaf show the Simulink plant that was used with the this design
 \begin{figure}[p]
 \centering
         \includegraphics[scale=0.65]{images/plant2/tank.pdf}
-    \caption{Tank and Steady State Haber Column Model}
+    \caption{Tank and Steady State Haber Column Model, flow-rates are fed in and integrated for net volumes.}
         \label{fig:tank}
 \end{figure}
 \begin{figure}[p]

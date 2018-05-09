@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Overview}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Design objectives}{4}{subsection.1.2}
+\contentsline {section}{\numberline {2}Review of ammonia synthesis methods}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Haber process}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}KAAP Ruthenium-based synthesis}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Electrocatalysis}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Photocatalytic synthesis}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Method comparison}{7}{subsection.2.5}
+\contentsline {section}{\numberline {3}Thermodynamic modelling}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Equilibrium constant}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Reaction mixtures}{9}{subsection.3.2}
+\contentsline {section}{\numberline {4}Mechanism and Kinetics}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Reaction mechanism}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Rate of reaction}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Fugacities}{12}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Modelling}{13}{subsection.4.4}
+\contentsline {section}{\numberline {5}Catalyst}{14}{section.5}
+\contentsline {section}{\numberline {6}Reactor design}{15}{section.6}
+\contentsline {subsection}{\numberline {6.1}Reactor sizing}{16}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Material selection}{17}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Pressure drop}{18}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Heat exchanger}{18}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Quench cooling}{18}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Indirect cooling}{18}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.3}Design}{19}{subsubsection.6.4.3}
+\contentsline {section}{\numberline {7}Additional units}{20}{section.7}
+\contentsline {subsection}{\numberline {7.1}Separator}{20}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Compressor}{21}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Purge}{22}{subsection.7.3}
+\contentsline {section}{\numberline {8}Ammonia storage}{22}{section.8}
+\contentsline {subsection}{\numberline {8.1}High pressure storage}{23}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Low temperature storage}{23}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Design}{23}{subsection.8.3}
+\contentsline {section}{\numberline {9}Ammonia cracker}{25}{section.9}
+\contentsline {subsection}{\numberline {9.1}Design}{25}{subsection.9.1}
+\contentsline {section}{\numberline {10}Simulation, optimisation, and control}{26}{section.10}
+\contentsline {subsection}{\numberline {10.1}MATLAB modelling}{26}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}ASPEN simulation}{26}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Model limitations}{27}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Plant control}{28}{subsection.10.4}
+\contentsline {section}{\numberline {11}Economic assessment}{29}{section.11}
+\contentsline {subsection}{\numberline {11.1}Capital cost}{29}{subsection.11.1}
+\contentsline {section}{\numberline {12}Section Results and Conclusion}{31}{section.12}
+\contentsline {subsection}{\numberline {12.1}Results}{31}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Conclusion}{31}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Further Design}{31}{subsection.12.3}
+\contentsline {section}{\numberline {13}Safety and environmental assessment}{32}{section.13}
+\contentsline {subsection}{\numberline {13.1}Chemical risk and hazards}{32}{subsection.13.1}

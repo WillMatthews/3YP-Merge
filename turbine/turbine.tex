@@ -1,24 +1,24 @@
-\documentclass[11pt, oneside]{article}  
+%\documentclass[11pt, oneside]{article}  
 
-\usepackage{style-3yp} %this is the .sty file
-\usepackage{pdflscape}
-\lfoot{Enzia Schnyder} %your name in the footer
+%\usepackage{style-3yp} %this is the .sty file
+%\usepackage{pdflscape}
+%\lfoot{Enzia Schnyder} %your name in the footer
 
-\usepackage{float}
-\usepackage{longtable}
-\usepackage{gensymb} %degrees symbol
-\usepackage [version=4] {mhchem}
-\usepackage{microtype}
+%\usepackage{float}
+%\usepackage{longtable}
+%\usepackage{gensymb} %degrees symbol
+%\usepackage [version=4] {mhchem}
+%\usepackage{microtype}
 
 %table
-\usepackage{array}
-\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
-\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
-\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
-\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
-\usepackage{multirow}
+%\usepackage{array}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+%\newcolumntype{J}{>{\centering\arraybackslash}m{4.1cm}}
+%\newcolumntype{M}{>{\centering\arraybackslash}m{5cm}}
+%\newcolumntype{N}{>{\centering\arraybackslash}m{3.5cm}}
+%\usepackage{multirow}
 
-\begin{document}
+%\begin{document}
 \section{Gas Turbine}
 
 \subsection{Introduction}\label{sec:intro}
@@ -256,7 +256,7 @@ W_t = \dot{M}_{ex} \tilde{C}_{PP} \eta_t  (T_3 - T_{4s})
 Where $\dot{M}_{ex}$ is the molar flow rate of the exhaust gas ($kmol s^{-1}$), $\tilde{C}_{PP}$ is the molar specific heat capacity of the exhaust products ($kJ kmol^{-1} K^{-1}$), $\eta_t$ is the turbine isentropic efficiency, $T_3$ and $T_{4s}$ are the temperatures at the turbine inlet and the outlet for an isentropic process respectively ($K$). Using an isentropic efficiency of 0.8 \cite{boyce}, the molar flow rate was $0.3246kmol s^{-1}$
 
 \subsection{Turbine cycle modifications }
-The cycle efficiency obtained from the simple cycle turbine was 33.2\%, which is similar to other gas turbines of similar size on the market \cite{PDF:GE}. In order to increase cycle efficiency, modifications were added to the standard cycle including using a separate power turbine to increase efficiency, using waste oxygen from the electrolyser to decrease the mass flow rate of air and applying a heat engine to the hot exhaust leaving the turbine. 
+The cycle efficiency obtained from the simple cycle turbine was 33.2\%, which is in the range of typical simple cycle efficiencies of 21-45\% \cite{boyce}. In order to increase cycle efficiency, modifications were added to the standard cycle including using a separate power turbine to increase efficiency, using waste oxygen from the electrolyser to decrease the mass flow rate of air and applying a heat engine to the hot exhaust leaving the turbine. 
 
 \subsubsection{Split-shaft system}
 Due to the large size of the plant and the large variation in power output required, it is advantageous to use a split-shaft system which consists of 2 turbine. The first is used to transfer work to the compressor, which is called the gas generator. This must be coupled to the compressor and operates at a high pressure. The second is the power turbine used to generate power being supplied to the grid, which operates at a lower pressure. This turbine is coupled with the load and must operate at US mains frequency of 60Hz (3600rpm). As the rotational speeds of the two turbines in a split shaft system are independent, the gas generator speed can be varied with the power demand to operate at maximum cycle efficiency \cite{thermonotes}.  %show in diagram?
@@ -348,61 +348,6 @@ Where $T_C$ and $T_H$ are the cold and hot temperatures respectively (K) and the
 \end{center}  
 \end {table}
 
-\pagebreak
-\subsection{Turbine System Overview}
-The overall turbine diagram is shown in Figure \ref{fig:turbinediagram}. Stream and power data for one of the three turbines are shown in Tables \ref{tab:streamdata} and \ref{tab:powerdata}.
-
-\begin{figure} [h]
-\centering
-\includegraphics[width=0.58\textwidth]{./pictures/plantdiagram.png}
-  \caption{The turbine diagram, showing all streams, work inputs, outputs and heat inputs} \label{fig:turbinediagram}
-  \end{figure}
-  
-\begin {table} [h]
-\begin{center}
-\caption{Thermodynamic and composition data for all streams of a single turbine operating at full capacity} \label{tab:streamdata}
-\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c| }
- \hline
-  \multirow{2}{*}{State}  & \multicolumn{7}{|c|}{Molar flow rate (kmol/s)} & \multirow{2}{*}{Temperature (K)} & \multirow{2}{*}{Pressure (kPa)}\\ 
- \cline{2-8}
-  & $O_2$ & $N_2^*$ & $N_2$ & $H_2O$ & $NH_3$ & $H_2$ & Total  & &\\ 
-  \hline
-  1 &  \multirow{2}{*}{1.145} & \multirow{2}{*}{4.308} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{5.453} & 298.0 & 101.3\\ 
- \cline{1-1} \cline{9-10}
-  2  & & & & & & & & 735.1 & 1722\\
-  \hline
-  3  & \multirow{4}{*}{0.676} & \multirow{4}{*}{4.305} & \multirow{4}{*}{0.313} & \multirow{4}{*}{0.939} & \multirow{4}{*}{-} & \multirow{4}{*}{-} & \multirow{4}{*}{6.233} & 1700 & 1722\\
-  \cline{1-1} \cline{9-10}
-  4  & & & & & & & & 1334  & 572.8\\
-  \cline{1-1} \cline{9-10}
-  5  & & & & & & & & 917.5 & 101.3\\
- \hline
- 6  & - & - & 0.119 & - & 0.394 & 0.357 & 0.870 & 693 & 1722 \\ 
- \hline
-\end{tabular}
-\end{center}  
-\end {table} % state 6 pressure
-
-  \begin{table} [h]
-\begin{center}
-\caption{Heat inputs and work outputs of a single turbine} \label{tab:powerdata}
-\begin{tabular}{ |c|c| }
- \hline
-  $W_{T1}$ & 78.9 MW\\ 
- \hline
-  $W_{T2}$ & 89.3 MW\\
-  \hline
-  $W_E$ & 723.6 kW\\
- \hline
- $Q_{in}$ & 207 MW\\
- \hline
- Overall Efficiency & 0.4353\\ 
- \hline
-\end{tabular}
-\end{center}  
-\end{table}
-
-\pagebreak
 \subsection{Turbine Control}
 Variations in power demand of Maui would lead to different power demands from the gas turbine. Therefore a complex control system would need to be used to operate the turbine. A typical control system would have 3 controllers for temperature, acceleration and speed, which pass through a low value select as shown in Figure \ref{fig:turbinecont}. However, it was shown by Balagamuran (2009) \cite{balagamuran} that temperature and acceleration are rarely selected so can be neglected. A simplified speed controller can be used instead. The structure of the closed loop transfer function with negative feedback is shown below in Figure \ref{fig:control}.
 
@@ -436,7 +381,7 @@ T = 1.3(\dot{m}_f - 0.45) + 0.5(1 - N)
 \end{equation}
 \textbf{Rotor}: The rotor system is used to convert the torque signal to a rotor speed using the rotor time constant, which was found to be 20s from turbines of similar size \cite{balagamuran}.
 \begin{equation}
-N = (Turbine \ Torque - Load \ Torque)\frac{1}{20s}
+N = (\mathrm{Turbine \ Torque - Load \ Torque)}\frac{1}{20s}
 \end{equation}
 
  \begin{landscape}
@@ -497,6 +442,63 @@ The model results show a stable rise in power output for all cases, with peak ov
 \includegraphics[width=0.8\textwidth]{./pictures/scopenew.eps}
   \caption{The 1MW step response of rotor speed, reference speed and PID signal} \label{fig:scope}
   \end{figure}
+  
+\pagebreak
+\subsection{Turbine System Overview}
+The overall turbine diagram is shown in Figure \ref{fig:turbinediagram}. Stream and power data for one of the three turbines are shown in Tables \ref{tab:streamdata} and \ref{tab:powerdata}.
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=0.58\textwidth]{./pictures/plantdiagram.png}
+  \caption{The turbine diagram, showing all streams, work inputs, outputs and heat inputs} \label{fig:turbinediagram}
+  \end{figure}
+  
+\begin {table} [h]
+\begin{center}
+\caption{Thermodynamic and composition data for all streams of a single turbine operating at full capacity} \label{tab:streamdata}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c| }
+ \hline
+  \multirow{2}{*}{State}  & \multicolumn{7}{|c|}{Molar flow rate (kmol/s)} & \multirow{2}{*}{Temperature (K)} & \multirow{2}{*}{Pressure (kPa)}\\ 
+ \cline{2-8}
+  & $O_2$ & $N_2^*$ & $N_2$ & $H_2O$ & $NH_3$ & $H_2$ & Total  & &\\ 
+  \hline
+  1 &  \multirow{2}{*}{1.145} & \multirow{2}{*}{4.308} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{5.453} & 298.0 & 101.3\\ 
+ \cline{1-1} \cline{9-10}
+  2  & & & & & & & & 735.1 & 1722\\
+  \hline
+  3  & \multirow{4}{*}{0.676} & \multirow{4}{*}{4.305} & \multirow{4}{*}{0.313} & \multirow{4}{*}{0.939} & \multirow{4}{*}{-} & \multirow{4}{*}{-} & \multirow{4}{*}{6.233} & 1700 & 1722\\
+  \cline{1-1} \cline{9-10}
+  4  & & & & & & & & 1334  & 572.8\\
+  \cline{1-1} \cline{9-10}
+  5  & & & & & & & & 917.5 & 101.3\\
+ \hline
+ 6  & - & - & 0.119 & - & 0.394 & 0.357 & 0.870 & 693 & 1722 \\ 
+ \hline
+\end{tabular}
+\end{center}  
+\end {table} % state 6 pressure
+
+  \begin{table} [h]
+\begin{center}
+\caption{Heat inputs and work outputs of a single turbine} \label{tab:powerdata}
+\begin{tabular}{ |c|c| }
+ \hline
+  $W_{T1}$ & 78.9 MW\\ 
+ \hline
+  $W_{T2}$ & 89.3 MW\\
+  \hline
+  $W_E$ & 723.6 kW\\
+ \hline
+ $Q_{in}$ & 207 MW\\
+ \hline
+ \textbf{Overall Efficiency} & \textbf{0.4353}\\ 
+ \hline
+\end{tabular}
+\end{center}  
+\end{table}
+
+\pagebreak
+
 
 \subsection{Safety \& Risk}
 The running of a large gas turbine has many associated risks; A safety and risk analysis was carried out for the gas turbine using a hazard and operability (HAZOP) study. This is to identify all potential hazards associated with the gas turbine coming from deviation to intended operation procedure. Causes and methods to mitigate these risks are split by turbine part and are outlined in Table \ref{tab:HAZOP}. A safe turbine is achieved using continued monitoring at each section and high pressure relief valves.
@@ -515,14 +517,15 @@ The running of a large gas turbine has many associated risks; A safety and risk 
    \hline
    More air flow & Broken air flow valve & Combustion conditions are too lean, ammonia released as exhaust & Continued monitoring of inlet air flow, shut down compressor if there is too much air\\
    \hline
-   %No air flow & Blocked air flow valve & Compressor stall, build up of pressure in pipe & Continued monitoring of inlet air flow, Pressure relief valve in pipe\\
+   No air flow & Blocked air flow valve & Compressor stall, build up of pressure in pipe & Continued monitoring of inlet air flow, Pressure relief valve in pipe\\
+   \hline
    Contaminated air flow & Impurities at the air inlet & large impurities can affect reaction, debris can damage machinery & Monitor the composition of the air at the compressor inlet, put plant in an area with clean air, filter out large debris\\
  \hline
  Higher temperature & Temperature fluctuations during the year & Combustion temperature is hotter leading to greater $NO_x$, damage to combustion vessel & Monitor combustion temperature and adjust air flow rate accordingly\\
  \hline
     \multicolumn{4}{|c|}{\textbf{Combustor}}\\ 
    \hline
-  More fuel flow & Broken fuel valve & Increased combustion temperature, depletion of ammonia reserves & Continued monitoring of combustion chamber temperature, shut down if it exceeds 1800K\\
+  More fuel flow & Broken fuel valve & Increased combustion temperature, depletion of ammonia reserves, risk of explosion & Continued monitoring of combustion chamber temperature, shut down if it exceeds 1800K\\
   \hline
   \multirow{3}{*}{Less fuel flow} & Blocked fuel valve & Mixture may be too lean to burn, ammonia released as exhaust, stored ammonia supply affected, pressure build up in pipe & Continued monitoring of fuel flow, shut down if no combustion, pressure relief valve in pipe\\
    \cline{2-4}
@@ -550,22 +553,23 @@ The running of a large gas turbine has many associated risks; A safety and risk 
 \doublespacing
 
 \subsection{Costing}
-The main costs of the gas turbine are capital and operation and maintenance (O\&M) costs. Capital costs are the costs for building and installing the gas turbine system, operation and maintenance are required to keep the turbine running well throughout its lifetime. From literature, these are \cite{turbinecost} \cite{boyce}:
+The main costs of the turbine system are capital and operation and maintenance (O\&M) costs. Capital costs are the costs for building and installing the gas turbine system, operation and maintenance are required to keep the turbine running well throughout its lifetime. From literature, these are \cite{turbinecost} \cite{boyce}:
 \begin{equation}
-Capital \ Cost = 3 [Plant \ Output (kW)] x 763.6 [{Plant \ Output (MW)}^{-0.223}] = \$75.6 \ Million
+\mathrm{Capital \ Cost} = 3 \big [ \ \mathrm{Plant \ Output \ (kW)} \ \big ] x 763.6 \big [ \ {\mathrm{Plant \ Output  \ (MW)}}^{-0.223} \ \big ] = \$75.6 \ \mathrm{Million}
 \end{equation} 
 \begin{equation}
-O \& M \ Cost = 3 x 5.8 [Plant \ Output (MWh)]= \$1.91 \ Million / year
+\mathrm{O \& M} \ \mathrm{Cost} = 3 x 5.8 \big [ \ \mathrm{Plant \ Output (MWh)}\ \big ] = \$1.91 \ \mathrm{Million / year}
 \end{equation} 
+This is expensive, however because the turbines are used at peak hours when energy prices are high, they will generate a high revenue. Gas turbines have a lifespan of 30-40 years \cite{boyce} so will not to be replaced during the 25 years of plant operation.
 
 \subsection{Conclusions \& Further Work}
-This chapter shows that the gas turbine system is an effective way to generate power during sharp rises in demand. It is cost effective, reliable, safe and is able to respond to sharp changes in demand. The model also shows that it is relatively efficient for the amount of time that it is used. In addition, If demand should change by large amounts over time, more turbines can also be added or taken away from the plant due to their modular nature.
+This chapter shows that the gas turbine system is an effective way to generate power during sharp rises in demand. It is cost effective, reliable, safe and is able to respond quickly to varying demand. The model also shows that it is relatively efficient for the amount of time that it is used. It is also more sustainable than typical turbines as the only pollutants released are small amounts of $NO_x$.
 
 One of the largest limitations of the model used was its inability to accurately predict the $NO_x$ formation. The literature did not provide sufficient data for this problem but indicates that in addition to temperature, equivalence ratio also has a large effect on $NO_x$ formation in nitrogen based fuels. This should be studied further across different $NH_3/H_2$ mixtures and different equivalence ratios to find the optimal conditions emitting the least amount of $NO_x$. If necessary, reduction of up to 70\% of $NO_x$ emissions can also be performed after combustion using selective non-catalytic reduction \cite{NOxeffect}. %Nozari
-\bibliography{turbine}
+\bibliography{./turbine/turbine}
 %./turbine/
 \bibliographystyle{unsrt}
 %\printbibliography[heading=subbibliography]
 
 
-\end{document}
+%\end{document}

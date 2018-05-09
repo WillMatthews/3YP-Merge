@@ -1,0 +1,81 @@
+\documentclass[11pt, a4paper]{article}
+
+\title{Plant Safety}
+\author{James Rhodes}
+\date{\today}
+\usepackage{style-3yp}
+\usepackage{fullpage}
+\usepackage{mhchem}
+\usepackage{setspace}
+\usepackage{inputenc}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+%\usepackage{wraptable}
+\usepackage{mathtools}
+
+
+\usepackage{graphicx}
+\graphicspath{ {graphics/} } 
+%\linespread{1.5}
+
+
+
+\newcommand\tc{400}
+\newcommand\pbar{150}
+\newcommand\ammOUT{227.6}  %daily average ammonia production requirement tonnes/day
+\newcommand\conv{34}	%first pass conversion rate
+\newcommand\purge{5}
+
+
+\begin{document}
+
+%\maketitle
+%\tableofcontents
+{\renewcommand{\arraystretch}{1.0}
+\doublespacing
+\section{Safety and environmental assessment}
+
+Ammonia based energy storage systems possess a large number of inherent risks, due to their operating conditions and chemical risks of the materials used. Over the past 50 years one major risk has been plant fires despite a steady decreased over time \cite{Ojha2010}\cite{Williams1999}. A number of studies and risk reviews have been conducted on the operation and source of risks and failure within Ammonia synthesis plants \cite{Ojha2010}.
+\subsection{Chemical risk and hazards}
+Two most high risk elements of the process are hydrogen and ammonia storage and synthesis. In the case of hydrogen, the main factor is the storage of compressed gas. This is due to the risk of explosion of hydrogen gas under high temperature and pressure. Pressure relief valves can be used to prevent overpressurization and allow the release of gases before fracture of the storage vessel. However, pressure relief can form of explosive hydrogen gas clouds in certain atmospheric conditions and thus adequate monitoring of any valve flow must be made and subsequent ventilation of the outlet gas. 
+\\
+Ammonia has a number of chemical effects; whilst it is not considered a  flammable hazardous product due to its high autoignition temperature (651 \textdegree C) and an explosive limit of 16-25\% \cite{Ojha2010}, the first of these being its corrosivity to many metals and alloys including copper and zinc, this means that any storage, piping or fittings to come into contact with ammonia should be made only from iron and steel as these do not suffer from ammonia corrosion.
+Despite its lower density than air evidence suggests that the formation of ammonia gas clouds at ground level is possible in certain environmental conditions \cite{Griffiths1982}. These are largely dependent on wind speed and humidity. The impact of such releases can be varied, and the number of fatalities does not appear to correlate strongly to the amount of ammonia released. A 1400 ton release of ammonia in Lithuania (1989), the largest ever recorded, resulted in a 400km2 affected area and a fatality rate of 7 people, whilst a 38 ton release of ammonia in South Africa (1973) resulted in 18 fatalities,  the highest recorded involving ammonia. This was due to the proximity of a urban population, the speed of ammonia release - caused by brittle fracture - and the environmental conditions at the time\cite{Ojha2010}. 
+\\
+Gaseous ammonia can cause severe irritation to the eyes, nose throat and lungs at high enough concentrations whilst contact with liquid ammonia can cause cryogenic burns. The main hazards associated with the levels of toxicity of ammonia and the levels of ammonia associated with each hazard are presented below.
+
+\begin{table}[!htbp]
+	\begin{center} 
+		\caption{Ammonia exposure concentration hazards}
+		\begin{tabular}{ |l||l|  }
+			\hline
+			Hazard & Concentration (PPM)\\
+			\hline
+			Threshold limit value (TLV) & 25\\
+			\hline
+			Short term exposure limit (STEL)& 35\\
+			\hline
+			Immediately dangerous to life and health (IDLH)&300 \\
+			\hline
+			Severe eye and respiratory irritation - Permanent damage  &400-700\\
+			\hline
+			Convulsive coughing and bronchial spasms &1700\\
+			\hline
+			Life threatening   &2500 \\
+			\hline
+			Death from suffocation  &5000-10000 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Further information on the impact of exposure to ammonia can be found in the Acute Exposure Guideline Levels (AEGS) \cite{Michaels1998}. In order to minimise the hazards caused by ammonia release, a number of methods are available. The first of these is the positioning of the discharge valve sufficiently high above ground level to allow any high concentrations releases of ammonia to dilute. Furthermore, the installation of a mist extractor prevents liquid droplets of ammonia being released. This is needed as ammonia is toxic in  water ecosystems, a 600 ton spill in Arkansas, USA (1971) resulted in the death of thousands of fish \cite{Ojha2010}. 
+
+
+Despite these measures perhaps the most effective way of minimising the long-term risks is to limit the amount of gas released the plant. This is can be done by recycling streams. In the case of the purge a membrane unit to recover hydrogen. In the ammonia storage tank vented gas is recycled through a refrigeration loop. The ammonia storage tank must be located outside of any plant buildings and at away from any densely populated urban areas. potable water sources and clear of any combustible materials. The site must be easily accessible by road to emergency vehicles and personnel. During any unattended operation constant monitoring of all liquid and vapour levels must take place.
+
+\bibliography{v3bib}
+\bibliographystyle{abbrv}
+\end{document}

@@ -1,18 +1,18 @@
-\documentclass[11pt, oneside]{article}  
+%\documentclass[11pt, oneside]{article}  
 
-\usepackage{style-3yp} %this is the .sty file
-\lfoot{Enzia Schnyder} %your name in the footer
+%\usepackage{style-3yp} %this is the .sty file
+%\lfoot{Enzia Schnyder} %your name in the footer
 
-\usepackage{wrapfig}
-\usepackage{float}
+%\usepackage{wrapfig}
+%\usepackage{float}
 %table
-\usepackage{array}
-\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
-\newcolumntype{K}{>{\centering\arraybackslash}m{1.5cm}}
-\newcolumntype{J}{>{\centering\arraybackslash}m{2.8cm}}
-\usepackage{multirow}
+%\usepackage{array}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+%\newcolumntype{K}{>{\centering\arraybackslash}m{1.5cm}}
+%\newcolumntype{J}{>{\centering\arraybackslash}m{2.8cm}}
+%\usepackage{multirow}
 
-\begin{document}
+%\begin{document}
 
 \section{Heat Exchangers}
 \subsection{Introduction}
@@ -58,7 +58,7 @@ Stream & Composition & $\dot{m} $ $(kg/s) $& $C_p$ $(kJ kg^{-1} K^{-1})$  & $T_{
 \end{tabular}
 \end{center}  
 \end{table}
-Streams 2 and 7 are exhaust streams so they do not have to be fully cooled fully, and can be used as heating utilities with maximum power described in Table \ref{tab:heatexdata}. This results in a total heat demand of 4.54MW and a total heat supply of 0.689MW with additional 124MW provided by hot streams 2 and 7. Therefore heating power must be supplied from streams 2 or 7 to fulfill heating requirements. Due to the low outlet temperatures of hot streams, cooling utility will also be required.
+Streams 2 and 7 are exhaust streams so they do not have to be fully cooled fully, and can be used as heating utilities with maximum power described in Table \ref{tab:heatexdata}. This results in a total heat demand of 4.54MW and a total heat supply of 0.689MW with additional 124MW provided by hot streams 2 and 7. Therefore heating power must be supplied from streams 2 or 7 to fulfill heating requirements, extra heat that is not required for the network can be used as part of a cogeneration system.
 
 \subsection{Design Problem} \label{ssec:utility}
 
@@ -172,11 +172,11 @@ From Table \ref{tab:powerhex}, five heat exchangers and two cooling utility unit
 Streams 1, 6 and 7 in the network have variable flow rates. This means that to satisfy stream requirements at all times, there will occasionally have to be heat transferred across the pinch, increasing the utility requirements. A control system would have to be designed to adjust the mass flow rates of stream 7 and cooling water used for C1 and C2 according to the varying demand.
 
 \subsection{Costing}
-From section \ref{ssec:LM23}, the capital cost of a heat exchanger varies with heat exchange area $A (m^2)$ as:
+From section \ref{LM23}, the capital cost of a heat exchanger varies with heat exchange area $A (m^2)$ as:
 \setlength{\belowdisplayskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
 \setlength{\abovedisplayskip}{1pt} \setlength{\abovedisplayshortskip}{1pt}
 \begin{equation} 
-Cost \ (Million\ \$) = 130 \frac{A}{0.093}^{0.78}
+\mathrm{Cost \ (Million\ \$)} = 130 \frac{A}{0.093}^{0.78}
 \end{equation}
 
 The area of each heat exchanger was found using $Q = UA\Delta T_{LM}$
@@ -185,8 +185,8 @@ Where $Q$ is the heat transferred, $U$ is the overall heat transfer coefficient 
 \subsection{Conclusion}
 This chapter shows that the heat exchanger network satisfies all of the heating and cooling requirements in the plant and is a cost effective and reliable way to increase plant efficiency by reducing utility requirements from 5.2MW to 86.8kW.
 
-\bibliography{heatexreport}
+\bibliography{./turbine/heatexreport}
 %
 \bibliographystyle{unsrt}
 %\printbibliography[heading=subbibliography]
-\end{document}
+%\end{document}

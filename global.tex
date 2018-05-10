@@ -1,19 +1,13 @@
 \documentclass[11pt,oneside]{article}
 
 \usepackage{style-3yp}
-\usepackage{chapterbib}
-    \fancypagestyle{plain}{}
-%\usepackage[style=numerical]{biblatex}
 
-%\usepackage[firstpage]{draftwatermark}
-
-\usepackage{array,hhline,ragged2e}
 \begin{document}
 
-% Document Title Page
+% TITLEPAGE
 \includepdf{./titlepage/titlepg.pdf}
 
-% Table of Contents
+% TABLE OF CONTENTS AND SPACER PAGE
 \newpage
 \thispagestyle{empty}
 \begin{center}
@@ -32,49 +26,68 @@
 
 %%%%%%%% END TITLING AND ADMIN PREAMBLE %%%%%%%%%%%%
 
-% Introduction Chapter
+% INTRODUCTION
 \lfoot{William Matthews}
 \graphicspath{{./intro/}}
 \include{./intro/intro}
 
-% Air Separation Chapter
+% AIR SEPARATION
 \lfoot{Lai Chong}
 \graphicspath{{./airseparation/graphics/}}
 \include{./airseparation/airseparation}
 
-% Electrolysis Chapter
-%todo change section labels
+% ELECTROLYSIS
 \lfoot{Jing Yang}
 \graphicspath{{./electrolysis/}}
 \include{./electrolysis/hhh}
 
-% Haber Chapter
-\lfoot{James Rhodes}
-\graphicspath{{./ammoniasynth/graphics/}}
-\include{./ammoniasynth/V3}
-
-
+% HABER BOSCH
 \doublespacing
-% Ammonia Turbine Chapter
-%todo remove begin end document
+\lfoot{James Rhodes}
+\graphicspath{{./ammoniasynthJR/ammoniasynth/graphics/}}
+\include{ammoniasynthJR/ammoniasynth/V3}
+
+% GAS TURBINE
+\doublespacing
+\lfoot{Enzia Schnyder}
+\graphicspath{{./turbine/}}
+\include{./turbine/turbine}
+
+% SOFC
+\lfoot{Lewis Murray}
+\graphicspath{{./SOFC/}}
+\include{./SOFC/sofc}
+
+% HEAT EXCHANGERS
+\doublespacing
 \lfoot{Enzia Schnyder}
 \graphicspath{{./turbine/}}
 \include{./turbine/heatexreport}
-\include{./turbine/turbine}
-\include{./turbine/Sustainability}
 
-% SOFC Chapter
-\lfoot{Lewis Murray}
-\graphicspath{{./SOFC/}}
-\include{./SOFC/main}
-
-% Power Control Chapter
+% POWER CONTROL
 \lfoot{William Matthews}
 \graphicspath{{./powercontrol/}}
 \include{./powercontrol/PowerControl}
 
-% Conclusion Chapter
+% SUSTAINABILITY
+\doublespacing
+\graphicspath{{./turbine/}}
+\lfoot{Enzia Schnyder}
+\include{./turbine/Sustainability}
+
+% SAFETY
+\doublespacing
+\lfoot{James Rhodes}
+\graphicspath{./SafetyJR/}
+\include{SafetyJR/V3}
+
+% FINANCE
+\lfoot{Lewis Murray}
+\graphicspath{{./SOFC/}}
+\include{SOFC/cost}
+
+% CONCLUSION
 \lfoot{Lai Chong}
-\include{./conclusion/conclusion}
+\include{conclusion/conclusion}
 
 \end{document}

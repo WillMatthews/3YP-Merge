@@ -28,7 +28,7 @@
 \subsection{Introduction} 
 
 
-Hydrogen gas is required to be fed into the ammonia synthesis process before being converted to energy. The production of hydrogen is currently dominated by the steam reforming of methane gas which depends on the finite fossil fuel resources that also produce greenhouse gases. Water electrolysis combined with renewable energy is sustainable, produces almost zero carbon dioxide and is able to produce hydrogen at a high purity $(>99.9\%)$. Even with these advantages, water electrolysis only represents 4\% of global hydrogen production. This is largely due to high investment cost and energy efficiency problem. There are currently three main types of electrolysis: alkaline electrolysis, polymer electrolyte membrane electrolysis (PEM) and solid oxide electrolysis cell (SOEC). Only the first two types are commercially mature and available. Alkaline electrolysis is chosen because it has the largest power capacity to match the scale of this project. Alkaline electrolysis also has much lower investment cost (at least 10 times smaller)and larger durability compared with PEM. As the maximum power supply (276MW) is far above the power capacity of any commercial electrolysers (typical range is 3 - 6MW), multiple electrolysers are installed in parallel.
+Hydrogen gas is required to be fed into the ammonia synthesis process before being converted to energy. The production of hydrogen is currently dominated by the steam reforming of methane gas which depends on the finite fossil fuel resources that also produce greenhouse gases. Water electrolysis combined with renewable energy is sustainable, produces almost zero carbon dioxide and is able to produce hydrogen at a high purity $(>99.9\%)$. However, water electrolysis only represents 4\% of global hydrogen production.\cite{reversible} This is largely due to high investment cost and energy efficiency problem. There are currently three main types of electrolysis: alkaline electrolysis, polymer electrolyte membrane electrolysis (PEM) and solid oxide electrolysis cell (SOEC). Only the first two types are commercially mature and available. Alkaline electrolysis is chosen because it has the largest power capacity to match the scale of this project. Alkaline electrolysis also has much lower investment cost and larger durability compared with PEM. As the maximum power supply (276MW) is far above the power capacity of any commercial electrolysers (typical range is 3 - 6MW\cite{gibbs}), multiple electrolysers are installed in parallel.
 The main objective of the design is to increase the system efficiency while maintaining the required hydrogen production rate. The aim of this chapter is to lay a theoretical basis, present a detailed model  and examine the recent trends in alkaline electrolysis technology. 
 
 \subsubsection{Process diagram} 
@@ -50,10 +50,10 @@ The process flow diagram in Figure \ref{fig:overview} shows the electrolytic cel
 %\includepdf[pages=-,angle=90]{cadcad.pdf}
 
 \subsubsection{Dynamic system response}
-Because the power output from the wind farm is variable, intermittent and unpredictable, the electrolyser is required to cover a wide load range(typical load range is 100\% - 20\%). Some alkaline electrolysers can operate at a small overload, but they are not considered here because they lowers lifetime and efficiency. The lower limit is set for gas purity concerns: if the wind energy is below a minimum limit, the electrolyser can be either shut down or operate at a standby mode (energy is supplied to the stack to maintain a minimum hydrogen production rate). A complete shutdown would require a rather time-consuming start-up process while operating at the standby mode lowers efficiency, and therefore a compromise has to be made. In this model, the electrolyzers have multiple stacks that can be shut-down independently and automatically in order to reduce the minimum power input requirement and thus improve the system flexibility.  In addition, the electrolyser also needs to have a fast response in order to capture the peaks of he energy supply. Despite the dynamic nature of hydrogen production, the hydrogen consumption rate of the ammonia synthesis process is constant and therefore a hydrogen storage system is also required to store the excess energy. \cite{purity}\cite{gas} 
+Because the power output from the wind farm is variable, intermittent and unpredictable, the electrolyser is required to cover a wide load range (typical load range is 100\% - 20\%\cite{gas}). Some alkaline electrolysers can operate at a small overload, but they are not considered here because they lowers lifetime and efficiency. The lower limit is set for gas purity concerns: if the wind energy is below a minimum limit, the electrolyser can be either shut down or operate at a standby mode\cite{gas} (energy is supplied to the stack to maintain a minimum hydrogen production rate). A complete shutdown would require a rather time-consuming start-up process while operating at the standby mode lowers efficiency, and therefore a compromise has to be made. In this model, the electrolyzers have multiple stacks that can be shut-down independently and automatically in order to reduce the minimum power input requirement and thus improve the system flexibility.  In addition, the electrolyser also needs to have a fast response in order to capture the peaks of he energy supply. Despite the dynamic nature of hydrogen production, the hydrogen consumption rate of the ammonia synthesis process is constant and therefore a hydrogen storage system is also required to store the excess energy. 
 %?????
 \subsubsection{Specification}
-In industry, the typical electrical energy input efficiency is 54 kwh/$kg_{H2}$\cite{specification}. The mean hydrogen production rate is at a surplus to the hydrogen consumption rate to ensure that a constant hydrogen flow from the storage can be achieved. The water conversion rate is assumed to be 80\%. Table \ref{tab:specification} shows the flow rate and power requirement as well as the system and dynamic operation parameters. The hydrogen purity requirement is high because oxygen could adsorb on the surface of the ammonia synthesis catalyst and poison it. 
+In industry, the typical electrical energy input efficiency is 54 kwh/$kg_{H2}$\cite{specification}. The mean hydrogen production rate is at a surplus to the hydrogen consumption rate to ensure that a constant hydrogen flow from the storage can be achieved. The water conversion rate is assumed to be 80\%. Table \ref{tab:specification} shows the flow rate and power requirement as well as the system and dynamic operation parameters. The hydrogen purity requirement is high because oxygen could adsorb on the surface of the ammonia synthesis catalyst and poison it. \cite{purity}
 \begin{singlespace}
 \begin{table}[H]
 \begin{tabular}{ |c|c|c|c| } 
@@ -84,7 +84,7 @@ Ramp-up $\%_{(full load)}$/second& 10 & Ramp-down$\%_{(full load)}$/second  &  1
 
      
 \subsection{Fundamentals} 
-Electrolysis is a non-spontaneous redox reaction that is carried out in the electrolytic cell, with the electrolyser filled with electrolytes (anion and cation) to improve conductivity. When a DC current passes through the electrodes, hydrogen is produced at the cathode, and oxygen is generated at the anode, it is important to note that the metal from electrolyte should be more reactive than hydrogen, so that hydrogen is produced instead of metal. The electrolyser is divided into the anode chamber and the cathode chamber by the diaphragm, with electrodes placed in each chamber. The reaction in alkaline solution is as follows:
+Electrolysis is a non-spontaneous redox reaction that is carried out in the electrolytic cell, with the electrolyser filled with electrolytes (anion and cation) to improve conductivity. When a DC current passes through the electrodes, hydrogen is produced at the cathode, and oxygen is generated at the anode. The electrolyser is divided into the anode chamber and the cathode chamber by the diaphragm, with electrodes placed in each chamber. The reaction in alkaline solution is as follows:
 \begin{equation} 
 Cathode \quad 2H_2 O(l) + 2e^- \rightarrow H_2(g) + 2OH^-(aq)\quad   \phi_0=-0.828V
 \end{equation} 
@@ -94,18 +94,17 @@ Anode \quad 4OH^-(aq) \rightarrow O_2(g) +2H_2O(l) +4e^- \quad \phi_0=0.401V
 \begin{equation} 
 The \ overall \ reaction \quad H_2O(l) \rightarrow \frac{1}{2} O(g) + H_2(g) 
 \end{equation} 
-The molar rate of hydrogen production for cells connected in series can be determined by considering Faraday's law, which presents as 
+The molar rate of hydrogen production for cells connected in series can be determined by considering Faraday's law, which presents as\cite{gibbs} 
 \begin{equation} 
 \ f_{H2} = \eta_F \frac{N_{cell}I_{cell}}{zF} =\eta_F\frac{N_{cell} jA}{zF} 
 \end{equation} 
-where $\eta_F$ is the Faraday efficiency, F is Faraday's constant, z is the number of electrons transferred, which is 2 in this reaction. $n_c$ is the number of cells, I is total current, j is current density, and A is cell area.It is shown in the equation that the production rate is directly proportional to the current. \cite{rate} The objective is to minimise power consumption and increase efficiency, both electrochemical and thermodynamic effects should be taken into account for optimising the operation conditions.
-
+where $\eta_F$ is the Faraday efficiency, F is Faraday's constant, z is the number of electrons transferred(2 in this reaction). $n_c$ is the number of cells, I is total current, j is current density, and A is cell area. It is shown in the equation that the production rate is directly proportional to the current.
 
 \subsubsection{Thermodynamics} 
-The electrolysis process is an endothermic reaction, the enthalpy change is expressed as
+The electrolysis process is an endothermic reaction, the enthalpy change is expressed as\cite{gibbs}
 \begin{equation} 
-\triangle H =\triangle G + T\triangle S = zF[T(\frac{\partial U_{rev}}{\partial T})_p - U_{rev}]
-\end{equation} 
+\triangle H =\triangle G + T\triangle S 
+\end{equation}
 where $\triangle G $ is the Gibbs free energy change, which is the energy required to split water and is therefore the minimum electrical energy required. $T\triangle S$ represents thermal energy, $\triangle S$ is the change of the reaction entropy. $U_{rev}$ is the reversible voltage and p is the prevailing pressure (Pa). F is Faraday's constant, and z is the number of electrons transferred, which is 2 in this reaction.\cite{gibbs}  
 Under standard conditions (1 atm, 25$^{\circ}$ C), $\triangle H^0 = 285.8 kJ/mol, \triangle S^0 = 163.14$. Therefore, $\triangle G^0 = 237.2 kJ/mol.$ With increasing temperature, the energy required for decomposing water is reduced. This is why high temperature electrolysis method is adopted for the electrolysis process.The minimum voltage required (the reversible voltage) can be calculated by
 \begin{equation} 
@@ -304,9 +303,11 @@ The void fraction is related by bubble coverage by\cite{activation2}
 The polarisation curve of the alkaline electrolysis cell is plotted in figure 8 a), it is observable that the total cell voltage increases with higher current density. This is largely due to the increased contribution from ohmic losses,especially from bubble formation, whereas the curve for activation polarisation actually becomes flatter at higher current density. This means that a lower current density will lower the energy consumption and thus increase the system efficiency. However, the hydrogen production rate, which increases with higher current density,  is also an important factor to consider along with the system efficiency.  Electrolyser degradation and safety issues also influence the choice of current density. The rate of electrolyser degradation increases rapidly with higher current density and this will thus increase the investment cost. The large amount of heat produced as a result of higher current density, if poorly managed, can be dangerous. In addition, gas crossover is more significant at low current density, and this is because although the amount of gases crossing over the membrane remains the same, there are smaller amounts of gases produced to dilute the effects. The result is a highly flammable mixture once it reaches a certain limit. In industry, a compromise has to be made. The current density is usually kept between 1000 - 3000$A/m^2$. \cite{currentdensity}\cite{currentdensity2}
 
 \begin{figure}[h]
-\includegraphics[width=5.5cm]{total.eps}
-\includegraphics[width=5.5cm]{cellT.eps}
-\includegraphics[width=5.5cm]{cellP.eps}
+\centering
+\includegraphics[width=9cm]{total.eps}
+\newline
+\includegraphics[width=7cm]{cellT.eps}
+\includegraphics[width=7cm]{cellP.eps}
 \caption{a)Total cell voltage showing cumulative effects of reversible voltage, activation and ohmic overpotential. b)Total cell voltage against temperature. c)Total cell voltage against pressure}
 \label{fig:}
 \end{figure}
@@ -412,21 +413,7 @@ The electrolyser efficiency at different temperature and pressure with fixed cur
  %The configuration of the wind power generation sys-tem considered in this study is shown  below:
 %In order to get the Maximum Power, the system will use wind turbine's Maximum Power Point Tracking method. MPPT is a fully electronic system that varies the electrical operating point of the modules so that the modules are able to deliver maximum available power. Power captured from wind can be calculated using
 %\begin{equation} 
-%P=\frac{1}{2} \pi \rho C_p(\lambda , \beta)R^2v^3
-%\end{equation} 
-%where $\rho$ is the density of air, $\ C_p $  is power coefficient, R is blade radius, $\lambda$ is tip-speed ratio, $\beta$ is pitch angle, and v is the speed of wind.
-%The wind power E, produced by rotor rotating, is 
-%\begin{equation} 
-%E= \frac{1} {2} m V^2-\frac{1}{2} m{V_2}^2 = \frac{1}{2}\rho AV_1(V^2-{V_2}^2) 
-%\end{equation} 
-%where V is the wind speed before the wind turbine, V1 is the actual speed through the wind turbine, V2 is the speed after the wind turbine. A is the Rotor section.
-%In order to get the Maximum Power, the system will use wind turbine's Maximum Power Point Tracking method. MPPT is a fully electronic system that varies the electrical operating point of the modules so that the modules are able to deliver maximum available power.  So the output power of wind turbine power system is shown below
 
-%\begin{figure}[h] 
-%\centering
-%\includegraphics[width=12cm] {wind.png} 
-%\caption{Wind speed and Maximum Power} 
-%\end{figure} 
 
 \subsubsection{Configuration} 
 Currently there are two kinds of electrolyser configuration: unipolar and bipolar. In a unipolar configuration(or tank-type), the electrodes with the same polarity are connected in parallel, therefore the total cell voltage is the same as the voltages of individual cells, and the total current is the sum of currents in each cell. A bipolar electrolyser usually has a larger number of cells with the electrodes connected in series, and the electrodes each has both the positive and negative polarities. So current is the same in each cell and at the terminals. Unipolar electrolysers operate at a low voltage level of 1.9 - 2.5 V, but they require a high level of current. On the other hand, bipolar configuration requires a low current but a voltage of $V_{cell} \times (n-1)$, which is about 35-600V. $V_{cell}$ is the voltage for each cell and n is the number of electrodes. The industrial electrolysers are mostly bipolar electrolysers.
@@ -549,11 +536,12 @@ The electrolyzer is designed so that the maximum hydrogen flow rate can be achie
 %\begin{equation}
 %P = N_{cell} V_{cell}  I_{cell} = N_{cell} V_{cell}  J_{cell} A
 %\end{equation}
-Assuming a typical cell area of 1$m^2$. The total number of cells required is 48970. Theoretically it is preferable to use a larger number of stacks with fewer cells in one stack, since this can reduce the power loss by reducing the minimum allowed input power. However,  the cost of a large amount of stacks could be quite high and they would also take up a large amount of space. Figure 15 shows the theoretical cumulative hydrogen production in January with different stack number. It can be seen that when the stack number is above 200, the hydrogen waste is less than 5\%. Therefore a stack number of 200(which could be divided into different electrolysers) and 245 cells per stack is an appropriate choice.
+Assuming a typical cell area of 1$m^2$. The total number of cells required is 48970. Theoretically it is preferable to use a larger number of stacks with fewer cells in one stack, since this can reduce the power loss by reducing the minimum allowed input power. However,  the cost of a large amount of stacks could be quite high and they would also take up a large amount of space. Figure 15 shows the theoretical cumulative hydrogen production in January with different stack number. It can be seen that when the stack number is above 200, the hydrogen waste is less than 5\%. Therefore a stack number of 200 (which could be divided into different electrolysers) and 245 cells per stack is an appropriate choice.
  \begin{figure}[H] 
  \centering
 \includegraphics[width=7cm]{stack.eps}
 \caption{Theoretical cumulative hydrogen production in January against number of stacks}
+\label{fig:}
 \end{figure}
  
 
@@ -646,14 +634,19 @@ A system simulation is carried out based on power input profile,  demonstrating 
 \includegraphics[width = 17cm]{cumulative.eps}
 \caption{Cumulative production of hydrogen }
 \end{figure}
-\subsubsection{Costing}
+
+
+
+
+\subsection{Costing}
+A rough capital cost estimate of the hydrogen production system is shown in Table 10. The total capital cost include direct field cost, indirect field cost and home office/miscellaneous cost. There will also be operating costs such as water and maintenance. Most materials need to be transported, installed and maintained, which would involve associated labour cost, which is assumed as 10\% of the material cost for static equipments, and 5\% for rotating equipments. The component costs are estimated from industry data.\cite{cost} \cite{cost1} \cite{cost3}
 \begin{singlespace}
 \begin{longtable}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
 %\begin{table}[H]
 %\begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
  \hline
  \rowcolor{burntsienna}
-  & Labour \$ & Material \$ & Total\$\\
+  & Labour \$ & Material \$ & Total \$\\
   \hline
   \rowcolor{cyan}
    \multicolumn{4}{ | c |}{Direct Field Cost} \\
@@ -661,20 +654,20 @@ A system simulation is carried out based on power input profile,  demonstrating 
   \rowcolor{LightCyan}
   \multicolumn{4}{ | c |}{Equipment Cost} \\
   \hline
-  Vessels & 11350.74 & 113507.38 & 124858.12\\
+  Vessels & 19,380  & 193,800  & 213,180\\
   \hline
-  Hydrogen Compressor & 22701.48 & 454029.51 & 476730.99\\
+  Compressor & 421,550 & 8,431,000 & 8,852,550\\
   \hline
-  Drums/Filters & 4540.3  & 45402.95 & 49943.25\\
+  Drums/Filters & 91,720  & 917,200 & 1,008,920\\
   \hline
-  Cells & 56753.69 & 1225900 & 1282600 \\
+  Stacks & 522,590 & 5,225,900 & 5,748,490 \\
   \hline
-  Heat Exchangers & 4540.3 & 90805.9 & 95346.2\\
+  Heat Exchangers & 5,100 & 102,000 & 107,100\\
   \hline
-  Pumps & 9080.59 & 181611.80 & 190692.4\\
+  Pumps & 735 & 14,700 & 15,435\\
   \hline
   %\rowcolor{cyan}
-  \textbf{Subtotal Major Equipment} & \textbf{108967.08} & \textbf{2111237.23} & \textbf{2220204.31}\\
+  \textbf{Subtotal Major Equipment} & \textbf{1,061,075} & \textbf{14,884,600} & \textbf{15,945,675}\\
    \hline
     \rowcolor{LightCyan}
    \multicolumn{4}{ | c |}{Bulk Material Cost} \\
@@ -682,88 +675,91 @@ A system simulation is carried out based on power input profile,  demonstrating 
     \multicolumn{4}{ | c |}{\textbf{Civil/Structure/Architectural}} \\
    %Civil/Structure/Architectural  \\
    \hline 
-   Foundations & & 28376.854  & 28376.84\\
+   Foundations & & 38,379  & 38,379\\
    \hline
-   Roads/Paving  & & 9080.59  & 9080.59\\
+   Roads/Paving  & & 9,080  & 9,080\\
    \hline
-   Building &  &113507.38  & 113507.38\\
+   Building &  &213,507  & 213,507\\
    \hline
-   Structural Steel & & 11350.74 & 11350.74\\
+   Structural Steel & & 16,350 & 16,350\\
    \hline
     \multicolumn{4}{ | c |}{\textbf{Piping/Instruments}} \\
    \hline
-   Pipe & 14755.96 & 34052.21 & 48808.17\\
+   Pipe & 4,605 & 46,050 & 50,655\\
    \hline
-   Fittings & 9080.59 & 9080.59 & 18161.18\\
+   Fittings & 1,235 & 12,350 & 13,585\\
    \hline
-   Valves & 11350.74 & 73779.80  & 85130.53\\
+   Valves & 10,034 & 100,340  & 110,374\\
    \hline
-   Cables & 13620.89 & 34052.21 & 47673.10\\
+   Cables & 3,805 & 38,050 & 41,855\\
    \hline
-   Instruments & 22701.48 &22701.48  & 45402.95\\
+   Instruments & 2,270  & 22,701  & 24,971\\
    \hline
-   Control Valves & 17026.11 & 45402.95 & 62429.06\\
+   Control Valves & 6,540 & 65,402 & 71,942\\
    \hline
     \multicolumn{4}{ | c |}{\textbf{Electrical}} \\
    \hline
-   Cables &  13620.89  & 34052.21 & 47673.10\\
+   Cables &  3,405  & 34,050 & 37,455\\
    \hline 
-   DCS cabinet and card & 5675.37 & 4502.95 & 51078.32\\
+   DCS cabinet & 6,502 & 65,020 & 71,522\\
    \hline
     \multicolumn{4}{ | c |}{\textbf{Paintings}} \\
    \hline
-   Piping Painting & 5675.37 & & 5675.37\\
+   Piping painting & 7,720 & & 7,720\\
    \hline
-   Equipment insulation & 9080.59 & & 9080.59\\
+   Equipment painting & 12,350 & & 12,350\\
    \hline
    \multicolumn{4}{ | c |}{\textbf{Insulation}} \\
    \hline
-   Piping Insulation & 17026.11 & & 17026.11\\
+   Piping Insulation & 27026 & & 27026\\
    \hline
-   Equipment Insulation & 17026.11 & & 17026.11\\
+   Equipment Insulation & 27026 & & 27026\\
    \hline
-   \textbf{Subtotal Bulk Materials} & \textbf{303064.70} & \textbf{292849.04} & \textbf{595913.73}\\
+   \textbf{Subtotal Bulk Materials} & \textbf{58,466} & \textbf{661,279} & \textbf{719,745}\\
    \hline
 
-   \textbf{Total Direct Field Materials} & \textbf{412031.78} & \textbf{2404086.27} & \textbf{2816118.05}\\
+   \textbf{Total Direct Field Materials} & \textbf{ 1,119,541} & \textbf{15,545,879} & \textbf{16,665,420}\\
    \hline
    \rowcolor{cyan}
  \multicolumn{4}{ | c |}{Indirect Field Cost} \\  
  \hline
- Construction management & 45402.95 & & 45402.95\\
+ Construction management & 45,403 & & 45,403\\
  \hline
- Cranes & 56753.69 & & 56753.69\\
+ Cranes & 78,750 & & 78,750\\
  \hline
- Scaffolding & 30646.99 & & 30646.99\\
+ Scaffolding & 40,646 & & 40,646\\
  \hline
-\textbf{Total Indirect Field Costs} & \textbf{132803.63} & & \textbf{132803.63}\\
+\textbf{Total Indirect Field Costs} & \textbf{164,799
+} & & \textbf{164,799
+}\\
  \hline
  \hline
  \rowcolor{cyan}
  \multicolumn{4}{ | c |}{Home Office/Miscellaneous} \\
  \hline
- Detailed Engineering & 31818.18 & & 31818.18 \\
+ Detailed Engineering & 41,818 & & 41,818 \\
  
  \hline
  
  
- Start-up & 12121.21 & & 12121.21\\
+ Start-up & 12,121 & & 12,121\\
  \hline
 \rowcolor{burntsienna}
- Total Costs Excluding UAP & 588774.81 & 2404086.27 &2992861.07\\
+ Total Costs Excluding UAP &  1,338,279 & 15,545,879 & 16,884,158\\
  \hline
  
-Unallocated Provision  & & & 149643.05\\
+Unallocated Provision  & & & 249,300\\
 \hline
 \rowcolor{burntsienna}
-Total Project Cost & & & 3142504.13\\
+Total Project Cost & & & 15,795,179\\
 \hline
 %\end{tabular}
 \end{longtable}
 \end{singlespace}
 
 \subsubsection{Sustainability}
-Alkaline electrolysis derived by renewable energies has a great potential to become a more vital hy- drogen production strategy due to its sustainable nature. Water is the only material input to the system and no greenhouse gases such as carbon dioxide will be produced in the process. While al- kaline electrolysis has a lower energy efficiency than the conventional hydrogen production methods such as natural gas reforming, the continuous advances in the electrolysis technologies could lower the production costs and make it more competitive and widely used in large scale projects.
+The Paris agreement has set a target to limit the global temperature rise to 2$^oC$ above the pre-industrial level, corresponding to a
+Carbon budget of 790GtC. It has become a necessity for countries to develop long-term decarbonisation strategies.Therefore alkaline electrolysis derived by renewable energies has a great potential to become a more vital hydrogen production strategy due to its sustainable nature. Water is the only material input to the system and no greenhouse gases such as carbon dioxide will be produced in the process.The electricity comes from wind power station which is also sustainable. While alkaline electrolysis has a lower energy efficiency than the conventional hydrogen production methods such as natural gas reforming, the continuous advances in the electrolysis technologies could lower the production costs and make it more competitive and widely used in large scale projects.
 \subsubsection{Safety}
 The major risk in the electrolysis plant is the flammable mixture of oxygen and hydrogen gases.
 Hydrogen has the NFPA 704's highest rating of 4 on the flammability scale. \cite{safety} This can happen if the gas crossover during the electrolysis is above the allowed limit, or if hydrogen is leaked to the air which is difficult to detect since its colourless, odourless, and tasteless. Hydrogen gas has a flammability range of 4-75\% in the air and it also has a very low ignition energy(as low as 17$\mu$J).To avoid this problem, 
@@ -772,30 +768,30 @@ before driving the hydrogen production equipment, it is necessary to fill the sy
 
 {\fontsize{8pt}{7.5pt}\selectfont\tabcolsep=2.5pt\renewcommand\arraystretch{1.5}
 \begin{longtable}{
-|m{1.75cm}<{\centering}|m{3cm}<{\centering}|m{3cm}<{\centering}
+|m{1.75cm}<{\centering}|m{3.1cm}<{\centering}|m{4.5cm}<{\centering}
 |m{1.25cm}<{\centering}|m{1.1cm}<{\centering}
-|m{3.5cm}<{\raggedright}|}
+|m{4cm}<{\raggedright}|}
  \hline
  \rowcolor{cyan}
 Deviation &Causes &Unmitigated Consequences &Likelihood &Risk Ranking &Recommendations\\
 \hline
 \multirow{11}*{More Flow} & {Hydrogen/oxygen control valve failure} &
 {Cell reaction pressure drop, Electrolysis efficiency will be reduced} & Middle & Low & Add high flow alarm to response\\
-\cline{2-7}
+\cline{2-6}
 &{Cooling Water hand valves fully open by human error} &
 No Hazard identified &&&\\
-\cline{2-7}
+\cline{2-6}
 &{Caustic control valve failed to fully open} &
 {High level in cell, lead to overpressure, potential fatality} &
  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} &
 {Add high level alarm to response; \par
 Add high high level interlock to
 trip reaction cell.}\\
-\cline{2-7}
+\cline{2-6}
 &{Feed water valve fully open by human error} &
 {Flooding in the separator} &
  Low & Low & Add high level alarm to response;\\
-\cline{2-7}
+\cline{2-6}
 &{Nitrogen hand valve open by human error} &
 Production unqualified. & Low &Low &
 {Add blind flange between the two hand valves.}\\
@@ -806,27 +802,27 @@ Production unqualified. & Low &Low &
  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & {Add high Pressure alarm to response; \par
 Add high high Pressure interlock
 to trip reaction cell.}\\
-\cline{2-7}
+\cline{2-6}
 &{Cooling Water hand valves fully close by human error} & {Water carried with H2/O2, production unqualified} &  Low & Low& {Add high temperature alarm for the production to response}\\
-\cline{2-7}
+\cline{2-6}
 &{Caustic control valve failed fully closed} & {Low level in cell, lead to reaction stop} &  Low &Low &Add Low level alarm to response.\\
-\cline{2-7}
+\cline{2-6}
 &{Feed water valve fully closed by human error} & {Low level in cell, lead to reaction stop} &  Low & Low & Add Low level alarm to response.\\
-\hhline{~|------}
+\hhline{~|-----}
 &Pump Failure &
 {Backflow of gases, causing flammable gas mixture} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & Use valves to prevent gas backflow\\
-\hhline{~|------}
+\hhline{~|-----}
 &Facility Leakage & {Hydrogen leak into facilities, risk of explosion} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & { Install hydrogen sensor and leak alarm for emergency shut down}\\
-\hhline{~|------}
+\hhline{~|-----}
 &Valve or pipe blockage & Bursting of pipes &Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Install blockage detectors\\
-\hhline{~|------}
+\hhline{~|-----}
 &Water level too low & Leakage current & Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Check the level controller\\
 \hline
-No flow &\multicolumn{6}{c|}{Refer to less flow}\\
+No flow &\multicolumn{5}{c|}{Refer to less flow}\\
 \hline
-\multirow{4}*{Reverse Flow}& {Caustic source shut down due to unkown reason} & {Hydrogen reverse to caustic system, cause jet fire if leaked, potential people injury} & Safety & Low & Middle & Add check valve.\\
-\cline{2-7}
-&{Feed water source shut down due to unkown reason} & {Hydrogen reverse to feed water system, cause jet fire if leaked, potential people injury} & Low & Low & Add check valve.\\
+\multirow{4}*{Reverse Flow}& {Caustic source shut down due to unknown reason} & {Hydrogen reverse to caustic system, cause jet fire if leaked, potential people injury} & Low & Middle & Add check valve.\\
+\cline{2-6}
+&{Feed water source shut down due to unknown reason} & {Hydrogen reverse to feed water system, cause jet fire if leaked, potential people injury} & Low & Low & Add check valve.\\
 \hline
 High Pressure & {Pressure control system fails; Blockage; Pump failures} & {Facilities breakdown, potential explosion; low gas purity} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} &
 Pressure sensor installed for
@@ -866,10 +862,15 @@ Install PH meter linked to alarms\\
 
 
 \subsection{Conclusion} 
-Alkaline electrolysis integrated with wind energy to produce hydrogen is a mature technology with a great potential to reach a larger production scale. 
-This chapter reviewed the thermodynamics and kinetic analysis of the electrolysis system, as well as several sources of inefficiency. It was found that choosing optimum operating conditions such as elevated temperature and pressure, proper cell geometry and material selections are the key to improve system performance. 
+Alkaline electrolysis integrated with wind energy to produce hydrogen is a mature technology with a great potential to reach a larger production scale.
+The system performance can be improved by operating at elevated pressures and temperatures, as well as adopting the latest technology such as zero-gap configuration. The materials chosen are both cost-effective and able to maximize efficiency. The system is able to produce hydrogen gas at a high purity with an HHV efficiency of around 73\%, and is able to respond to dynamic wind power input with a wide load range. The plant is sustainable and generally cost-effective. With the continuous development of more advanced electrolysis technology and the upward trend of using renewable energies globally, the system will be able to operate at a higher efficiency and larger scale to become more competitive than the traditional hydrogen production methods.
 
-......Justify costing data sources;finish sustainability,Enlarge some images that are currently small; fix merge errors;explain control part in more details; Write more on conclusion part....
+
+
+
+
+
+..;finish sustainability,.
 
 \singlespacing
 %\linespread{0.4}
@@ -887,16 +888,16 @@ L. Kit Heung, L. Kit Heung, Savannah River Technology Center Aiken, SC 29808 USA
 Study on development of water electrolysis in the EU Fuel Cells and Hydrogen Joint Undertaking
 \bibitem{cons}
 Above Ground Vs. Underground Storage Tanks: Pros and Cons,http://www.communicationsetc.net/above\-ground\-vs\-underground\-storage\-tanks\-pros\-and\-cons/
-\bibitem{rate} 
-Alhassan Salami Tijania, Nur Afiqah Binti Yusupb, A. H. Abdol Rahimc
+%\bibitem{rate} 
+%Alhassan Salami Tijania, Nur Afiqah Binti Yusupb, A. H. Abdol Rahimc
 %\textit{The \LaTeX\ Companion}. 
-Mathematical modelling and simulation analysis of advanced alkaline electrolyzer system for hydrogen production
+%Mathematical modelling and simulation analysis of advanced alkaline electrolyzer system for hydrogen production
 \bibitem{gibbs} 
 Joonas Koponen,Review of water electrolysis technologies and design of renewable hydrogen production systems
 \bibitem{thermoneutral}
 Allebrod, Frank; Mogensen, Mogens Bjerg; Hjelm, Johan; Ebbesen, Sune Dalgaard, High Temperature and Pressure Alkaline Electrolysis
 \bibitem{reversible}
-M. Hammoudi, C. Henao, K. Agbossou, Y. Dube?, M.L. Doumbia, New multi-physics approach for modelling and design of alkaline electrolyzers
+M. Hammoudi, C. Henao, K. Agbossou, Y. Dube, M.L. Doumbia, New multi-physics approach for modelling and design of alkaline electrolyzers
 \bibitem{conductivity}
 R.J. Gilliama,, J.W. Graydonb, D.W. Kirkb, S.J. Thorpea, A review of specific conductivities of potassium hydroxide solutions for various concentrations and temperatures
 \bibitem{activation}
@@ -992,7 +993,12 @@ Monterey Gardiner, Energy requirements for hydrogen gas compression and liquefac
 L. Kit Heung Savannah River Technology Center Aiken, SC 29808 USA, Using Metal Hydride to Store Hydrogen, https://pdfs.semanticscholar.org/b781/192e2624db103d1b615502dd44354eff9b52.pdf
 \bibitem{storage3}
 Wade A. Amos, National Renewable Energy Laboratory, Costs of Storing and Transporting Hydrogen
-
+\bibitem{cost}
+David Milligan and Judy Milligan. Matches’ process equipment cost estimates. [Online] http: //matche.com/equipcost/Default.html, 2014. [Accessed 10/4/18].
+\bibitem{cost2}
+http://kkft.bme.hu/htms/kornykozp/Cost.of.Equipments.pdf. [Accessed 15/4/18]
+\bibitem{cost3}
+L. Bertucciolo, E. Chan, D. Hart, F. Lehner, B. Madden, and E. Standen, “Development of Water Electrolysis in the European Union: Final Report,” Fuel Cells and Hydrogen Joint Undertaking, Final Report, Feb. 2014.
 
 \bibitem{safety}
 https://en.wikipedia.org/wiki/Hydrogen\_safety

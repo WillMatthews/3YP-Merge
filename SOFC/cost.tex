@@ -1,17 +1,17 @@
-\documentclass{article}
+%\documentclass[11pt,oneside]{article}
 
-\usepackage{style-3yp} %this is the .sty file
-\usepackage{rotating}
-\usepackage{multirow}
-\usepackage[normalem]{ulem}
-\usepackage{array}
-\newcolumntype{A}{>{\centering\arraybackslash}m{1cm}}
-\newcolumntype{B}{>{\centering\arraybackslash}m{3cm}}
+%\usepackage{style-3yp} %this is the .sty file
+%\usepackage{rotating}
+%\usepackage{multirow}
+%\usepackage[normalem]{ulem}
+%\usepackage{array}
+%\newcolumntype{A}{>{\centering\arraybackslash}m{1cm}}
+%\newcolumntype{B}{>{\centering\arraybackslash}m{3cm}}
 
 \lfoot{Lewis Murray} %your name in the footer
 
 
-\begin{document}
+%\begin{document}
 %\begin{center}
 %{\bfseries 3YP - Ammonia Based Storage for Renewable Energy \\ Overall Plant %Financial Analysis}
 %\end{center}
@@ -104,20 +104,16 @@ SOFC Replacement        & 20\% of (Purchase Cost of SOFC + 14\%)     & 225.24   
 \subsection{Financial Overview}
 
 The levelised cost of electricity per kWh produced is calculated using Equation \ref{LMeq:unitcost}:
-
 \begin{equation}
     \text{Unit Cost of Production} = \frac{\text{Total Operating Cost per Year} - \text{Annual Investment Repayment}}{\text{Total kWh Produced per Year}}
     \label{LMeq:unitcost}
 \end{equation}
 
-
 The plant produces a total of $\text{1.688} \times \text{10}^{\text{10}}$ kWh every year, and the annual investment repayment is calculated using Equation \ref{LMeq:repayment}:
-
 \begin{equation}
     \text{Annual Investment Repayment} = \text{Total Capital Investment}\times\frac{i(1+i)^{n}}{(i+1)^{n} - 1}
     \label{LMeq:repayment}
 \end{equation}
-
 Where $i$ is the interest rate and $n$ is the repayment period in years. $i$ is assumed to be 10\%, to account for the high risk involved with investing in new technology, and $n$ is taken to be the currently planned lifetime of the plant, 25 years. This results in an annual repayment of \$735.88 million.
 \\
 
@@ -158,13 +154,12 @@ It is worth noting that the plant, as it has been modelled in this report, would
     \caption{Unit cost of production per MWh for various power generation methods \cite{IER}}
     \label{LMfig:costcomp}
 \end{figure}
-\\
-\\
-\\
-\bibliography{costrefs}
+
 \bibliographystyle{unsrt}
+\bibliography{./SOFC/costrefs}
 
 
 
 
-\end{document}
+
+%\end{document}

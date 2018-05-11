@@ -1,29 +1,33 @@
 \documentclass[11pt,oneside]{article}
 
 \usepackage{style-3yp}
+\renewcommand{\cftbeforesecskip}{0pt}
 
 \begin{document}
 
 % TITLEPAGE
 \includepdf{./titlepage/titlepg.pdf}
 
-% TABLE OF CONTENTS AND SPACER PAGE
+% DoA Forms
 \newpage
-\thispagestyle{empty}
-\begin{center}
-    \vspace*{5cm}
-  %  {\large \textrm{\emph{For Nick.}}}
-\end{center}
-\mbox{}
-\newpage
+
+\includepdf[]{intro/DoA}
+\includepdf[]{intro/DoA}
+\includepdf[]{intro/DoA}
+\includepdf[]{intro/DoA}
+\includepdf[]{intro/DoA}
+\includepdf[]{intro/DoA}
+
 
 \setcounter{page}{1}
 \singlespacing
 \lfoot{William Matthews}
+{
 \tableofcontents
+}
 \newpage
 \doublespacing
-
+\normalsize
 %%%%%%%% END TITLING AND ADMIN PREAMBLE %%%%%%%%%%%%
 
 % EXEC. SUMMARY
@@ -42,9 +46,9 @@
 \include{./airseparation/airseparation}
 
 % ELECTROLYSIS
-%\lfoot{Jing Yang}
-%\graphicspath{{./electrolysis/}}
-%\include{./electrolysis/hhh}
+\lfoot{Jing Yang}
+\graphicspath{{./electrolysis/}}
+\include{./electrolysis/hhh}
 
 % HABER BOSCH
 \doublespacing

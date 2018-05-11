@@ -1,7 +1,7 @@
-\documentclass[11pt, a4paper]{article} 
+%\documentclass[11pt, a4paper]{article} 
 
 
-\usepackage{style-3yp}
+%\usepackage{style-3yp}
 
 %\usepackage{geometry} 
 %\geometry{%
@@ -17,7 +17,7 @@
 %\usepackage{setspace}
 %\usepackage[final]{pdfpages}
 %\doublespacing
-\begin{document} 
+%\begin{document} 
 
 %\definecolor{name}{system}{definition}
 \definecolor{Gray}{gray}{0.9}
@@ -45,7 +45,6 @@ The process flow diagram in Figure \ref{fig:overview} shows the electrolytic cel
 \caption{Overview of the system} \label{fig:overview}
 \end{figure}  
 
-
 \begin{figure}[H]
 \centering
 \includegraphics[width= 25 cm, angle=90] {cadcad.pdf}
@@ -69,7 +68,7 @@ In industry, the typical electrical energy input efficiency is 54 $kwh/kg_{H2}$.
  \hline
  Maximum & 0.71   &  65.7 &  276 \\ 
  \hline
-Mean &  0.25(roughly)  & 23.6  &  99 \\ 
+Mean &  0.25 & 23.6  &  99 \\ 
  \hline
  Minimum  & 0.14  &  13.1 &  55 \\
  \hline
@@ -135,10 +134,10 @@ U_{rev}(T)=1.50342-9.956 \times 10^{-4}T+2.5 \times10^{-7}T^2
  \begin{singlespace}
 
  \begin{equation} 
-p_w=T^{-3.498} exp(37.93-\frac{6426.32} {T} )\exp(0.016214 - 0.13802M+0.19330\sqrt{M} ) 
+p_w=T^{-3.498} \exp\bigg(37.93-\frac{6426.32} {T} \bigg)\exp(0.016214 - 0.13802M+0.19330\sqrt{M} ) 
 \end{equation} 
 \begin{equation}
-pw*=T^{-3.4159} \exp(37.043-\frac{6275.7} {T} ) 
+pw*=T^{-3.4159} \exp\bigg(37.043-\frac{6275.7} {T} \bigg) 
 \end{equation} 
 \end{singlespace}
 where M is the molarity of the electrolyte solution, and it can be expressed as a function of temperature and  concentration($W_t\%$) by:\cite{reversible}
@@ -253,7 +252,7 @@ The exchange currents density is found experimentally, which can be significantl
 \begin{figure}[h] 
 \includegraphics[width=8cm] {Activation.eps} 
 \includegraphics[width=8cm]{ActivationT.eps}
-\caption{Activation Overpotential at cathode and anode(left),effects of temperature(right)} 
+\caption{Activation Overpotential at cathode and anode(left); effects of temperature(right)} 
 \label{fig:activation}
 \end{figure} 
 
@@ -312,7 +311,7 @@ The polarisation curve of the alkaline electrolysis cell is plotted in Figure \r
 \caption{a)Total cell voltage showing cumulative effects of reversible voltage, activation and ohmic overpotential. b)Total cell voltage against temperature. c)Total cell voltage against pressure}
 \label{fig:ni}
 \end{figure}
-Raising the operating temperature is one of the most effective ways to improve efficiency. As can be seen in Figure \ref{fig:ni} b), increasing the operating temperature reduces the cell voltage, as a result of decreased reversible voltage, higher ionic conductivity, and lower activation overpotential due to enhanced electrode surface kinetics. However, a high temperature can lead to high corrosion risk which will require more expensive materials. Also, the water loss from evaporation increases with higher temperature. Conventional electrolysis system is operated around 80 - 90$^oC$, just below the boiling point of water.\cite{temp} There are two major ways to further elevate the operating temperature, the first way is to use a pressurised system which will increase the boiling point of electrolyte, and in industry this is usually kept at 120-150$^oC$.\cite{temp} The second way is to carry out steam electrolysis which can increase the temperature even further to a level of above 500$^oC^$.\cite{temp} However this method has not become commercialized in industry due to its high economic cost. \\
+Raising the operating temperature is one of the most effective ways to improve efficiency. As can be seen in Figure \ref{fig:ni} b), increasing the operating temperature reduces the cell voltage, as a result of decreased reversible voltage, higher ionic conductivity, and lower activation overpotential due to enhanced electrode surface kinetics. However, a high temperature can lead to high corrosion risk which will require more expensive materials. Also, the water loss from evaporation increases with higher temperature. Conventional electrolysis system is operated around 80 - 90$^oC$, just below the boiling point of water.\cite{temp} There are two major ways to further elevate the operating temperature, the first way is to use a pressurised system which will increase the boiling point of electrolyte, and in industry this is usually kept at 120-150$^oC$.\cite{temp} The second way is to carry out steam electrolysis which can increase the temperature even further to a level of above 500$^oC$.\cite{temp} However this method has not become commercialized in industry due to its high economic cost. \\
 Pressure is another very important parameter, increasing operating pressure has several positive effects apart from allowing for higher operating temperature.  A high pressure would reduce the size of bubbles, and gases increase in solubility with increased pressure. This will reduce the ohmic loss from bubble formation. Obtaining pressurised hydrogen is also more energy efficient during the compression process. Also, higher operating pressure makes the process of hydrogen drying easier. However, at high pressure, there is more gas crossover due to diffusion since the partial pressure of both gases have increased. A high pressure also slightly increases the operating cell voltage. In industry, 
 hydrogen production at a pressure of up to 30 bar is  commercial available, and this can be achieved by using a feed-water pump.\cite{gibbs}
 
@@ -472,7 +471,7 @@ The zero gap cell involves two porous electrodes that are compressed and in cont
 \begin{figure}[H] 
 \centering
 \includegraphics[width=6cm]{zerogap.png}
-\caption{Zero-gap and non zero-gap configuration  }
+\caption{Zero-gap and non zero-gap configuration\cite{cathode2}}
 \label{fig:Data1}
 \end{figure}
 
@@ -519,7 +518,7 @@ Ion exchange membrane can also be used as separator in water electrolysis, with 
 
 \subsubsection{Ultrasound-aided Electrolysis}
 Another way to enhance the energy efficiency is through coupling electrolysis with ultrasonic field. Li et al.\cite{ultrasound} investigated the effects of ultrasound on alkaline water electrolysis. The results showed that the cell voltage was lower in the presence of ultrasound,
-especially at higher current density and lower electrolyte concentration. The experiment also indicated that the enhancement of the efficiency was generally greater at higher electrolyte concentration. The efficiency of Hydrogen production was increased in the range of 5 to18\% at higher current density under ultrasonic field and energy saving was up to 10 to 25\%. Other forms of external fields, such as magnetic field and super gravity field also have the effects of improving energy efficiency. The application of external field is useful because it accelerates the bubble detachment in the process. \cite{review}
+especially at higher current density and lower electrolyte concentration. The experiment also indicated that the enhancement of the efficiency was generally greater at higher electrolyte concentration. The efficiency of Hydrogen production was increased in the range of 5 to 18\% at higher current density under ultrasonic field and energy saving was up to 10 to 25\%. Other forms of external fields, such as magnetic field and super gravity field also have the effects of improving energy efficiency. The application of external field is useful because it accelerates the bubble detachment in the process. \cite{review}
 %\begin{figure}[H]
 %\centering
 %\includegraphics[width=8cm]{ultrasound.png}
@@ -566,7 +565,7 @@ where
 where $\dot{n}_i$ is the molar flow rates of product gases and water, $\dot{m}_f$ is the mass flow rate of the cooling water. $N_c$ is the number of cells in series and $C_p^f$ is the thermal capacity of fluid at constant pressure. At steady state, $\frac{dT}{dt} = 0$,  thus the required cooling water flow rate can be calculated, which is around 9 tons per hour for each stack. The above equations can also be used to predict the time required for the electrolyte to be heated up to the required temperature, or used in temperature controller design which will be covered in the next session.
 
 \subsection{Electrolyser Control System}
-A control system needs to be installed in the electrolyser to keep it working properly. The CAD drawing at the start of this session included control logics such as temperature, pressure and level control.  A limiter is installed between the power source and electrolyser in order to prevent the low level power from passing through. The temperature control is designed to maintain the desired temperature. This can be achieved by controlling the flow rate of cooling water. Apart from the internal heat generated, a heater is also added as an additional heat source for better control. When the temperature is higher than the desired value, the cooling water flow rate increases to transfer heat more quickly.  Pressure is controlled to approximately 30 bar using pumps and pressure relief valves. Level controllers are installed in the electrolyser tank and gas-liquid separator to monitor the liquid level in the vessel to prevent leakage current and ensure that liquid in the separator is not carried to the next equipment. Due to space limit, only temperature control will be discussed here. Closed loop PID control is the control mode most often associated with temperature controllers.\cite{control} To achieve better performance, a fuzzy PID model is adopted here. It is based on PID control algorithm and fuzzy control algorithm, which achieves fuzzy adjusting the PID parameters.\cite{fuzzy} The Simulink model is shown in Figure \ref{fig:pid}. 
+A control system needs to be installed in the electrolyser to keep it working properly. The CAD drawing at the start of this session included control logics such as temperature, pressure and level control.  A limiter is installed between the power source and electrolyser in order to prevent the low level power from passing through. The temperature control is designed to maintain the desired temperature. This can be achieved by controlling the flow rate of cooling water. Apart from the internal heat generated, a heater is also added as an additional heat source for better control. When the temperature is higher than the desired value, the cooling water flow rate increases to transfer heat more quickly. Pressure is controlled to approximately 30 bar using pumps and pressure relief valves. Level controllers are installed in the electrolyser tank and gas-liquid separator to monitor the liquid level in the vessel to prevent leakage current and ensure that liquid in the separator is not carried to the next equipment. Due to space limit, only temperature control will be discussed here. Closed loop PID control is the control mode most often associated with temperature controllers.\cite{control} To achieve better performance, a fuzzy PID model is adopted here. It is based on PID control algorithm and fuzzy control algorithm, which achieves fuzzy adjusting the PID parameters.\cite{fuzzy} The Simulink model is shown in Figure \ref{fig:pid}. 
 \begin{figure}[H]
 \includegraphics[with=10cm]{fuzzypid.png}
 \caption{Fuzzy PID block diagram}
@@ -638,7 +637,7 @@ A system simulation is carried out based on power input profile,  demonstrating 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width = 17cm]{cumulative.eps}
+\includegraphics[width = 16cm]{cumulative.eps}
 \caption{Cumulative production of hydrogen }
 \label{cumulative}
 \end{figure}
@@ -650,19 +649,14 @@ A system simulation is carried out based on power input profile,  demonstrating 
 \subsection{Costing}
 A rough capital cost estimate of the hydrogen production system is shown in Table \ref{tab:cost}. The total capital cost include direct field cost, indirect field cost and home office/miscellaneous cost. There will also be operating costs such as water and maintenance. Most materials need to be transported, installed and maintained, which would involve associated labour cost, it is assumed as 10\% of the material cost for static equipment, and 5\% for rotating equipment. The component costs are estimated from industry sources.\cite{cost} \cite{cost2} \cite{cost3}
 \begin{singlespace}
-
-\begin{longtable}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|}
-\caption{System Costings}
-\label{tab:cost}
-%\begin{table}[H]
-%\begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|} 
+\begin{table}[H]
+\begin{tabular}{|p{5.5cm}|p{2.5cm}|p{2.5cm}|p{2.9cm}|}
  \hline
  %champagne
  \rowcolor{champagne}
  %\rowcolor{burntsienna}
   & Labour \$ & Material \$ & Total \$\\
   \hline
-  
   \rowcolor{blue-green}
    \multicolumn{4}{ | c |}{Direct Field Cost} \\
    \hline
@@ -733,7 +727,6 @@ Buildings &  &213,507  & 213,507\\
    \hline
    \textbf{Subtotal Bulk Materials} & \textbf{58,466} & \textbf{661,279} & \textbf{719,745}\\
    \hline
-
    \textbf{Total Direct Field Materials} & \textbf{ 1,119,541} & \textbf{15,545,879} & \textbf{16,665,420}\\
    \hline
    \rowcolor{blue-green}
@@ -746,43 +739,42 @@ Buildings &  &213,507  & 213,507\\
  \hline
  Scaffolding & 40,646 & & 40,646\\
  \hline
-\textbf{Total Indirect Field Costs} & \textbf{164,799
-} & & \textbf{164,799
-}\\
- \hline
+\textbf{Total Indirect Field Costs} & \textbf{164,799} & & \textbf{164,799}\\
  \hline
  \rowcolor{blue-green}
  %\rowcolor{cyan}
  \multicolumn{4}{ | c |}{Home Office/Miscellaneous} \\
  \hline
  Detailed Engineering & 41,818 & & 41,818 \\
- 
- \hline
- 
- 
- Start-up & 12,121 & & 12,121\\
+  \hline
+  Start-up & 12,121 & & 12,121\\
  \hline
 \rowcolor{champagne}
  \textbf{Total Costs Excluding UAP} &  \textbf{1,338,279} & \textbf{15,545,879} & \textbf{16,884,158}\\
  \hline
- 
 Unallocated Provision  & & & 249,300\\
 \hline
 \rowcolor{champagne}
 \textbf{Total Project Cost} & & & \textbf{15,795,179}\\
 \hline
 %\end{tabular}
-\end{longtable}
+\end{tabular}
+\caption{System Costings}
+\label{tab:cost}
+\end{table}
 \end{singlespace}
 
 \subsection{Sustainability}
-The Paris Agreement has set a target to limit the global temperature rise to 2$^oC$ above the pre-industrial level, corresponding to a
-Carbon budget of 790GtC.\cite{sus} It has become a necessity for countries to develop long-term decarbonisation strategies. Therefore alkaline electrolysis derived by renewable energies has a great potential to become a more vital hydrogen production strategy due to its sustainable nature. Water is the only material input to the system and no greenhouse gases such as carbon dioxide will be produced in the process.The water The electricity comes from wind power station which is also sustainable. While alkaline electrolysis has a lower energy efficiency than the conventional hydrogen production methods such as natural gas reforming, the continuous advances in the electrolysis technologies could lower the production costs and make it more competitive and widely used in large scale projects.
-\subsection{Safety}
-The major risk in the electrolysis plant is the flammable mixture of oxygen and hydrogen gases.
-Hydrogen has the NFPA 704's highest rating of 4 on the flammability scale. \cite{safety} This can happen if the gas crossover during the electrolysis is above the allowed limit, or if hydrogen is leaked to the air which is difficult to detect since its colourless, odourless, and tasteless. Hydrogen gas has a flammability range of 4-75\% in the air and it also has a very low ignition energy(as low as 17$\mu$J).To avoid this problem, 
-before driving the hydrogen production equipment, it is necessary to fill the system with nitrogen until the oxygen content of the system is less than 1\%; Hydrogen leak alarm devices need to installed and electrolysis room should be set explosion-proof lights. Hydrogen flames are also nearly invisible, so flame detectors are needed. Also, all the equipment should be well grounded to prevent static electricity, which can cause hydrogen combustion and explosion. The leakage of the alkaline electrolyte is another potential risk. The HAZOP analysis is shown below.
 
+The Paris Agreement has set a target to limit the global temperature rise to 2$^oC$ above the pre-industrial level, corresponding to a
+Carbon budget of 790GtC.\cite{sus} It has become a necessity for countries to develop long-term decarbonisation strategies. Therefore alkaline electrolysis derived by renewable energies has a great potential to become a more vital hydrogen production strategy due to its sustainable nature. Water is the only material input to the system and no greenhouse gases such as carbon dioxide will be produced in the electrolysis process. The water source comes from seawater and thus a desalination process is required. Desalination is a sustainable solution to freshwater shortage. On the negative side, however, the process is expensive and the desalination effluents could damage the environments. The electricity comes from wind power station which is also sustainable. While alkaline electrolysis has a lower energy efficiency than the conventional hydrogen production methods such as natural gas reforming, the continuous advances in the electrolysis technologies could lower the production costs and make it more competitive and widely used in large scale projects.
+
+\doublespacing
+\subsection{Safety}
+
+The major risk in the electrolysis plant is the flammable mixture of oxygen and hydrogen gases.
+Hydrogen has the NFPA 704's highest rating of 4 on the flammability scale. \cite{safety} This can happen if the gas crossover during the electrolysis is above the allowed limit, or if hydrogen is leaked to the air which is difficult to detect since its colourless, odourless, and tasteless. Hydrogen gas has a flammability range of 4-75\% in the air and it also has a very low ignition energy(as low as 17$\mu$J).\cite{gibbs}To avoid this problem, 
+before driving the hydrogen production equipment, it is necessary to fill the system with nitrogen until the oxygen content of the system is less than 1\%; Hydrogen leak alarm devices need to installed and electrolysis room should be set explosion-proof lights. Hydrogen flames are also nearly invisible, so flame detectors are needed. Also, all the equipment should be well grounded to prevent static electricity, which can cause hydrogen combustion and explosion. The leakage of the alkaline electrolyte is another potential risk. The HAZOP analysis is shown below.
 
 {\fontsize{8pt}{7.5pt}\selectfont\tabcolsep=2.5pt\renewcommand\arraystretch{1.5}
 \begin{longtable}{
@@ -794,8 +786,8 @@ before driving the hydrogen production equipment, it is necessary to fill the sy
  \rowcolor{LightCyan}
 Deviation &Causes &Unmitigated Consequences &Likelihood &Risk Ranking &Recommendations\\
 \hline
-\multirow{11}*{More Flow} & {Hydrogen/oxygen control valve failure} &
-{Cell reaction pressure drop, Electrolysis efficiency will be affected} & Middle & Low & Add high flow alarm to respond\\
+\multirow{11}*{More Flow \vspace{8cm}} & {Hydrogen/oxygen control valve failure} &
+{Cell reaction pressure drop, Electrolysis efficiency will be affected} & Middle & Low & Add high flow alarm to respond.\\
 \cline{2-6}
 &{Cooling Water hand valves fully open by human error} &
 No Hazard identified &&&\\
@@ -818,24 +810,24 @@ Production unqualified. & Low &Low &
 \multirow{13}*{Less Flow}&
 {Hydrogen/oxygen control valve failure} &
 {Overpressure;lead to vessel/cell rupture; potential fatality} &
- Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & {Add high pressure alarm to respond; \par
+ Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & {Add high pressure alarm to respond. \par
 Add high Pressure interlock
 to trip reaction cell.}\\
 \cline{2-6}
-&{Cooling Water hand valves fully closed by human error} & {Material corrosion; mechanical failure; production unqualified} &  Low & Middle & {Add high temperature alarm for the production to response}\\
+&{Cooling Water hand valves fully closed by human error} & {Material corrosion; mechanical failure; production unqualified} &  Low & Middle & {Add high temperature alarm for the production to response.}\\
 \cline{2-6}
 &{Caustic control valve failed; fully closed} & {Low level in cell, lead to reaction stop; leakage current} &  Low & Middle &Add Low level alarm to respond.\\
 \cline{2-6}
 &{Feed water valve fully closed by human error} & {Low level in cell, lead to reaction stop} &  Low & Low & Add Low level alarm to response.\\
 \hhline{~|-----}
 &Pump Failure &
-{Backflow of gases, causing flammable gas mixture} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & Use valves to prevent gas backflow\\
+{Backflow of gases, causing flammable gas mixture} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & Use valves to prevent gas backflow.\\
 \hhline{~|-----}
-&Facility Leakage & {Hydrogen leak into facilities, risk of explosion} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & { Install hydrogen sensor and leak alarm for emergency shut down}\\
+&Facility Leakage & {Hydrogen leak into facilities, risk of explosion} &  Low & \multicolumn{1}{>{\columncolor{red}}c|}{High} & { Install hydrogen sensor and leak alarm for emergency shut down.}\\
 \hhline{~|-----}
-&Valve or pipe blockage & Bursting of pipes &Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Install blockage detectors\\
+&Valve or pipe blockage & Bursting of pipes &Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Install blockage detectors.\\
 \hhline{~|-----}
-&Water level too low & Leakage current & Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Check the level controller\\
+&Water level too low & Leakage current & Low &\multicolumn{1}{>{\columncolor{red}}c|}{High} &Check the level controller.\\
 \hline
 No flow &\multicolumn{5}{c|}{Refer to less flow}\\
 \hline
@@ -1058,7 +1050,7 @@ https://en.wikipedia.org/wiki/Hydrogen\_safety [Accessed 15/4/18]
 
 \end{thebibliography}
 
-\end{document}
+%\end{document}
 
 
 

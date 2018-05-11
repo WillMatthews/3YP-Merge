@@ -111,7 +111,7 @@ An \emph{iterative convergent scheme} was setup in MATLAB (using gradient descen
 \end{table}
 
 Using the obtained constants, the characteristic steady-state power curve for the wind turbine can be plotted, as shown in Figure \ref{fig:wturb}.
-By assuming that the turbine is always at steady state, it is easy to see estimating the wind power is a relatively simple task, by injecting windspeed in and multiply the result by the number of turbines in the field.
+By assuming that the turbine is always at steady state, it is easy to see estimating the wind power is a relatively simple task, by injecting wind speed in and multiply the result by the number of turbines in the field.
 
 The NOAA supply historical data on hourly wind-speeds \cite{power:NOAA}, as well as predicted future wind-speeds.
 This historical data-set was used to validate our model by considering how real-world wind-speed works with energy generation.
@@ -125,16 +125,16 @@ Using Equation \ref{eqn:wturbexm} and using $\tau_1, \tau_2$ the yearly generate
 Equation \ref{eqn:wturbexm} was applied to the wind speed data-set with 65 turbines, to obtain the power data below in Figure \ref{fig:speedpowermap}.
 
 The data obtained had values for every fifteen minutes, which although is a high resolution, a cubic spline fit gives an approximation on the second-by-second level.
-This is an approximation to what reality is with windspeed, however since turbine transfer functions for dynamic cases were not considered - this may make a good approximation to reality.
+This is an approximation to what reality is with wind speed, however since turbine transfer functions for dynamic cases were not considered - this may make a good approximation to reality. The final supply profile used for testing is visible in Figure \ref{fig:windsupply}
 
-Similarly for demand, the EIA supply data sets for electrical demand \cite{power:EIA}, which were smoothed with cubic splines and cleaned for use later.
+Similarly for demand, the EIA supply data sets for electrical demand \cite{power:EIA}, which were smoothed with cubic splines and cleaned for use later. An example of a typical daily load pattern is visible in Figure \ref{fig:hawaiipower}.
 
 \begin{figure}[t]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[scale=0.4]{./images/AWindspeed-eps-converted-to.pdf}
-  \caption{Windspeed in Maui}
+  \caption{Wind speed in Maui}
   \label{fig:windspeed}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
@@ -143,6 +143,23 @@ Similarly for demand, the EIA supply data sets for electrical demand \cite{power
   \caption{Electrical Power Obtained from 65 Wind Turbines}
   \label{fig:windpower}
 \end{subfigure}
-        \caption{Windspeed Mapping to Electrical Power by Applying Equation \ref{eqn:wturbexm} Over the First $10^5$ Seconds of Data}
+        \caption{Wind speed Mapping to Electrical Power by Applying Equation \ref{eqn:wturbexm} Over the First $10^5$ Seconds of Data}
 \label{fig:speedpowermap}
+\end{figure}
+
+
+
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[scale=0.7]{./images/hawaiipower.png}
+    \caption{Typical load profiles for Hawaii, comparing summer and winter seasons. \cite{power:loadcurve} (Note that this is for \emph{Hawaii}, which includes Maui as well as many other consumers. Maui's peak power is on the order of $\approx$200MW)}
+    \label{fig:hawaiipower}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[scale=0.6]{./images/hawaiiwind.eps}
+    \caption{Wind Supply Curve for One Year (65 GE Haliade 150-6MW turbines)}
+    \label{fig:windsupply}
 \end{figure}

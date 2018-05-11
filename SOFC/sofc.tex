@@ -1,6 +1,7 @@
 %\documentclass[11pt,oneside]{article}
 
 %\usepackage{style-3yp} %this is the .sty file
+%\usepackage{graphics}
 %\usepackage{rotating}
 %\usepackage{multirow}
 %\usepackage[normalem]{ulem}
@@ -146,7 +147,7 @@ The reaction inside the fuel cell is:
 H_2+  \frac{1}{2} O_2   \quad \rightarrow \quad  (x)H_2 O + (1-x)H_2 +  \frac{1}{2} O_2
 \label{LMeq:cellreaction}
 \end{equation}
-Where $x$ is the fraction of hydrogen that is utilised in the reaction. All terms in Equations \ref{LMeq:nh3decomp} and \ref{LMeq:cellreaction} are in the gaseous state. From these we can see that the molar ratios of substances, and calculate the mole fractions of the substances at the electrodes before the reaction takes place. We can also calculate that the molar air to fuel ratio must be 3.57, and therefore is 3.57 by volume, by the ideal gas assumption. This assumption is valid given the extremely high temperatures of the gases.
+Where $x$ is the fraction of hydrogen that is utilised in the reaction. All terms in Equations \ref{LMeq:nh3decomp} and \ref{LMeq:cellreaction} are in the gaseous state. From these we can see that the molar ratios of substances, and calculate the mole fractions of the substances at the electrodes before the reaction takes place. We can also calculate that the molar air to fuel ratio must be 3.57, and therefore is 3.57 by volume, by the ideal gas assumption. This assumption is valid given the high temperatures of the gases.
 
 
 \subsection{Design Procedure}
@@ -175,7 +176,7 @@ The control configuration was heavily based on the design used by Zamfirescu et 
     
     The effects on the performance by changing the operating conditions are shown in Figures \ref{LMfig:SOFCtempinc} and \ref{LMfig:SOFCpresinc}. Increasing temperature and pressure both increase the cell's maximum power density, but increasing temperature has the most significant effect.
     The effect of changing the support method is shown in Figure \ref{LMfig:SOFCsupport}.
-        It is clear from Figure \ref{LMfig:SOFCsupport} that an anode-supported cell has superior power density. The increased anode thickness causes the power density to increase, whereas the electrolyte and cathode supported cells result in significant decreases in power density. The electrolyte supported case can be explained by the significant increase in ohmic losses. The cathode supported case is likely an exaggerated result due to the failure of the ESM model to account for the rate of change of concentration gradient, causing it to drop rapidly, resulting in the very sudden increase in concentration losses (evident by the shape of the graph). However, the conclusions drawn are supported by Villabla's thesis \cite{LM2}, and it is widely stated in literature that anode-supported cells are superior. This seems to be a consequence of the increased anode thickness, which slows down the rate of transfer of the water produced in the cell reaction. As such, there is less build up of water at the anode surface, and therefore a smaller drop in the partial pressure of hydrogen and the cell potential.
+        It is clear from Figure \ref{LMfig:SOFCsupport} that an anode-supported cell has superior power density. The increased anode thickness causes the power density to increase, whereas the electrolyte and cathode supported cells result in significant decreases in power density. The electrolyte supported case can be explained by the significant increase in ohmic losses. The cathode supported case is likely an exaggerated result due to the failure of the ESM model to account for the rate of change of concentration gradient, causing it to drop rapidly, resulting in the very sudden increase in concentration losses. However, the conclusions drawn are supported by Villabla's thesis \cite{LM2}, and it is widely stated in literature that anode-supported cells are superior. This seems to be a consequence of the increased anode thickness, which slows down the rate of transfer of the water produced in the cell reaction. As such, there is less build up of water at the anode surface, and therefore a smaller drop in the partial pressure of hydrogen and the cell potential.
     \\
   
   \begin{figure}[h]
@@ -503,8 +504,9 @@ Finally, the heat exchangers could be designed in greater detail, looking at non
 % \usepackage{multirow}
 % \usepackage[normalem]{ulem}
 % \useunder{\uline}{\ul}{}
-\begin{table}[]
+\begin{table}[p]
 \centering
+\scalebox{0.9}{
 \caption{HAZOP Analysis for the SOFC system}
 \label{LMtable:HAZOP}
 \begin{tabular}{|c|c|c|c|c|}
@@ -529,7 +531,7 @@ Finally, the heat exchangers could be designed in greater detail, looking at non
 PART OF                     & \begin{tabular}[c]{@{}c@{}}No reaction,\\ despite correct fuel and air flow\end{tabular}        & \begin{tabular}[c]{@{}c@{}}Electrodes and electrolytes are \\ not connected properly/damaged\end{tabular}                                                     & No power output                                                                                                                                             & \begin{tabular}[c]{@{}c@{}}Regular inspection \\ of SOFC stacks\end{tabular}                                                                                \\ \hline
 REVERSE                     & NA                                                                                              & NA                                                                                                                                                            & NA                                                                                                                                                          & NA                                                                                                                                                          \\ \hline
 OTHER THAN                  & Start up/Shut down                                                                              & Maintenance                                                                                                                                                   & \begin{tabular}[c]{@{}c@{}}Large temperature change causes\\ damage to cells due to \\ expansion/contraction\end{tabular}                                   & \begin{tabular}[c]{@{}c@{}}Minimise need for \\ additional maintenance\end{tabular}                                                                         \\ \hline
-\end{tabular}
+\end{tabular}}
 \end{table}
 \end{landscape}
 

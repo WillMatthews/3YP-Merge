@@ -10,7 +10,7 @@
 \subsection{Introduction} \noindent
 This section will briefly discuss the aim of the air separation part of the project, the goals to achieve as well as the two conventional air separation methods used in the industry.
 	\subsubsection{Background}  \noindent
-    One of the two major inputs to the Haber-Bosch process for the ammonia synthesis part of the energy storage system is a high-purity stream of nitrogen. This section details the method used to process around 265.5 tpd of dry air to produce 202.8 tpd of nitrogen at 99.99\% purity to be further processed in the Haber-Bosch plant downstream, to produce 90,000 tpy of Ammonia.
+    One of the two major inputs to the Haber-Bosch process for the ammonia synthesis part of the energy storage system is a high-purity stream of nitrogen. This section details the method used to process around 97,000 tpy (or 265.5 tpd) of dry air to produce around 74,000 tpy (or 202.8 tpd) of nitrogen at 99.99\% purity to be further processed in the Haber-Bosch plant downstream, to produce 90,000 tpy of Ammonia.
 	\subsubsection{Air Composition} \noindent
     The input to the processing plant is atmospheric air taken at ambient temperature and pressure (at 25$^\circ$C and 1.013 bar). A water filter unit is in place to remove any water content in the input stream before air separation. Dry air composition at ambient conditions are shown in Table \ref{table:air_properties} \citep{hands1986,barron1985,HLT}.
     \begin{table}[ht]
@@ -78,9 +78,9 @@ This section includes the overall air separation plant schematic and goes over i
 	    \end{tabular}
     \end{table}
 		\subsubsubsection{Pre-Processing Filtering}
-        Before inlet air stream can enter the first distillation column for separation, it has to be processed to remove impurities that may adversely affect the performance of the plant, namely water vapour and carbon dioxide. \\
+        Before inlet air stream can enter the first distillation column for separation, it has to be processed to remove impurities that may adversely affect the performance of the plant, namely water vapour and $CO_2$. \\
         A mechanical air filter is first used to remove solid air particulates by means of a woven fibrous membrane in a cylindrical cartridge (up to 0.5 \textmu m). Air flows from outside in, accumulating dust on the exterior of the cylinder, which can be blown off by a reverse pulse of compressed air \citep{airfilter}.\\
-        Water vapour can condense into ice in the cryogenic chambers, the build-up can cause blockage in the trays of distillation column, whilst carbon dioxide can poison the catalyst in Haber-Bosch process downstream. Hence both species are removed via the use of a molecular sieve, which uses microporous adsorbents like zeolite (up to 2 nm) and operates in a similar manner as PSA \citep{white2017}.
+        Water vapour can condense into ice in the cryogenic chambers, the build-up can cause blockage in the trays of distillation column, whilst $CO_2$ can poison the catalyst in Haber-Bosch process downstream. Hence both species are removed via the use of a molecular sieve, which uses microporous adsorbents like zeolite (up to 2 nm) and operates in a similar manner as PSA \citep{white2017}.
         \subsubsubsection{Multi-stage Compressors with Intercoolers}
         In between the air filter and the molecular sieve, a multi-stage compressor will be used compress filtered inlet gas stream from 1.01 bar (i.e. atmospheric) to 5.6 bar. As the compression process is modelled to be adiabatic, temperature of the inlet stream will rise with compression, hence intercoolers are used to ensure maximum temperature in between compression is capped at 400 K to ensure minimal heat transfer and high compressor efficiency. \\
         After the first compression, hot compressed gas is cooled to ambient temperature (298 K) using water as a coolant before subjected to further compression. This process is repeated if multiple stages of compression is required.\\
@@ -587,37 +587,9 @@ This section details the process to improve the system by optimising the two-col
     	    \caption{Reference Tracking with Proposed PID Controller}
     	    \label{fig:control_graph}
     	\end{figure}
-\subsection{Costing} \noindent
-The main cost of running a cryogenic plant comes from the capital cost of compressors, capital cost of other components and operating cost of production are relatively low in comparison. \\
-Most cryogenic distillation plants are designed to be self-sufficient by using hot and cold streams effectively, the plant is design to be independent from the grid, hence operating costs are essentially negligible.\\
-A rough estimate on the costings of different plant components are summarised in Table \ref{table:cost}.
-\begin{table}[H]
-    \singlespacing
-    \centering
-    \caption{Costing Estimate of Cryogenic Plant Components}
-    \label{table:cost}
-    \begin{tabular}{|l|r|}
-        \hline
-        Component                               & Cost (in USD)    \\     \hline
-        Mechanical Air Filter \citep{matches}   & \$44,000         \\
-        Molecular Sieve \citep{couper2012}      & \$92,000         \\
-        Compressors \citep{matches}             & \$8,431,000      \\
-        Heat Exchangers \citep{douglas1988}     & \$102,000        \\
-        Separator \citep{matches}               & \$50,000         \\
-        High Pressure Column \citep{douglas1988} & \$68,000         \\
-        Low Pressure Column \citep{douglas1988}  & \$197,000        \\
-        Condensers \citep{douglas1988}           & \$206,000        \\
-        Reboilers \citep{douglas1988}            & \$207,000        \\     \hline
-        Total                 & \$9,397,000     \\     \hline
-    \end{tabular}
-\end{table}
-
 \subsection{Safety and Risk} \noindent
 There are a few associated hazards when a cryogenic distillation plant is in operation, namely direct exposure to cryogenic material, oxygen-enriched air, asphyxiation in confined spaces and explosion due to rapid expansion of liquefied gas. \\
-To ensure the safety of workers and general public, a HAZOP study, tabulated in Table \ref{table:HAZOP}, is conducted to identify sources of hazards and methods are devise to reduce the risks.
-\subsection{Conclusion \& Further Work}
-\noindent A double-column design is adopted to perform air separation and produce two high-purity product streams continuously. The cryogenic distillation plant is expected to produce 202.8 tpd of nitrogen at 99.99\% purity to be used to synthesize ammonia in Haber-Bosch plant downstream, and 62.7 tpd of oxygen at 99\% purity to be used in ammonia gas turbine. \\
-For the plant to be implemented in reality, more in-depth analysis is required in several areas: column vessel and insulation materials, different operating conditions of columns, alternative liquefaction system and heat balance of streams. Regardless, this section on cryogenic distillation of air was overall successful.
+To ensure the safety of workers and general public, a HAZOP study, tabulated overleaf in Table \ref{table:HAZOP}, is conducted to identify sources of hazards and methods are devise to reduce the risks.
 \begin{landscape}
 \begin{table}[p]
     \singlespacing
@@ -642,7 +614,37 @@ For the plant to be implemented in reality, more in-depth analysis is required i
     \end{adjustbox}
 \end{table}
 \end{landscape}
-
+\subsection{Sustainability}  \noindent
+The air separation unit takes in atmospheric air as an input, implying that the raw materials are easily accessible and naturally obtainable. \\
+During the pre-processing filtration of inlet air stream, 44 tpy of $CO_2$ is filtered out using a molecular sieve. But as this small amount of $CO_2$ is taken out directly from air, the disposal does not contribute to an increase in net $CO_2$ level in the atmosphere. It is also worth noting that this $CO_2$ generation is significantly lower than that of conventional coal power plants. \\
+Hence it is suffice to conclude that the air separation operation of this plant has minimal negative environmental impact, and is therefore highly sustainable.
+\subsection{Costing} \noindent
+The main cost of running a cryogenic plant comes from the capital cost of compressors, capital cost of other components and operating cost of production are relatively low in comparison. \\
+Most cryogenic distillation plants are designed to be self-sufficient by using hot and cold streams effectively, the plant is design to be independent from the grid, hence operating costs are essentially negligible.\\
+A rough estimate on the costings of different plant components are summarised in Table \ref{table:cost}.
+\begin{table}[H]
+    \singlespacing
+    \centering
+    \caption{Costing Estimate of Cryogenic Plant Components}
+    \label{table:cost}
+    \begin{tabular}{|l|r|}
+        \hline
+        Component                               & Cost (in USD)    \\     \hline
+        Mechanical Air Filter \citep{matches}   & \$44,000         \\
+        Molecular Sieve \citep{couper2012}      & \$92,000         \\
+        Compressors \citep{matches}             & \$8,431,000      \\
+        Heat Exchangers \citep{douglas1988}     & \$102,000        \\
+        Separator \citep{matches}               & \$50,000         \\
+        High Pressure Column \citep{douglas1988} & \$68,000         \\
+        Low Pressure Column \citep{douglas1988}  & \$197,000        \\
+        Condensers \citep{douglas1988}           & \$206,000        \\
+        Reboilers \citep{douglas1988}            & \$207,000        \\     \hline
+        Total                 & \$9,397,000     \\     \hline
+    \end{tabular}
+\end{table}
+\subsection{Conclusion \& Further Work}
+\noindent A double-column design is adopted to perform air separation and produce two high-purity product streams continuously. The cryogenic distillation plant is expected to produce around 74,000 tpy of nitrogen at 99.99\% purity to be used to synthesize ammonia in Haber-Bosch plant downstream, and 23,000 tpy of oxygen at 99\% purity to be used in ammonia gas turbine. \\
+For the plant to be implemented in reality, more in-depth analysis is required in several areas: column vessel and insulation materials, different operating conditions of columns, alternative liquefaction system and heat balance of streams. Regardless, this section on cryogenic distillation of air was overall successful.
 \bibliographystyle{unsrt}
 \bibliography{./airseparation/airbib}
 %\bibliography{airbib}

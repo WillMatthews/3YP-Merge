@@ -88,7 +88,7 @@ As defined by the power demand of Maui, Hawaii the annual power is set to averag
 	\end{center}
 \end{table}
 
-\subsection{Review of Ammonia Synthesis Methods}
+\subsection{Review of Synthesis Methods}
 
 In order to best choose the overall design process a literature review of a number of methods was conducted in order to establish the process that best satisfies the objectives. These can then be compared with one another to establish the most suitable overall process. 
 
@@ -189,12 +189,11 @@ logK_a = -2.69log(T) - 5.52\times10^{-5}T + 1.85\times10^{-7}T^2+\frac{2001.6}{T
 \end{center}
 \end{figure}}
 
-This clearly shows a decrease in the concentrations of products as the temperature increases; thus concurring with the Le Chatelier's principle that the equilibrium of reaction will shift to counteract the rise in temperature. This would suggest that a low reaction temperature would favour a high product yield at equilibrium. The governing mass and heat balances within the reactor are:
+This clearly shows a decrease in the concentrations of products as the temperature increases; thus concurring with the Le Chatelier's principle that the equilibrium of reaction will shift to counteract the rise in temperature. This would suggest that a low reaction temperature would favour a high product yield at equilibrium. The governing mass balance within the reactor is:
 \begin{equation}
-\frac{\dd}{\dd t}n_{i,reac} = \dot{n}_{i,in} + \dot{n}_{i,form} + \dot{n}_{i,out}   
+ \dot{n}_{i,in}+\dot{n}_{i,form}=\dot{n}_{i,out}+\dot{n}_{i,accum}   
 \end{equation}
-where the molar flow rates for specie $i$, $\dot{n}_{i,in} = \dot{n}_{i,feed} + \dot{n}_{i,recycle} $ and $\dot{n}_{out} = \dot{n}_{prod} + \dot{n}_{recycle} + \dot{n}_{purge}.
-
+where $\dot{n}_i$ are the molar flow rates for specie $i$, $\dot{n}_{i,in} = \dot{n}_{i,feed} + \dot{n}_{i,recycle} $ and $\dot{n}_{i,out} = \dot{n}_{i,prod} + \dot{n}_{i,recycle} + \dot{n}_{i,purge}$
 
 \subsubsection{Reaction Mixtures}
 When calculating the properties of N$_2$:H$_2$:NH$_3$ streams throughout the system a rule of mixtures is used. Eqn. \ref{eq:cpmix} gives the specific heat of a reaction mixture where $x_{i}$ are the mole fractions in the stream and $C_{p,i}$ are their respective specific heats. 
@@ -345,7 +344,7 @@ Using the experimental values for $k_{20}$ and $E_2$ in Eq. \ref{eq:Arr} to calc
 
 \subsection{Catalyst}
 
-In modelling the rate of reaction Dyson and Simon accounted for the flow of reactants through a reactor. In order to account for the presence of a solid catalyst an effectiveness factor $\xi_{c}$ was used such that an effective rate ($r_{eff}=\xi_{c}r_{NH_3}$) through the reactor could be calculated using the following assumptions \cite{Dyson1968}; The catalyst particles can be considered as spheres. The diffusion coefficients of each component are independent of position within a particle, particles are isothermal and Knudsen diffusion is not experienced. Giving the equation:
+In modelling the rate of reaction Dyson and Simon accounted for the flow of reactants through a reactor. To account for the presence of a solid catalyst an effectiveness factor $\xi_{c}$ was used such that an effective rate ($r_{eff}=\xi_{c}r_{NH_3}$) through the reactor could be calculated using the following assumptions \cite{Dyson1968}; The catalyst particles can be considered as spheres. The diffusion coefficients of each component are independent of position within a particle, particles are isothermal and Knudsen diffusion is not experienced. Giving the equation:
 \begin{equation}
 	\xi_{c} = \frac{(\text{molar flux of component i across surface})\times(\text{surface area of catalyst pellet})}{(\text{vol. of catalyst pellet})\times(\text{rate of formation of component i at surface})}
 \end{equation}
@@ -369,7 +368,7 @@ In modelling the rate of reaction Dyson and Simon accounted for the flow of reac
 		\end{tabular}
 }
 \end{wraptable}
-Throughout the past 100 years an Fe-based magnetite (Fe$_{2}$O$_3$) precursor with a variety of oxidic promoters have been the principal catalyst used industrially in ammonia synthesis \cite{Liu2014}. However, over the past few decades a number of additional catalysts have been developed. These involve the use of a various other materials as promoters including ruthenium and bimetallic nitrides. These were considered during the initial design of the plant due to their higher yields of ammonia at reduced pressures. This was mainly due to both the high cost and limited availability of ruthenium. Considering the island location of the power generation facility the availability of resources was a key factor in the choice of catalyst. On balance, the additional cost of these materials are substantially higher than iron and thus greatly increase both the initial capital costs of the plant but also the running costs of the plant due to the increased material costs. Thus an alternative w\"{u}stite (Fe$_{1-x}$O) iron catalyst was chosen for the ammonia synthesis stage. This was chosen due to the increased reaction rate at lower operating pressure than the traditional magnetite promoter thus reducing the pressure needed for the reactor and the capital costs required. The catalyst in use will be the A301 catalyst manufactured by Shangyou Catalyst Co. Ltd. 
+Throughout the past 100 years an Fe-based magnetite (Fe$_{2}$O$_3$) precursor with a variety of oxidic promoters have been the principal catalyst used industrially in ammonia synthesis \cite{Liu2014}. However, recently a number of additional catalysts have been developed; involving the use of a various other materials as promoters including ruthenium and bimetallic nitrides. These were considered during the initial design of the plant due to their higher yields of ammonia at reduced pressures, but drawbacks included both the high cost and limited availability in the case of ruthenium. Considering the island location of the power generation facility the availability of resources was a key factor in the choice of catalyst. On balance, the additional cost of these materials are substantially higher than iron and thus greatly increase both the initial capital costs of the plant but also the running costs of the plant due to the increased material costs. Thus an alternative w\"{u}stite (Fe$_{1-x}$O) iron catalyst was chosen for the ammonia synthesis stage. This was chosen due to the increased reaction rate at lower operating pressure than the traditional magnetite promoter thus reducing the pressure needed for the reactor and the capital costs required. The catalyst in use will be the A301 catalyst manufactured by Shangyou Catalyst Co. Ltd. 
 
 \begin{table}[!htbp]
 	\begin{center}
@@ -398,26 +397,26 @@ Throughout the past 100 years an Fe-based magnetite (Fe$_{2}$O$_3$) precursor wi
 The synthesis reactor is central to the design of the process as it is within that the synthesis reaction takes place. In order to maintain close to optimum conditions  a two bed reactor with intercooling between them was chosen. This enables the products of the first bed to return to a lower temperature before entering the second stage.
 
 \subsubsection{Reactor Sizing}
-The reactor consists of two reactor stages with interstage indirect cooling. Both reactor inlet stages are designed as fixed bed reactors with an even catalyst spacing throughout. The overall volume of the reactor V, can be given by Eq. \ref{eq:reacsize}: where $r$ is the rate of reaction, $\rho_{cat}$ is the packing density of the catalyst and $\dot{m}$ the mass flow rate \cite{Banares-alcantara2014}.
+The reactor consists of two reactor stages with interstage indirect cooling. Both reactor inlet stages are designed as fixed bed reactors with an even catalyst spacing throughout. 
+
+The overall volume of the reactor V, can be given by Eq. \ref{eq:reacsize}: where $r$ is the rate of reaction, $\rho_{cat}$ is the packing density of the catalyst and $\dot{m}$ the mass flow rate \cite{Banares-alcantara2014}.
 \begin{equation}
 \label{eq:reacsize}
 	V = \frac{\dot{m}}{1000\rho_{cat}r}
 \end{equation}
-Rearranging the steady flow energy equation for an adiabatic reactor with no shaft work ($Q,W_s=0$) gives an energy balance within the reactor: where $\Delta H_{reac}$ is the heat of reaction and x is the distance along the reactor.
+Rearranging the steady flow energy equation for an adiabatic reactor with no shaft work ($Q,W_s=0$) gives an energy balance within the reactor: where $\Delta H_{reac}$ is the heat of reaction per mol$_{NH_3}$ and x is the distance along the reactor.
 \begin{equation}
 \frac{\dd T_{reac}}{\dd x} = \frac{(-\Delta H_{reac})A_{cat}}{\dot{m}_{mix}C_{p_mix}}r_{NH_3}
 \end{equation}
+
 \begin{table}[!htbp]
 	\begin{center}
-		\label{tab:reacreq}
-		\caption{Reactor sizing}
-		
+		\caption{Reactor sizing\label{tab:reacreq}}
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
 			Reaction rate r& $\rho_{cat}$ & $\dot{m}_{NH_3}$ & V  & L$_T$ & D$_T$ \\ \hline
 			$1.3838*10^{-4}$ $\frac{kg_{NH_3}}{s^{-1}kg_{cat}^{-1}}$       & 3.25 kg/L         & 3.22 kg/s                      & 7.16 m$^3$ & 2.74 m & 1.83 m \\ \hline
 		\end{tabular}
-		
 	\end{center}
 \end{table}
 
@@ -447,7 +446,7 @@ where $\Delta p$ is the pressure drop across the length $L$ of the bed, $\mu$ is
 \end{table}
 
 
-Modelling the outlet temperature against reactor length in Figure \ref{fig:Rlen} for a single bed with an input temperature of 400 \textdegree C and a diameter D$_1$ = 1.83 m shows a change in the reactor profile up to L$_1$=1.25 m: after this point increasing the reactor length no longer increases the NH$_3$ yield thus this was chosen as a suitable length for the first stage. Using this first stage design a second bed could be subsequently designed; a larger bed was required to optimise ammonia yield. Simulating the reactor bed on ASPEN an optimum length of D$_2$=1.82 m and L$_2$=1.49 m was chosen as after this point there was no significant increase in performance with reactor length, giving a first pass conversion of 34.2\% \cite{Elnashaie1989}.
+Modelling the outlet temperature against reactor length in Figure \ref{fig:Rlen} for a single bed with an input temperature of 400 \textdegree C and a diameter D$_1$ = 1.83 m shows a change in the reactor profile up to L$_1$=1.25 m: after this point increasing the reactor length no longer increases the NH$_3$ yield thus this was chosen as a suitable length for the first stage. Using this first stage design a second bed could be subsequently designed; a larger bed was required to optimise ammonia yield. Simulating the reactor bed on ASPEN an optimum length of D$_2$=1.82 m and L$_2$=1.49 m was chosen as after this point there was no significant increase in performance with reactor length, giving a first pass conversion of 34.2\% \cite{Elnashaie1989}. Furthermore, under a reactor pressure of $\pbar$  bar the thickness of the walls must be sufficient to withstand the high internal pressures of reaction.
 
 {\begin{figure}[!htbp]
 		
@@ -459,8 +458,6 @@ Modelling the outlet temperature against reactor length in Figure \ref{fig:Rlen}
 	\end{figure}
 }
 
-
-Furthermore, under a reactor pressure of $\pbar$  bar the thickness of the walls must be sufficient to withstand the high internal pressures of reaction.
 \subsubsection{Material Selection}
 In order to calculate the thickness of material required  the internal reactor forces must be measured, as must the operating temperatures. Simulation shows the peak temperature of normal operation of the reactor remains below 700\textdegree C. Therefore a material with a melting point significantly higher than this is required. Due to the corrosivity of NH$_3$ to a number of metals high-yield steel was chosen as the material for construction of the vessel. 
 \begin{table}[!htbp]
@@ -561,7 +558,7 @@ For an isentropic compressor the total output temperature can be calculated from
 T_{out} = T_{in}\left[ \left( \frac{P_2}{P_1}\right)^{\frac{1}{N}} \right]^{\left( \frac{n-1}{n}\right)} 
 \end{equation}
 The total 
-compression power required $\dot W_{fluid}$ for the fluid is given by Eqn. \ref{compP}
+compression power required $\dot W_{comp}$ is given by Eqn. \ref{eq:compP}
 \begin{equation}
 \label{eq:compP}
 \dot W_{comp} = \frac{ \dot W_{fluid}}{\eta_{comp}} = \frac{1}{\eta_{comp}} TN\frac{n}{n-1}R\dot m \left( \left[ \left( \frac{P_2}{P_1}\right)^{\frac{1}{N}} \right]^{\left( \frac{n-1}{n}\right)} - 1 \right)
@@ -616,6 +613,7 @@ In order to limit the build-up of inert gases within the synthesis loop, a fract
 
 \subsection{Ammonia Storage}
 \label{subsec:JRstorage}
+
 Storage of liquid ammonia product is vital in matching the supply and demand sides of the plant. Thus the scale of this storage must be one of the largest stores in the plant. Liquid ammonia has a boiling point of -33.3\textdegree C at atmospheric conditions, however, this can be increased by pressure storage. This requires a compromise to be made between low temperatures and high pressures in which to store ammonia. A review of current large-scale ammonia storage methods (Bartels,2008)\cite{Bartels2008} highlights the main trade-off between high pressure and low temperature storage being the high capital cost of building high pressure vessels against the increased energy requirements and thus running costs of maintaining low temperature storage.
 
 \begin{wrapfigure}{r}{0.4\textwidth}
@@ -623,7 +621,7 @@ Storage of liquid ammonia product is vital in matching the supply and demand sid
 	\includegraphics[width=0.99\textwidth]{AmmStoreP}
 	\caption{Cold NH$_3$ storage cycle}
 \end{wrapfigure}
- As calculated in  section \ref{sec:plantscale} the maximum capacity for required ammonia storage is 15000 tonnes at maximum capacity.
+As calculated in  section \ref{sec:plantscale} the maximum capacity for required ammonia storage is 15000 tonnes at maximum capacity.
 
 \subsubsection{Low Temperature Storage}
 
@@ -678,13 +676,11 @@ In order to minimise the heat transfer the surface area/volume ratio of the stor
 \begin{equation}
 P_h= \rho g h
 \end{equation}
-In the case of ammonia the pressure on the bottom of the tank would be 203.144 MPa of additional pressure. Thus a suitable steel thickness would have to be chosen to withstand this.
-
-Designing the refrigeration system using the compressor design equations and with a flash tank liquid holdup time of 10m the condenser can be sized using \cite{Morgan2013}0;
+In the case of ammonia the pressure on the bottom of the tank would be 203.144 MPa of additional pressure. Thus a suitable steel thickness would have to be chosen to withstand this. Designing the refrigeration system using the compressor design equations and with a flash tank liquid holdup time of 10m the condenser can be sized using \cite{Morgan2013}; where H is the specific mass enthalpy.
 \begin{equation}
 	\text{Area} = \frac{\dot{m}H}{U_{cond}T_{LMTD}}
 \end{equation}
-Where H is the specific mass enthalpy.
+
 \begin{table}[!htbp]
 	\begin{center}
 		\caption{Storage refrigeration cycle design summary}
@@ -695,7 +691,6 @@ Where H is the specific mass enthalpy.
 			\hline
 			0.17 kg/s& 74kW & 0.31 m$^3$ &69.7 m$^2$ \\
 		
-			
 			\hline
 		\end{tabular}
 	\end{center}
@@ -745,7 +740,7 @@ Due to the high peak demands of the 3 gas turbines a small amount of the cracked
 \end{table}
 
 
-\subsection{Simulation, Optimisation, and Control}
+\subsection{Modelling, Optimising and Control}
 This section addresses the methods used in modelling, optimising and controlling the process in order to achieve peak operating conditions.
 
 {\begin{figure}[!htbp]
@@ -807,7 +802,7 @@ The ammonia synthesis process is designed to run at steady state conditions and 
 A full control system for the ammonia synthesis process using quench cooling is given by Araujo \cite{Araujo2008}. However, in this design only the emergency reactor control system is considered (Fig. \ref{fig:controlEMER}). 
 
 
-\subsection{Economic, Sustainability and Safety Assessment}
+\subsection{Cost, Sustainability and Safety}
 
 In this section only  the capital cost assessment for the design stage was conducted. For plant operating costs see section \ref{LMCostsection}.
 \subsubsection{Capital Cost}
@@ -819,7 +814,7 @@ Where $K_1,K_2,K_3$ are defined in Table \ref{tab:Cost}. Thus the bare module co
 \begin{equation}
 C_{BM} =C_p^oF_{BM} = C_p^o(B_1+B_2F_MF_P)
 \end{equation}
-Where $F_M$ and $F_P$ are the respective material and pressure factors and $B_1, B_2$ are constants defined by design. Data for these constraints can be found in data sets and ASME tables \cite{RichardTurtonRichardC.BailieWallaceB.Whiting2013}
+Where $F_M$ and $F_P$ are the respective material and pressure factors and $B_1, B_2$ are constants defined by design. Data for these constraints can be found in data sets and ASME tables \cite{RichardTurtonRichardC.BailieWallaceB.Whiting2013}. The overall capital cost of this stage is estimated to be \$15.5 m with the highest cost being the pre-built ammonia crackers - accounting for over 43\% of process cost.
 
 \begin{table}[!htbp]
 	\begin{center}
@@ -910,8 +905,8 @@ Whilst the overall system sustainability is covered later in this report. The am
 }
 
 
-\subsection{Section Results and Conclusion}
-\subsubsection{Results}
+\subsection{Section Summary}
+\subsubsection{Results and Conclusion}
 \begin{wraptable}{r}{0.45\textwidth}
 	\singlespacing
 	\centering
@@ -933,24 +928,20 @@ Whilst the overall system sustainability is covered later in this report. The am
 			\hline
 			Operating temperature & 400\textdegree C \\
 			\hline
-			Synthesis pressure & 1 bar \\
+			Storage pressure & 1 bar \\
 			\hline
-			Synthesis temperature & -33\textdegree C \\
+			Storage temperature & -33\textdegree C \\
 			\hline
 		\end{tabular}
 \end{wraptable}
 
-During the final design iteration of the synthesis stage a first pass conversion rate of \conv \% can be achieved after optimization. This is achieved at a pressure of \pbar  bar and a reactor inlet temperature of \tc\textdegree C. Figure \ref{fig:aspenF} shows the final stage ammonia synthesis stage ASPEN flow diagram. 
-
- The ammonia synthesis, whilst a well established process requires careful design and optimisation due to the specific design requirements. The use of ASPEN and MATLAB has allowed for the creation of a dynamic modelling system that has enabled the conversion rate of ammonia within the reactor to be optimised, whilst design of the ammonia storage requirements and power generation needs of the plant has enabled the output of this stage to be designed to minimise the waste output of the plant through stream recycles.
-
-\subsubsection{Conclusion}
+During the final design iteration of the synthesis stage a first pass conversion rate of \conv \% can be achieved after optimization. This is achieved at a pressure of \pbar  bar and a reactor inlet temperature of \tc\textdegree C. Figure \ref{fig:aspenF} shows the final stage ammonia synthesis stage ASPEN flow diagram. This is a high first pass conversion relative to industrial averages and is achieved by using high pressure and improved catalyst in relation to the industrial standard. The ammonia synthesis, whilst a well established process requires careful design and optimisation due to the specific design requirements. The use of ASPEN and MATLAB has allowed for the creation of a dynamic modelling system that has enabled the conversion rate of ammonia to be optimised, whilst design of the storage requirements and power generation needs of the plant has enabled this stage to be designed to minimise the waste output of the plant through stream recycles. This achieves an overall conversion rate nearly 3 times than that of a first pass yield. 
 
 In conclusion, this section of the reactor is vital in providing the long term energy storage. This has meant that scale and reliability have been prioritised in the design, whilst minimising environmental impact and maximising economic efficiency. This satisfies the initial design objectives and meets the needs of respective processes elsewhere in the plant. 
 
 
 \subsubsection{Further Design}
-Whilst this design has addressed all the initial requirements, there are further improvements that could be made to increase efficiency of the process. One of these would be to recycle the hydrogen content within the purge stream, this would not only reduce output wastage but also improve the overall process efficiency. 
+Whilst this design has addressed all the initial requirements, there are further improvements that could be made to the process. One of these would be to design a large scale cracker, this may have led to cost reductions over the current design. Finally, recycling the hydrogen content within the purge stream, would not only reduce output wastage but also improve the overall process efficiency.
 
 \bibliography{./ammoniasynthJR/ammoniasynth/v3bib}
 \bibliographystyle{unsrt}

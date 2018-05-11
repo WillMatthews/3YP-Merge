@@ -8,8 +8,8 @@
 %\newcolumntype{A}{>{\centering\arraybackslash}m{1cm}}
 %\newcolumntype{B}{>{\centering\arraybackslash}m{3cm}}
 
+\let\subsection\paragraph
 \lfoot{Lewis Murray} %your name in the footer
-
 
 %\begin{document}
 %\begin{center}
@@ -19,7 +19,8 @@
 \section{Overall Financial Analysis}
 \label{LMCostsection}
 
-\subsection{Initial Capital Investment}
+\subsection{Initial Capital Investment}\\
+\hspace{1cm}\\
 The cost estimations for the plant were performed using the 'Total Purchasing Cost Estimate' (TPCE) method \cite{KLM}. This calculates values for the various aspects of the plant's construction by scaling them relative to the purchase price of the major plant components. Table \ref{LMtable:componentPC} shows the purchase prices of the main plant components, and Table \ref{LMtable:TPCE} shows the various scaling factors chosen. In the interest of a conservative estimate, the largest scaling factors were taken from the range of values given.
 
 
@@ -30,14 +31,14 @@ The cost estimations for the plant were performed using the 'Total Purchasing Co
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Component}  & \textbf{Price (Millions of USD)} \\ \hline
-Electrolyser        & 4.37                             \\ \hline
+Electrolyser        & 15.8                             \\ \hline
 Cryo Separator      & 9.40                             \\ \hline
 Reactor             & 15.48                             \\ \hline
 Main Turbine        & 75.60                            \\ \hline
 HEX Net             & 0.24                             \\ \hline
 Wind Farm           & 975.00                           \\ \hline
 SOFC/GT system      & 987.91                           \\ \hline
-\textbf{TOTAL COST} & \textbf{2068.00}                 \\ \hline
+\textbf{TOTAL COST} & \textbf{2079.43}                 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -48,28 +49,29 @@ SOFC/GT system      & 987.91                           \\ \hline
 \begin{tabular}{|c|c|c|}
 \hline
                                                                               \textbf{Expense} & \textbf{\% TPCE}       & \textbf{Cost (Millions of USD)}          \\ \hline
-Purchase                                                                      & 100             & 2068.00          \\ \hline
-Installation                                                                  & 14          & 289.52           \\ \hline
-Instrumentation                                                               & 8          & 165.44           \\ \hline
-Piping                                                                        & 20           & 413.60        \\ \hline
-Electrics                                                                     & 10           & 206.80           \\ \hline
-Building                                                                      & 18          & 372.24           \\ \hline
-Yard Improvement                                                              & 5          & 103.40           \\ \hline
-Service Facilities                                                            & 20           & 413.60           \\ \hline
-Land                                                                          & 2          & 41.36            \\ \hline
-\textbf{TOTAL DIRECT COST}                                                    & \textbf{197} & \textbf{4,073.96} \\ \hline
-\begin{tabular}[c]{@{}l@{}}Engineering   Supervision\end{tabular}           & 21          & 434.28           \\ \hline
-Construction Expenses                                                         & 14          & 289.52           \\ \hline
-\textbf{TOTAL INDIRECT COST}                                                  & \textbf{35} & \textbf{723.80}  \\ \hline
-\begin{tabular}[c]{@{}l@{}}Contractors   fee\end{tabular}                   & 14          & 289.52           \\ \hline
-Contingency                                                                   & 35          & 723.80           \\ \hline
-\textbf{FIXED CAPITAL INVESTMENT}                                             & \textbf{281} & \textbf{5,811.08} \\ \hline
-Working Capital                                                               & 42          & 868.56           \\ \hline
-\textbf{\begin{tabular}[c]{@{}l@{}}TOTAL   CAPITAL INVESTMENT\end{tabular}} & \textbf{323} & \textbf{6,679.64} \\ \hline
+Purchase                                                                      & 100             & 2079.43          \\ \hline
+Installation                                                                  & 14          & 291.12           \\ \hline
+Instrumentation                                                               & 8          & 166.35           \\ \hline
+Piping                                                                        & 20           & 415.89        \\ \hline
+Electrics                                                                     & 10           & 207.94           \\ \hline
+Building                                                                      & 18          & 374.30           \\ \hline
+Yard Improvement                                                              & 5          & 103.97          \\ \hline
+Service Facilities                                                            & 20           & 415.89           \\ \hline
+Land                                                                          & 2          & 41.59            \\ \hline
+\textbf{TOTAL DIRECT COST}                                                    & \textbf{197} & \textbf{4,096.48} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Engineering   Supervision\end{tabular}           & 21          & 436.68           \\ \hline
+Construction Expenses                                                         & 14          & 291.12           \\ \hline
+\textbf{TOTAL INDIRECT COST}                                                  & \textbf{35} & \textbf{727.80}  \\ \hline
+\begin{tabular}[c]{@{}l@{}}Contractors   fee\end{tabular}                   & 14          & 291.12           \\ \hline
+Contingency                                                                   & 35          & 727.80           \\ \hline
+\textbf{FIXED CAPITAL INVESTMENT}                                             & \textbf{281} & \textbf{5,853.20} \\ \hline
+Working Capital                                                               & 42          & 873.36           \\ \hline
+\textbf{\begin{tabular}[c]{@{}l@{}}TOTAL   CAPITAL INVESTMENT\end{tabular}} & \textbf{323} & \textbf{6,716.56} \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Operating Costs}
+\hspace{1cm}\\
 The plant operating costs are also calculated using the TPCE method, but with some additional complications. Labour costs are calculated separately, and the values are calculated proportional to the Total Capital Investment instead of the purchase cost. A summary of the operating costs can be seen in Table \ref{LMtable:opcosts}. 
 \\
 
@@ -91,18 +93,18 @@ In Table \ref{LMtable:opcosts}, 'indirect expenses' accounts for administrative,
 \textbf{Annual Expense} & \textbf{Calculation}                       & \textbf{Cost (Millions of USD)} \\ \hline
 Labour                  & Calculated separately                      & 525.00           \\ \hline
 Supervision             & 20\% of Labour Cost                        & 105.00           \\ \hline
-Maintenance             & 6\% of TCI                                 & 400.78           \\ \hline
-Indirect Expenses       & 3\% of TCI                                 & 200.39           \\ \hline
-General Overhead        & 15\% of Labour + Supervision + Maintenance & 690.12           \\ \hline
+Maintenance             & 6\% of TCI                                 & 402.99           \\ \hline
+Indirect Expenses       & 3\% of TCI                                 & 201.50           \\ \hline
+General Overhead        & 15\% of Labour + Supervision + Maintenance & 690.45           \\ \hline
 SOFC Replacement        & 20\% of (Purchase Cost of SOFC + 14\%)     & 225.24           \\ \hline
-\textbf{TOTAL}          & \textbf{Sum of all values in this table}   & \textbf{2,146.53} \\ \hline
+\textbf{TOTAL}          & \textbf{Sum of all values in this table}   & \textbf{2,150.18} \\ \hline
 \end{tabular}
 \end{table}
 
 
 
 \subsection{Financial Overview}
-
+\hspace{1cm}\\
 The levelised cost of electricity per kWh produced is calculated using Equation \ref{LMeq:unitcost}:
 \begin{equation}
     \text{Unit Cost of Production} = \frac{\text{Total Operating Cost per Year} - \text{Annual Investment Repayment}}{\text{Total kWh Produced per Year}}
@@ -128,14 +130,15 @@ Using Equation \ref{LMeq:unitcost}, the unit cost of production is found to be \
 Sale Price per kWh (USD)              & \$0.225     \\ \hline
 Total Energy produced per year (kWh)  & $\text{1.688} \times \text{10}^{\text{10}}$ \\ \hline
 Annual Revenue (USD)                  & \$3.798 bn. \\ \hline
-Annual Expense (USD)                  & \$2.882 bn. \\ \hline
-Annual Net Profit (USD)               & \$0.916 bn.\\ \hline
-Total Net Profit after 25 years (USD) & \$23.889 bn.\\ \hline
-Return on Investment after 25 years   & 342.7\%    \\ \hline
+Annual Expense (USD)                  & \$2.890 bn. \\ \hline
+Annual Net Profit (USD)               & \$0.908 bn.\\ \hline
+Total Net Profit after 25 years (USD) & \$22.697 bn.\\ \hline
+Return on Investment after 25 years   & 337.9\%    \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Conclusion}
+\hspace{1cm}\\
 It is clearly demonstrated in the cost analysis that the plant is very profitable. However, this is almost entirely due to Hawaii's uniquely expensive energy market. Hawaii's energy is predominantly produced using petroleum, which has to be imported from the US mainland to Hawaii, 2000 miles away in the Pacific Ocean \cite{Solar}. This drives up the price per kWh enormously, and so a very lucrative opportunity is created, whereby electricity generated on the island itself can be sold for much higher than cost price. The cost price shown in Table 4 has been chosen conservatively, and could be set much higher for greater profitability.
 \\
 
@@ -154,7 +157,7 @@ It is worth noting that the plant, as it has been modelled in this report, would
     \caption{Unit cost of production per MWh for various power generation methods \cite{IER}}
     \label{LMfig:costcomp}
 \end{figure}
-
+\hspace{1cm}\\
 \bibliographystyle{unsrt}
 \bibliography{./SOFC/costrefs}
 
